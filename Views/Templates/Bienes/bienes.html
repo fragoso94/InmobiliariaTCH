@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="form-group">
+                <label >Municipio</label>
+                <select class="form-control" ng-model="form.municipio">
+                    <option value="">Seleccionar Municipio</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md">
+            <label >Tipo de Inmueble</label>
+            <div class="form-group">
+                <select class="form-control" ng-model="form.tipoInmueble">
+                    <option value="">Seleccionar Inmueble</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <label >Uso del Inmueble</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Uso del Inmueble" ng-model="form.usoInmueble">
+            </div>
+        </div>
+        <div class="col-md">
+            <label>Superficie del terreno</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Superficie del Terreno" ng-model="form.superficieTerreno">
+            </div>
+        </div>
+        <div class="col-md">
+            <label >Superficie Construido</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Superficie Construido" ng-model="form.superficieConstruido">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" style="text-align: center">Medidas</div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <label>Al Norte</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Al Norte" ng-model="form.norte">
+            </div>
+        </div>
+        <div class="col-md">
+            <label>Al Sur</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Al Sur" ng-model="form.sur">
+            </div>
+        </div>
+        <div class="col-md">
+            <label>Al Oriente</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Al Oriente" ng-model="form.oriente">
+            </div>
+        </div>
+        <div class="col-md">
+            <label>Al Poniente</label>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Al Poniente" ng-model="form.poniente">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label >Ubicacion</label>
+            <div class="form-group">
+                <input id="fileUbicacion" type="file" name="ubicacion">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label >Croquis de la ubicación</label>
+            <div class="form-group">
+                <input id="fileCroquis" type="file" name="croquis">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label >Memoria Fotografica</label>
+            <div class="form-group">
+                <input id="fileMemoriaFotografica" type="file" name="memoriaFotografica">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <div class="col-md">
+                <label >Observaciones</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Observaciones" ng-model="form.observaciones">
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <label >Tipo de Formato</label>
+            <div class="form-group">
+                <select class="form-control" ng-model="form.tipoFormato">
+                    <option value="">Seleccionar Tipo de Formato</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success" ng-click="agregar()">Agregar</button>
+    </div>
+</div>

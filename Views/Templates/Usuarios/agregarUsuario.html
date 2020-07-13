@@ -1,0 +1,54 @@
+<div class="container-login100">
+    <div class="container">
+        <form>
+            <div class="card text-center">
+                <div class="card-header bg-info">
+                    Agregar Usuario
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control" placeholder="Usuario" ng-model="form.usuario" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre" ng-model="form.nombre" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" placeholder="Contraseña" ng-model="form.password" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Correo</label>
+                            <input type="email" class="form-control" placeholder="Correo" ng-model="form.correo" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Clave</label>
+                            <input type="text" class="form-control" placeholder="Clave" ng-model="form.clave" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Readeable Password</label>
+                            <input type="text" class="form-control" placeholder="Readable Password" ng-model="form.readable">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Id Grupo</label>
+                            <input type="text" class="form-control" placeholder="Id grupo" ng-model="form.idGrupo" required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Id departamento</label>
+                            <input type="text" class="form-control" placeholder="Id departamento" ng-model="form.idDep" required>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <button class="btn btn-primary" ui-sref="login">Regresar</button>
+                    <button type="submit" class="btn btn-success" ng-click="agregarUsuario()">Crear cuenta</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
