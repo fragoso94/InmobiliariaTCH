@@ -18,6 +18,13 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'Views/Custom/contenedorInmobiliaria.html',
         controller: 'InmobiliariaController'
     };
+    let agregarInmueble = {
+        name: 'agregarInmueble',
+        url: '/agregarInmueble',
+        templateUrl: 'Views/Custom/contenedorAgregarInmueble.html'
+        //controller: 'InmobiliariaController'
+    };
+
     let agregarUsuario = {
         name: 'agregarUsuario',
         url: '/agregarUsuario',
@@ -28,7 +35,9 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state(home);
     $stateProvider.state(login);
     $stateProvider.state(inmobiliaria);
+    $stateProvider.state(agregarInmueble);
     $stateProvider.state(agregarUsuario);
 
+    //$urlRouterProvider.hashPrefix('!');
     $urlRouterProvider.otherwise('/login');
 });
