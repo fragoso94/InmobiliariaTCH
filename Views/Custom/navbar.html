@@ -1,38 +1,37 @@
-
-<div class="navbar-expand-lg navbar-light bg-light">
+<div class="navbar-expand-lg navbar-light bg-transparent">
   <header><a href="#"> <img src="Image/header.png" alt="Imagen de Bienes Inmuebles"></a></header>
   <nav class="navbar navbar-light" style="background-color: #ffffff">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inmuebles <span class="sr-only">(current)</span></a>
+            <a class="nav-link" ui-sref="inmobiliaria">Inmuebles</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Segregaciones</a>
+            <a class="nav-link" ui-sref="segregaciones">Segregaciones</a>
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Catálogos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Altas</a>
-              <a class="dropdown-item" href="#">Bajas</a>
+              <a class="dropdown-item" ui-sref="altas">Altas</a>
+              <a class="dropdown-item" ui-sref="bajas">Bajas</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Modificar Catálogos</a>
+              <a class="dropdown-item" ui-sref="modificar">Modificar Catálogos</a>
             </div>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Reportes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Tipo Expediente</a>
-              <a class="dropdown-item" href="#">Tipo Inmueble</a>
+              <a class="dropdown-item" ui-sref="tipoExpediente">Tipo Expediente</a>
+              <a class="dropdown-item" ui-sref="tipoInmueble">Tipo Inmueble</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Modificar</a>
+              <a class="dropdown-item" ui-sref="modificarReporte">Modificar</a>
             </div>
           </li>
 
