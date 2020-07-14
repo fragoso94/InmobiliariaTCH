@@ -1,6 +1,371 @@
-<div class="container" style="margin-top: 50px;">
-    <h1>Lista inmobiliaria</h1>
-    <h1>Lista inmobiliaria</h1>
-    <h1>Lista inmobiliaria</h1>
-    <h1>Lista inmobiliaria</h1>
+<div  style="margin: 50px;">
+    <!-- Formulario-->
+    <h6 id="cabecera" class="p-2 mb-2 text-white">Captura de Expedientes de Bienes Inmuebles</h6>
+    <form>                
+        <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="NoExpediente">No. Expediente</label> 
+              <input type="text" class="form-control" id="NoExpediente" placeholder="Ingresar" required>
+            </div>
+
+            <div class="form-group col-md-4">                      
+              <label for="TipoExpediente">Tipo de Expediente</label> 
+              <select class="form-control" id="TipoExpediente" required>
+                <option selected disabled value="">Seleccionar...</option>                        
+                <option>Activo</option>
+                <option>Desincorporado</option>
+                <option>Rehabiltación Agraria</option>
+                <option>Centro Educativo</option>
+                <option>Regularizar</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="Tipo de Inmueble">Tipo de Inmueble</label>
+              <select class="form-control" id="Cve_TipoInmueble" required>
+                <option selected disabled value="">Seleccionar...</option>
+                <option>Todos</option>
+                <option>Aeropuerto</option>
+                <option>Albergue</option>
+                <option>Almacenes</option>
+                <option>Anillo Periférico</option>
+                <option>Antena Radio</option>
+                <option>Asilo Ancianos</option>
+                <OPtion>Asociación Civil</OPtion>
+                <option>Auditorios</option>
+                <option>Autopistas</option>
+                <option>Bases Militares</option>
+                <option>Bases Navales</option>
+                <option>Bibliotecas</option>
+                <option>Bodegas</option>
+                <option>Bomberos</option>
+                <option>Bordes y Espigones</option>
+                <option>Calles</option>
+                <option>Campos Aéreos</option>
+                <option>Campos Deportivos</option>
+                <option>campos Experimentales</option>
+                <option>Carceles Municipales</option>
+                <option>Casa Hogar para Enfermos</option>
+                <option>Casa de Gobierno</option>
+                <option>Vialidades</option>
+                <option>Casas de la Cultura</option>
+                <option>Casas Ejidales</option>
+                <option>Casas Habitación</option>
+                <option>Casas Habilitada para Oficina</option>
+                <option>Casetas Fiscales</option>
+                <option>Centros de Educación Basica</option>
+                <option>Centros de Convivencia Infantil</option>
+                <option>TeleBachilleratos</option>
+                <option>Centros de Educación Infantil</option>
+                <option>Centros D.I.F.</option>
+                <option>Centros de Readaptación Social</option>
+                <option>Centros de Salud</option>
+                <option>Asociación Civil</option>
+                <option>Conalep</option>
+                <option>Colonias</option>
+                <option>Cruz Roja</option>
+                <option>Edificios</option>
+                <option>Escuelas de Ciencias y Tecnologías</option>
+                <option>Escuelas de Educación Especial</option>
+                <option>Escuelas de Enfermería</option>
+                <option>Escuelas Normales</option>
+                <option>Escuelas Preescolares</option>
+                <option>Escuelas Preparatoris</option>
+                <option>Escuelas Primarias</option>
+                <option>Escuelas Secundarias</option>
+                <option>Escuelas Telesecundarias</option>
+                <option>Estacionamientos</option>
+                <option>Fábricas</option>
+                <option>Asociacion Civil</option>
+                <option>Fraccionamientos</option>
+                <option>Hangares</option>
+                <option>Hospitales</option>
+                <option>Instalaciones de la Feria</option>
+                <option>Libramientos</option>
+                <option>Ladrilleras</option>
+                <option>Mercados</option>
+                <option>Mina y Planta Trituradora</option>
+                <option>Museos</option>
+                <option>Parques Públicos</option>
+                <option>Plantas de Tratamiento de Aguas</option>
+                <option>Plantas Industriales</option>
+                <option>Plantas Potabilizadoras</option>
+                <option>Plazuelas</option>
+                <option>Rastros</option>
+                <option>Finca Rústica</option>
+                <option>Tanque de Bombeo</option>
+                <option>Teatros de la Ciudad</option>
+                <option>Terrenos</option>
+                <option>Universidades</option>
+                <option>Víveros</option>
+                <option>Velatorio D.I.F.</option>
+                <option>Tanque de Almacenamiento</option>
+                <option>Glorietas</option>
+                <option>Zoomat</option>
+              </select>
+            </div>
+        </div>
+        
+        
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Nombre_Inmueble">Nombre del Inmueble</label>
+                <input type="text" class="form-control" placeholder="Nombre" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Direccion_Inmueble">Dirección del Inmueble</label>
+                <input type="text" class="form-control" placeholder="Dirección" required>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="DescripcionEjecutiva">Descripción Ejecutiva</label>
+                <input type="text" class="form-control" id="DescripcionEjecutiva" placeholder="Descripción" required>
+            </div>                                          
+        </div>
+                            
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="submit" class="btn btn-danger">Cancelar</button>
+            </div>
+        </div>                  
+                          
+    </form>                     
+ <!-- Fin de Formulario -->
+ <h6 id="cabecera" class="p-2 mb-2 text-white">Datos Particulares del Inmueble</h6>
+ <!--Form 2--> 
+ <form>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="Cve_Municipio">Municipio</label> 
+      <select class="form-control" id="Cve_Municipio" required>
+        <option selected disabled value="">Buscar...</option>                        
+        <option>Acacoyagua</option>
+        <option>Acala</option>
+        <option>Acapetahua</option>
+        <option>Altamirano</option> 
+        <option>Amatán</option>
+        <option>Amatenango de la Frontera</option>
+        <option>Amatenango del Valle</option>
+        <option>Ángel Albino Corzo</option>
+        <option>Arriaga</option>
+        <option>Bejucal de Ocampo</option>
+        <option>Bella Vista</option>
+        <option>Berriozábal</option>
+        <option>Bochil</option>
+        <option>El Bosque</option>
+        <option>Cacahoatán</option>
+        <option>Catazajá</option>
+        <option>Cintalapa</option>
+        <option>Coapilla</option>
+        <option>Comitán de Domínguez</option>
+        <option>La Concordia</option>
+        <option>Copainalá</option>
+        <option>Chalchihuitán</option>
+        <option>Chamula</option>
+        <option>Chanal</option>
+        <option>Chapultenango</option>
+        <option>Chenalhó</option>
+        <option>Chiapa de Corzo</option>
+        <option>Chiapilla</option>
+        <option>Chicoasén</option>
+        <option>Chicomuselo</option>
+        <option>Chilón</option>
+        <option>Escuintla</option>
+        <option>Francisco León</option>
+        <option>Frontera Comalapa</option>
+        <option>Frontera Hidalgo</option>
+        <option>La Grandeza</option>
+        <option>Huehuetán</option>
+        <option>Huixtán</option>
+        <option>Huitiupán</option>
+        <option>Huixtla</option>
+        <option>La Independencia</option>
+        <option>Ixhuatán</option>
+        <option>Ixtacomitán</option>
+        <option>Ixtapa</option>
+        <option>Ixtapangajoya</option>
+        <option>Jiquipilas</option>
+        <option>Jitotol</option>
+        <option>Juárez</option>
+        <option>Larráinzar</option>
+        <option>La Libertad</option>
+        <option>Mapastepec</option>
+        <option>Las Margaritas</option>
+        <option>Mazapa de Madero</option>
+        <option>Mazatán</option>
+        <option>Metapa</option>
+        <option>Mitontic</option>
+        <option>Motozintla</option>
+        <option>Nicolas Ruíz</option>
+        <option>Ocosingo</option>
+        <option>Ocotepec</option>
+        <option>Ocozocoautla de Espinosa</option>
+        <option>Ostuacán</option>
+        <option>Osumacinta</option>
+        <option>Oxchuc</option>
+        <option>Palenque</option>
+        <option>Pantelhó</option>
+        <option>Pantepec</option>
+        <option>Pichucalco</option>
+        <option>Pijijiapan</option>
+        <option>El Porvenir</option>
+        <option>Villa Comaltitlán</option>
+        <option>Pueblo Nuevo Sollistahuacán</option>
+        <option>Rayón</option>
+        <option>Reforma</option>
+        <option>Las Rosas</option>
+        <option>Sabanilla</option>
+        <option>Salto de Agua</option>
+        <option>San Cristóbal de las Casas</option>
+        <option>San Fernando</option>
+        <option>Siltepec</option>
+        <option>Simojovel</option>
+        <option>Sitalá</option>
+        <option>Socoltenango</option>
+        <option>Solosuchiapa</option>
+        <option>Soyaló</option>
+        <option>Suchiapa</option>
+        <option>Suchiate</option>
+        <option>Sunuapa</option>
+        <option>Tapachula</option>
+        <option>Tapalapa</option>
+        <option>Tapilula</option>
+        <option>Tecpatán</option>
+        <option>Tenejapa</option>
+        <option>Teopisca</option>
+        <option>Tila</option>
+        <option>Tonalá</option>
+        <option>Totolapá</option>
+        <option>La Trinitaria</option>
+        <option>Tumbalá</option>
+        <option>Tuxtla Gutiérrez</option>
+        <option>Tuxtla Chico</option>
+        <option>Tuzantán</option>
+        <option>Tzimol</option>
+        <option>Unión Juárez</option>
+        <option>Venustiano Carranza</option>
+        <option>Villa Corzo</option>
+        <option>Villaflores</option>
+        <option>Yajalón</option>
+        <option>San Lucas</option>
+        <option>Zinacantán</option>
+        <option>San Juan Cancuc</option>
+        <option>Aldama</option>
+        <option>Benemérito de las Américas</option>
+        <option>Maravilla Tenejapa</option>
+        <option>Marqués de Comillas</option>
+        <option>Montecristo de Guerrero</option>
+        <option>San Andrés Duraznal</option>
+        <option>Santiago el Pinar</option>
+        <option>No Definido</option>                    
+      </select>                  
+    </div>
+
+    <div class="form-group col-md-4">                      
+      <label for="coco">Clasifica Predio</label> 
+      <select class="form-control" id="ClasificaPredio" required>
+        <option selected disabled value="">Seleccionar...</option>                        
+        <option>Rústico</option>
+        <option>Terracería</option>
+        <option>Pavimentado</option>                    
+      </select>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="dos">Tipo Predio</label>
+      <select class="form-control" id="TipoPredio" required>
+        <option selected disabled value="">Elegir...</option>
+        <option>Construido</option>
+        <option>Baldio</option>
+        <option>Bardado</option>                    
+      </select>
+    </div>
+</div>                                            
+ 
+  <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputStatus">Status</label>
+            <input type="text" class="form-control" id="Status" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputDate">Fecha Alta</label>
+            <input type="date" class="form-control" id="fecha_alta" required>
+        </div>
+        <div class="form-group col-md-4">
+          <!--<div class="form-check">-->
+            <label class="form-check-label" for="gridCheck">Asegurado</label required>
+            <input class="form-check-input" type="checkbox" id="Asegurado">                    
+        </div>
+  </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputSuperTotal">Superficie Total</label>
+            <input type="text" class="form-control" id="SuperficieTotal" placeholder="mts" required>
+        </div>
+
+        <div class="form.group col-md-4">
+            <label for="Super Construida">Superficie Construida</label>
+            <input type="text" class="form-control" id="SuperficiConstruida" placeholder="mts" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="NoNiveles">No. Niveles</label>
+          <input type="text" class="form-control" id="NoNiveles">
+        </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+          <label for="Clave_Castastral">Clave Castastral</label>
+          <input type="text" class="form-control" id="Cve_Castastral" required>
+      </div>
+
+      <div class="form.group col-md-4">
+          <label for="Valor Catastral">Valor Catastral</label>
+          <input type="text" class="form-control" id="ValorCatastral" placeholder="$0.00" required>
+      </div>
+      <div class="form-group col-md-4">
+          <label for="Valor Actual">Valor Actual</label>
+          <input type="text" class="form-control" id="ValorActual" placeholder="$0.00" required>
+      </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="ValorFiscal">Valor Fiscal</label>
+        <input type="text" class="form-control" id="ValorFiscal" required>
+    </div>
+
+    <div class="form.group col-md-4">
+        <label for="ValorAdquisición">Valor Adquisición</label>
+        <input type="text" class="form-control" id="ValorAdquisición" required>
+    </div>                
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-12">
+      <label for="Propetario Anterior">Propetario Anterior</label>
+      <input type="text" class="form-control" id="PropetarioAnterior" required>
+  </div>
+
+  <div class="form.group col-md-12">
+      <label for="Observaciones">Observaciones</label>
+      <input type="text" class="form-control" id="Observaciones" required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="Dependencia Ocupante">Dependencia Ocupante</label>
+    <input type="text" class="form-control" id="DependenciaOcupante">
+  </div>
+</div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <button type="submit" class="btn btn-warning">Agregar</button>
+      <button type="submit" class="btn btn-danger">Cancelar</button>
+      <button type="submit" class="btn btn-info">Regresar</button>
+    </div>
+  </div>
+</form>      
+ <!--Fin form 2-->
+
 </div>
