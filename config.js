@@ -12,22 +12,22 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'Views/Templates/login.html',
         controller: 'LoginController'
     };
-    let bienes = {
-        name: 'bienes',
-        url: '/bienes',
-        templateUrl: 'Views/Templates/Bienes/bienes.html',
-        controller: 'BienesController'
+    let inmobiliaria = {
+        name: 'inmobiliaria',
+        url: '/inmobiliaria',
+        templateUrl: 'Views/Custom/contenedorInmobiliaria.html',
+        controller: 'InmobiliariaController'
     };
     let agregarUsuario = {
         name: 'agregarUsuario',
         url: '/agregarUsuario',
-        templateUrl: 'Views/Templates/AgregarUusario/AgregarUusario.html',
+        templateUrl: 'Views/Custom/contenedorAgregarUsuario.html',
         controller: 'AgregarUsuarioController'
     };
 
     $stateProvider.state(home);
     $stateProvider.state(login);
-    $stateProvider.state(bienes);
+    $stateProvider.state(inmobiliaria);
     $stateProvider.state(agregarUsuario);
 
     $urlRouterProvider.otherwise('/login');

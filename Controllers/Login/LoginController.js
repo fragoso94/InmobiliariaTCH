@@ -2,10 +2,11 @@ app.controller('LoginController', ['$scope','$state','$http', function ($scope,$
     $scope.form = {};
 
     $scope.login = () => {
-        Autenticar($scope.form.user, $scope.form.pass);
+        //Autenticar($scope.form.user, $scope.form.pass);
+        $state.go('inmobiliaria');
     };
 
-    function Autenticar(user, pass) {
+    /*function Autenticar(user, pass) {
         console.log (user, pass)
         let peticion = $http({
             method: "POST",
@@ -32,6 +33,6 @@ app.controller('LoginController', ['$scope','$state','$http', function ($scope,$
         }, function (response) {
             console.error(response);
         });
-    };
+    };*/
 
 }]);
