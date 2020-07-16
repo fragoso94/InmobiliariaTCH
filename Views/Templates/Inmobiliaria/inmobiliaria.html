@@ -24,33 +24,19 @@
     <table class="table table-striped table-bordered fixed_header" style="width:100%;">
         <thead>
         <tr>
-            <th class="centerText" scope="col">Código</th>
-            <th class="centerText" scope="col">Producto</th>
-            <th class="centerText" scope="col">Precio unitario</th>
-            <th class="centerText" scope="col">Precio de venta</th>
-            <th class="centerText" scope="col">Stock Mínimo</th>
-            <th class="centerText" scope="col">Stock Máximo</th>
-            <th class="centerText" scope="col">Categoría</th>
-            <th class="centerText" scope="col">Fecha de alta</th>
-            <th class="centerText" scope="col">Cantidad disponible</th>
+            <th class="centerText" scope="col">Id</th>
+            <th class="centerText" scope="col">Nombre</th>
+            <th class="centerText" scope="col">Direccion</th>
+
             <!--                <th class="centerText" scope="col">Activo</th>-->
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="(key, value) in productos | filter: nombre">
-            <td class="centerText">{{value.codigo_prod}}</td>
-            <td class="centerText">
-                <a type="button" ng-href="#!/producto/{{value.id_prod}}">
-                    {{value.nombre_prod}}
-                </a>
-            </td>
-            <td class="centerText">{{value.precio_compra | currency}}</td>
-            <td class="centerText">{{value.precio_venta | currency}}</td>
-            <td class="centerText">{{value.stock_min}}</td>
-            <td class="centerText">{{value.stock_max}}</td>
-            <td class="centerText">{{value.nombre_cat}}</td>
-            <td class="centerText">{{value.fecha_alta}}</td>
-            <td class="centerText">{{value.cantidad_stock}}</td>
+        <tr ng-repeat="(key, value) in inmuebles"><!--| filter: nombre -->
+            <td class="centerText">{{value.IdExpediente}}</td>
+            <td class="centerText">{{value.Nombre}}</td>
+            <td class="centerText">{{value.Descripcin}}</td>
+
             <!--                <td class="centerText">-->
             <!--                    <span class="badge badge-success" ng-show="value.activo == 1 ? true : false">Activo</span>-->
             <!--                    <span class="badge badge-danger" ng-show="value.activo == 0 ? true : false">Inactivo</span>-->
