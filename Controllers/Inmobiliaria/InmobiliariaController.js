@@ -4,9 +4,8 @@ app.controller('InmobiliariaController',["$scope","$state", "$http", function ($
     $scope.agregarInmueble = ()=>{
         $state.go('agregarInmueble');
     };
-
-    let urlApi = 'https://localhost:44372/Api/Inmuebles'; //Juancho
-    //let urlApi = 'https://localhost:44312/Api/Inmuebles'; //Fragoso//
+    
+    let urlApi = 'https://localhost:44312/Api/Inmuebles'; //Fragoso
     ObtenerInmuebles = () =>{
         $http({method: 'GET', url: urlApi}).
         then(function(response) {
