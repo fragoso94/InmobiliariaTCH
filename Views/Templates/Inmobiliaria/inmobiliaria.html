@@ -32,10 +32,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="(key, value) in inmuebles"><!--| filter: nombre -->
-            <td class="centerText">{{value.IdExpediente}}</td>
-            <td class="centerText">{{value.Nombre}}</td>
-            <td class="centerText">{{value.Descripcin}}</td>
+        <tr ng-repeat=" (key,value) in inmuebles "><!--| filter: nombre -->
+            <td class="centerText">{{value.idExpediente}}</td>
+            <td class="centerText">{{value.nombre}}</td>
+            <td class="centerText">{{value.direccion}}</td>
 
             <!--                <td class="centerText">-->
             <!--                    <span class="badge badge-success" ng-show="value.activo == 1 ? true : false">Activo</span>-->
