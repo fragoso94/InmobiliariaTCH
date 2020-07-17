@@ -41,3 +41,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     //$urlRouterProvider.hashPrefix('!');
     $urlRouterProvider.otherwise('/login');
 });
+
+app.run(function($rootScope) {
+    $rootScope.urlBase = 'https://localhost:44312/api';
+});

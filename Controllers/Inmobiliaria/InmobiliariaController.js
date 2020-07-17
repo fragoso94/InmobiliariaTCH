@@ -1,13 +1,9 @@
-app.controller('InmobiliariaController',["$scope","$state", "$http", "ApiServices", function ($scope, $state, $http, ApiServices) {
-    let urlApiDaniel = 'https://localhost:44312/Api/Inmuebles';
+app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
+    let urlApiDaniel = $rootScope.urlBase + '/Inmuebles';
     //let urlApiJuancho = '';
 
-    $scope.agregarInmueble = ()=>{
-        $state.go('agregarInmueble');
-    };
-
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
-    var response = ApiServices.getAll('GET',urlApiDaniel);
+    var response = ApiServices.getWS('GET',urlApiDaniel);
     response.then(function (datos) {
         console.log(datos);
         $scope.inmuebles = datos;
@@ -16,7 +12,9 @@ app.controller('InmobiliariaController',["$scope","$state", "$http", "ApiService
         console.error(error)
     });
 
-
+    $scope.agregarInmueble = ()=>{
+        $state.go('agregarInmueble');
+    };
     /*ObtenerInmuebles = () =>{
         var datos =  $http({method: 'GET', url: urlApiDaniel});
         datos.then(function(response) {

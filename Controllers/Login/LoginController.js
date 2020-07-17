@@ -1,38 +1,24 @@
-app.controller('LoginController', ['$scope','$state','$http', function ($scope,$state, $http) {
+app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope', function ($scope,$state, ApiServices,$rootScope) {
     $scope.form = {};
+    let urlApiDaniel = $rootScope.urlBase + '/Login';
 
     $scope.login = () => {
-        //Autenticar($scope.form.user, $scope.form.pass);
-        $state.go('inmobiliaria');
+        var data = {
+            "Login": $scope.form.user,
+            "password" : $scope.form.pass
+        };
+        var response = ApiServices.getWS('POST',urlApiDaniel, data);
+        response.then(function (datos) {
+            console.log(datos);
+            if(datos.estado == 1){
+                $state.go('inmobiliaria');
+            }else{
+                alert(datos.mensaje);
+            }
+        })
+        response.catch(function (error) {
+            console.error(error)
+        });
     };
-
-    /*function Autenticar(user, pass) {
-        console.log (user, pass)
-        let peticion = $http({
-            method: "POST",
-            url: "https://localhost:44321/Api/Auth/",
-            data:
-            {
-                "Login": user,
-                "Password": pass
-            }
-        });
-
-        peticion.then(function (response) {
-            console.log(response);
-            if (response.data != null)
-            { 
-                if (response.data.Estado == 1) {
-                    $state.go('home');
-                }
-                else {
-                    console.warn("El usuario o contraseña es incorrecta.");
-                    $scope.mensajeValidacion = "El usuario o contraseña es incorrecta";
-                }
-            }
-        }, function (response) {
-            console.error(response);
-        });
-    };*/
 
 }]);
