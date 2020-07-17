@@ -6,12 +6,12 @@ app.factory('ApiServices', function ($http, $q) {
             var promise = defered.promise;
 
             $http({method: method, url: urlApi})
-            .then(function(response) {
-                //console.log(response.data)
-                defered.resolve(response.data);
-            }, function(err) {
-                defered.reject(err);
-            });
+                .then(function(response) {
+                    //console.log(response.data)
+                    defered.resolve(response.data);
+                }, function(err) {
+                    defered.reject(err);
+                });
             return promise;
         },
     }
