@@ -1,5 +1,6 @@
-app.controller('AgregarUsuarioController', ['$scope', '$http','$state', function ($scope, $http,$state) {
+app.controller('AgregarUsuarioController', ['$scope', '$http','$state','$rootScope', function ($scope, $http,$state, $rootScope) {
     $scope.form = {};
+    $rootScope.session();
 
     $scope.agregarUsuario = () => {
         InsertarUsuario($scope.form);

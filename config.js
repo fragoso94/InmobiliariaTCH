@@ -42,6 +42,31 @@ app.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/login');
 });
 
-app.run(function($rootScope) {
+app.run(function($rootScope, ApiServices, $state) {
     $rootScope.urlBase = 'https://localhost:44312/api';
+
+    $rootScope.logout = () => {
+        ApiServices.logout();
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('estado');
+    };
+
+    $rootScope.session = () => {
+        let cantgoback = ApiServices.islogged();
+        if (cantgoback.estado == 1) {
+            localStorage.setItem('usuario', cantgoback.usuario);
+            localStorage.setItem('estado', cantgoback.estado);
+            $rootScope.usuarioActual = localStorage.getItem('usuario');
+            //console.log("autenticado");
+            console.log($rootScope.usuarioActual);
+        } else {
+            $rootScope.usuarioActual = localStorage.getItem('usuario');
+            estadoActual = localStorage.getItem("estado");
+            if(estadoActual != 1){
+                console.log("no autenticado");
+                $state.go('login');
+            }
+        }
+    };
+
 });

@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope', function ($scope,$state, ApiServices,$rootScope) {
+app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope', function ($scope,$state, ApiServices, $rootScope) {
     $scope.form = {};
     let urlApiDaniel = $rootScope.urlBase + '/Login';
 
@@ -7,18 +7,18 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
             "Login": $scope.form.user,
             "password" : $scope.form.pass
         };
-        var response = ApiServices.getWS('POST',urlApiDaniel, data);
-        response.then(function (datos) {
-            console.log(datos);
-            if(datos.estado == 1){
-                $state.go('inmobiliaria');
-            }else{
-                alert(datos.mensaje);
-            }
-        })
-        response.catch(function (error) {
-            console.error(error)
-        });
-    };
+        ApiServices.getWS('POST', urlApiDaniel, data);
+    }
+    /*var response = ApiServices.getWS('POST', urlApiDaniel, data);
+    response.then(function (datos) {
+        if(datos.estado == 1){
+            //$state.go('inmobiliaria');
+        }else{
+            alert(datos.mensaje);
+        }
+    })
+    response.catch(function (error) {
+        console.error(error)
+    });*/
 
 }]);

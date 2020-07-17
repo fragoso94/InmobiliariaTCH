@@ -13,3 +13,11 @@ header a img{
     font-size: 1rem;
     font-weight: bold;
 }
+
+.btnSalir{
+    font-family: 'Open Sans', Arial, sans-serif;
+    Color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
