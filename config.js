@@ -3,7 +3,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     let home = {
     name: 'home',
     url: '/home',
-    templateUrl: 'Views/Custom/contenedorHome.html',
+    templateUrl: 'Views/Custom/ContenedorHome.html',
     controller: 'HomeController'  
 };
     let login = {
@@ -32,11 +32,19 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'AgregarUsuarioController'
     };
 
+    let listaUsuario = {
+        name: 'listaUsuario',
+        url: '/listaUsuario',
+        templateUrl: 'Views/Custom/contenedorListaUsuario.html',
+        controller: 'ListarUsuarioController'
+    };
+
     $stateProvider.state(home);
     $stateProvider.state(login);
     $stateProvider.state(inmobiliaria);
     $stateProvider.state(agregarInmueble);
     $stateProvider.state(agregarUsuario);
+    $stateProvider.state(listaUsuario);
 
     //$urlRouterProvider.hashPrefix('!');
     $urlRouterProvider.otherwise('/login');
@@ -45,6 +53,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 app.run(function($rootScope, ApiServices, $state) {
     $rootScope.urlBase = 'https://localhost:44312/api';
     $rootScope.urlBaseProd = 'https://apiinmobiliariatch.azurewebsites.net/api';
+    //https://apiinmobiliariatch.azurewebsites.net/api/Usuarios
 
     $rootScope.logout = () => {
         ApiServices.logout();
