@@ -44,6 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 app.run(function($rootScope, ApiServices, $state) {
     $rootScope.urlBase = 'https://localhost:44312/api';
+    $rootScope.urlBaseProd = 'https://apiinmobiliariatch.azurewebsites.net/api';
 
     $rootScope.logout = () => {
         ApiServices.logout();

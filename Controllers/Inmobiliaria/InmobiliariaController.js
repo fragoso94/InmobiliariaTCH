@@ -1,10 +1,10 @@
 app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    let urlApiDaniel = $rootScope.urlBase + '/Inmuebles';
-    //let urlApiJuancho = '';
+    let urlApiLocal = $rootScope.urlBase + '/Inmuebles';
+    let urlApiProd = $rootScope.urlBaseProd + '/Inmuebles';
     $rootScope.session();
 
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
-    var response = ApiServices.getWS('GET',urlApiDaniel);
+    var response = ApiServices.getWS('GET',urlApiProd);
     response.then(function (datos) {
         console.log(datos);
         $scope.inmuebles = datos;
