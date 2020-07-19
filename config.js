@@ -68,7 +68,7 @@ app.run(function($rootScope, ApiServices, $state) {
             localStorage.setItem('estado', cantgoback.estado);
             $rootScope.usuarioActual = localStorage.getItem('usuario');
             //console.log("autenticado");
-            console.log($rootScope.usuarioActual);
+            //console.log($rootScope.usuarioActual);
         } else {
             $rootScope.usuarioActual = localStorage.getItem('usuario');
             estadoActual = localStorage.getItem("estado");

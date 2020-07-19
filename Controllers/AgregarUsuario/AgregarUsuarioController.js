@@ -3,10 +3,10 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','$state','$rootSco
     $rootScope.session();
 
     $scope.agregarUsuario = () => {
-        InsertarUsuario($scope.form);
+
     };
 
-    function InsertarUsuario(data) {
+    /*function InsertarUsuario(data) {
         console.log(data);
         let usuario = {
             "Login": data.usuario,
@@ -36,7 +36,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','$state','$rootSco
         }, function (response) {
             console.error(response);
         });
-    };
+    };*/
 
 
 

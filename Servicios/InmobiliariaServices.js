@@ -18,9 +18,9 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         });
                     //break;
                     return promise;
-                case 'POST':
+                case 'LOGIN':
                     $http({
-                        method: method,
+                        method: 'POST',
                         url: urlApi,
                         headers: {
                             'Content-Type': 'application/json'
@@ -39,7 +39,20 @@ app.factory('ApiServices', function ($http, $q, $location) {
                             console.error(err);
                         });
                     break;
-                    //return promise;
+                case 'POST':
+                    $http({
+                        method: method,
+                        url: urlApi,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        data: datos})
+                        .then(function(response) {
+                            defered.resolve(response.data);
+                        }, function(err) {
+                            defered.reject(err);
+                        });
+                    return promise;
                 default: break;
             }
         },

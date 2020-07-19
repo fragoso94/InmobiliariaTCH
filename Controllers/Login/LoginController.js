@@ -5,10 +5,10 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
 
     $scope.login = () => {
         var data = {
-            "Login": $scope.form.user,
-            "password" : $scope.form.pass
+            "Usuario": $scope.form.user,
+            "Pass" : $scope.form.pass
         };
-        ApiServices.getWS('POST', urlApiProd, data);
+        ApiServices.getWS('LOGIN', urlApiProd, data);
     }
 
 }]);
