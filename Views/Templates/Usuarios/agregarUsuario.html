@@ -2,7 +2,7 @@
     <div class="container">
         <form>
             <div class="card text-center">
-                <div class="card-header bg-info">
+                <div class="card-header">
                     Agregar Usuario
                 </div>
                 <div class="card-body">
@@ -43,10 +43,25 @@
                         </div>
 
                     </div>
+                    <div class="form-row">
+                        <!-- Default unchecked -->
+                        <div class="custom-control custom-checkbox form-group col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked" ng-model="form.admin">
+                            <label class="custom-control-label" for="defaultUnchecked">Administrador</label>
+                        </div>
+                        <div class="custom-control custom-checkbox form-group col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked2" ng-model="form.subSecre">
+                            <label class="custom-control-label" for="defaultUnchecked2">Subsecretaría</label>
+                        </div>
+                        <div class="custom-control custom-checkbox form-group col-md-4">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked3"ng-model="form.direccion">
+                            <label class="custom-control-label" for="defaultUnchecked3">Dirección</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer text-muted">
-                    <button class="btn btn-primary" ui-sref="login">Regresar</button>
-                    <button type="submit" class="btn btn-success" ng-click="agregarUsuario()">Crear cuenta</button>
+                <div class="card-footer text-muted">                    
+                    <button class="btn btn-danger" ui-sref="login">Cancelar</button>
+                    <button type="button" class="btn btn-primary" ng-click="guardarUsuario()">Crear cuenta</button>                     
                 </div>
             </div>
         </form>

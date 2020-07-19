@@ -1,43 +1,32 @@
-app.controller('AgregarUsuarioController', ['$scope', '$http','$state','$rootScope', function ($scope, $http,$state, $rootScope) {
+app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$state','$rootScope', function ($scope, $http, ApiServices, $state, $rootScope) {
     $scope.form = {};
-    $rootScope.session();
+    
+    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';    
 
-    $scope.agregarUsuario = () => {
+    $scope.guardarUsuario = () => {        
+        var data = {
+            "NombreUsuario": $scope.form.usuario,
+            "Nombre" : $scope.form.nombre,
+            "Password": $scope.form.password,
+            "RedeablePassword": $scope.form.readable,
+            "Correo": $scope.form.correo,
+            "Adiministrador": $scope.form.admin,            
+            "Subsecretaria": $scope.form.subSecre,
+            "Direccion": $scope.form.direccion,                        
+            "Clave": $scope.form.clave,           
+            "IdGrupo": $scope.form.idGrupo,            
+            "IdDepartamento": $scope.form.idDep       
 
-    };
-
-    /*function InsertarUsuario(data) {
-        console.log(data);
-        let usuario = {
-            "Login": data.usuario,
-            "Nombre": data.nombre,
-            "Password": data.password,
-            "Readable_Password": data.readable,
-            "Correo": data.correo,
-            "Clave": data.clave,
-            "Id_Grupo": data.idGrupo,
-            "Id_Dep": data.idDep,
-        };
-
-        let peticion = $http({
-            method: "POST",
-            url: "https://localhost:44321/Api/Usuario/",
-            data: usuario
-        });
-
-
-        peticion.then(function (response) {
-            console.log(response.data);
-            if (response.data.Exito == true)
-            {
-                swal(response.data.Mensaje, "Finalizar", "success");
-                //$state.go('login');
-            }
-        }, function (response) {
-            console.error(response);
-        });
-    };*/
-
-
-
+         }; 
+         console.log (data);
+                    var respuesta = ApiServices.getWS('POST', urlApiProd, data);
+                    respuesta.then(function (datos){
+                        console.log(datos);
+                        $scope.Usuarios =datos;
+                    })
+                    respuesta.catch(function(error){
+                    
+                });
+    }
+    
 }]);
