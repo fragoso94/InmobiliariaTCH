@@ -21,8 +21,8 @@ app.config(function($stateProvider, $urlRouterProvider){
     let agregarInmueble = {
         name: 'agregarInmueble',
         url: '/agregarInmueble',
-        templateUrl: 'Views/Custom/contenedorAgregarInmueble.html'
-        //controller: 'InmobiliariaController'
+        templateUrl: 'Views/Custom/contenedorAgregarInmueble.html',
+        controller: 'AgregarInmuebleController'
     };
 
     let agregarUsuario = {

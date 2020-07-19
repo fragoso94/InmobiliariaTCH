@@ -4,13 +4,16 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $rootScope.session();
 
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
+    $scope.spinner = true;
     var response = ApiServices.getWS('GET',urlApiProd);
     response.then(function (datos) {
         console.log(datos);
         $scope.inmuebles = datos;
+        $scope.spinner = false;
     })
     response.catch(function (error) {
-        console.error(error)
+        console.error(error);
+        $scope.spinner = false;
     });
 
     $scope.agregarInmueble = ()=>{

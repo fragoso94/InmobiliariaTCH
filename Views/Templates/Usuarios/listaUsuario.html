@@ -21,53 +21,60 @@
             </button>
         </div>
     </div>
-    <table class="table table-striped table-bordered fixed_header" style="width:100%;">
-        <thead>
-        <tr>
-            <th class="centerText" scope="col">Nombre</th>
-            <th class="centerText" scope="col">Correo</th>
-            <th class="centerText" scope="col">Status</th>
-            <th class="centerText" scope="col">Administrador</th>
-            <th class="centerText" scope="col">Subsecretaría</th>
-            <th class="centerText" scope="col">Direccion</th>
-            <th class="centerText" scope="col">Clave</th>
-            <th class="centerText" scope="col"></th>
+    <div class="loader" ng-show="spinner"></div>
+    <div class="fixed_header">
+        <table class="table table-striped table-bordered fixed_header" style="width:100%;">
+            <thead>
+            <tr>
+                <th class="centerText" scope="col">Nombre</th>
+                <th class="centerText" scope="col">Correo</th>
+                <th class="centerText" scope="col">Estatus</th>
+                <th class="centerText" scope="col">Administrador</th>
+                <th class="centerText" scope="col">Subsecretaría</th>
+                <th class="centerText" scope="col">Direccion</th>
+                <th class="centerText" scope="col">Clave</th>
+                <th class="centerText" scope="col"></th>
 
-            <!--                <th class="centerText" scope="col">Activo</th>-->
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat=" (key,value) in Usuarios "><!--| filter: nombre -->
-            <td class="centerText">{{value.nombre}}</td>
-            <td class="centerText">{{value.correo}}</td>
-            <td class="centerText">{{value.estatus}}</td>
-            <td>
-                <div class="form-check" style="vertical-align: middle; text-align: center">
-                    <input class="form-check-input" type="checkbox" value="" ng-checked="value.administrador"
-                           ng-disabled="true" id="defaultCheck1">
-                </div>
-            </td>
-            <td class="centerText">
-                <div class="form-check" style="vertical-align: middle; text-align: center">
-                    <input class="form-check-input" type="checkbox" value="" ng-checked="value.subsecretaria"
-                           ng-disabled="true" id="defaultCheck2">
-                </div>
-            </td>
-            <td class="centerText">
-                <div class="form-check" style="vertical-align: middle; text-align: center">
-                    <input class="form-check-input" type="checkbox" value="" ng-checked="value.direccion"
-                           ng-disabled="true" id="defaultCheck3">
-                </div>
-            </td>
+                <!--                <th class="centerText" scope="col">Activo</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" (key,value) in Usuarios | filter: nombre ">
+                <td class="centerText">{{value.nombre}}</td>
+                <td class="centerText">{{value.correo}}</td>
+                <td class="centerText">
+                    {{
+                        value.estatus == true ? "Activo" : "Inactivo"
+                    }}
+                </td>
+                <td>
+                    <div class="form-check" style="vertical-align: middle; text-align: center">
+                        <input class="form-check-input" type="checkbox" value="" ng-checked="value.administrador"
+                               ng-disabled="true" id="defaultCheck1">
+                    </div>
+                </td>
+                <td class="centerText">
+                    <div class="form-check" style="vertical-align: middle; text-align: center">
+                        <input class="form-check-input" type="checkbox" value="" ng-checked="value.subsecretaria"
+                               ng-disabled="true" id="defaultCheck2">
+                    </div>
+                </td>
+                <td class="centerText">
+                    <div class="form-check" style="vertical-align: middle; text-align: center">
+                        <input class="form-check-input" type="checkbox" value="" ng-checked="value.direccion"
+                               ng-disabled="true" id="defaultCheck3">
+                    </div>
+                </td>
 
-            <td class="centerText">{{value.clave}}</td>
-            <td class="centerText">
-                <span class="fa fa-edit"></span>
-                <span class="fa fa-trash"></span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                <td class="centerText">{{value.clave}}</td>
+                <td class="centerText">
+                    <span class="fa fa-edit"></span>
+                    <span class="fa fa-trash"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
