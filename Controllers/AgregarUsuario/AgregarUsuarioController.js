@@ -1,6 +1,6 @@
 app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$state','$rootScope', function ($scope, $http, ApiServices, $state, $rootScope) {
     $scope.form = {};
-    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';    
+    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
 
     $scope.guardarUsuario = () => {        
         var data = {

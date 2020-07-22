@@ -1,6 +1,7 @@
 app.factory('ApiServices', function ($http, $q, $location) {
     let usuario = "";
     let estado = 0;
+    let token = "";
 
     return{
 
@@ -32,6 +33,8 @@ app.factory('ApiServices', function ($http, $q, $location) {
                             if(response.data.estado == 1){
                                 usuario = response.data.username;
                                 estado = response.data.estado;
+                                token = response.data.token;
+                                console.log(token);
                                 $location.path('/inmobiliaria');
                             }
                         }, function(err) {
@@ -40,10 +43,14 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         });
                     break;
                 case 'POST':
+                    let getToken = localStorage.getItem('token');
+                    let accessToken = "Bearer " + getToken;
+
                     $http({
                         method: method,
                         url: urlApi,
                         headers: {
+                            'Authorization': accessToken,
                             'Content-Type': 'application/json'
                         },
                         data: datos})
@@ -65,7 +72,8 @@ app.factory('ApiServices', function ($http, $q, $location) {
         islogged: function(){
             checkSession = {
                 "usuario" : usuario,
-                "estado" : estado
+                "estado" : estado,
+                "token" : token
             }
             return checkSession;
         },
