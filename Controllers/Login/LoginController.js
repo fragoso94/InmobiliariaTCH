@@ -4,11 +4,34 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
     let urlApiProd = $rootScope.urlBaseProd + '/Login';
 
     $scope.login = () => {
-        var data = {
-            "Usuario": $scope.form.user,
-            "Password" : $scope.form.pass
-        };
-        ApiServices.getWS('LOGIN', urlApiLocal, data);
+        $usuario = validate($scope.form.user);
+        $password = validate($scope.form.pass);
+        if($usuario){
+            if($password){
+                Loguear();
+            }
+            else{
+                $scope.mensajeValidacion ="password";
+            }
+        }
+        else{
+            $scope.mensajeValidacion ="usuario";
+        }
     }
+
+    Loguear = () => {
+        var data = {
+           "Usuario": $scope.form.user,
+           "Password": $scope.form.pass
+       };
+       ApiServices.getWS('LOGIN', urlApiLocal, data);
+
+    }
+
+    function validate(campo){
+        if(campo == undefined || campo == ""){
+            return false;
+        }else{ return  true;}
+    };
 
 }]);
