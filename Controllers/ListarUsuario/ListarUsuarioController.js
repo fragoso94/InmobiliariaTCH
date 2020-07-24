@@ -1,5 +1,5 @@
 app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
+    //let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
     let urlApiProd = $rootScope.urlBaseProd + '/Usuarios/ObtenerUsuarios';
     $rootScope.session();
     //propiedades de la paginación

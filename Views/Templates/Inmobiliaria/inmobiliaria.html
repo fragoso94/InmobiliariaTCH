@@ -38,6 +38,23 @@
            </tbody>
        </table>
    </div>
+   
+   <nav aria-label="...">
+    <ul class="pagination pagination-lg">
+        <li class="page-item itemPagination">
+<!--                <a class="page-link" ng-click="Anterior()">Anterior</a>-->
+            <button class="btn btn-light btn-lg" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">Atrás</button>
+        </li>
+        <li class="page-item"><a class="page-link">
+            {{paginaActual}}/{{paginas}}
+        </a></li>
+        <li class="page-item itemPagination">
+            <button class="btn btn-light btn-lg" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">Siguiente</button>
+<!--                <a class="page-link" ng-click="Siguiente()">Siguiente</a>-->
+        </li>
+    </ul>
+</nav>
+
 </div>
 </body>
 </html>
