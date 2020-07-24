@@ -1,6 +1,6 @@
 app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    let urlApiLocal = $rootScope.urlBase + '/Usuarios';
-    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
+    //let urlApiLocal = $rootScope.urlBase + '/Usuarios';
+    let urlApiProd = $rootScope.urlBaseProd + '/ObtenerUsuarios';
     $rootScope.session();
 
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.

@@ -1,21 +1,23 @@
 app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope', function ($scope,$state, ApiServices, $rootScope) {
     $scope.form = {};
-    let urlApiLocal = $rootScope.urlBase + '/Login/LoginPortal';
-    let urlApiProd = $rootScope.urlBaseProd + '/Login';
+    //let urlApiLocal = $rootScope.urlBase + '/Login/LoginPortal';
+    let urlApiProd = $rootScope.urlBaseProd + '/Login/LoginPortal';
 
     $scope.login = () => {
-        $usuario = validate($scope.form.user);
-        $password = validate($scope.form.pass);
+        $usuario = validar($scope.form.user);
+        $password = validar($scope.form.pass);
         if($usuario){
             if($password){
+
+                $scope.mensajeValidacion = "";
                 Loguear();
             }
             else{
-                $scope.mensajeValidacion ="password";
+                $scope.mensajeValidacion ="La Contraseña es requerida";
             }
         }
         else{
-            $scope.mensajeValidacion ="usuario";
+            $scope.mensajeValidacion ="El Usuario Es requerido";
         }
     }
 
@@ -24,12 +26,13 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
            "Usuario": $scope.form.user,
            "Password": $scope.form.pass
        };
-       ApiServices.getWS('LOGIN', urlApiLocal, data);
+       $scope.mensajeValidacion ="Datos Incorrectos, llame a soporte técnico para reuperar su contraseña";
+       ApiServices.getWS('LOGIN', urlApiProd, data);
 
     }
 
-    function validate(campo){
-        if(campo == undefined || campo == ""){
+    validar = (campo)=>{
+        if(campo == undefined || campo == ""){            
             return false;
         }else{ return  true;}
     };
