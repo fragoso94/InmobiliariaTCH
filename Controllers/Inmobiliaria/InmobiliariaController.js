@@ -15,66 +15,28 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
         var response = ApiServices.getWS('POST', urlApiProd, datos);
         response.then(function(data){
             $scope.inmuebles = data;
-    
+            data.forEach(item => {
+                let total = (item.cantidad/$scope.totalPagina);
+                $scope.paginas = Math.ceil(total);
+            })
         })
-        response.cath(function(eror){
+        response.catch(function(error){
             console.log(error);
         })
-        /*$scope.spinner = true;
-        console.log($scope.paginaActual);
-        var datos = {
-            "total": $scope.totalPagina,
-            "paginaActual": $scope.paginaActual
-        }
-        var response =ApiServices.getWS('POST', urlApiProd, datos);
-        response.then(function(datos){
-            console.log(datos);
-            $scope.inmuebles = datos;
-            datos.forEach(ten => {
-                console.log(ten.catidad);
-                let total = (ten.cantidad/$scope.totalPagina);
-                $scope.paginas = Math.ceil(total);                
-            });
-            $scope.spinner = false;
-        })
-        response.cath(function(error){
-            console.error(error);
-            $scope.spinner = false;
-        });*/
     };
     
    ObtenerInmuebles();
+    $scope.Anterior = () => {
+        $scope.paginaActual--;
+        ObtenerInmuebles();
+    }
+    $scope.Siguiente = () =>{
+        $scope.paginaActual++;
+        ObtenerInmuebles();
+    }
+    $scope.agregarInmueble = ()=>{
+        $state.go('agregarInmueble');
+    };
 
-           /* $scope.inmobiliaria = ()=>{
-                $state.go('agregarInmueble');
-            };
-
-            $scope.Anterior = () => {
-                $scope.paginaActual--;
-                ObtenerInmuebles();
-            }
-            $scope.Siguiente = () =>{
-                $scope.paginaActual++;
-                ObtenerInmuebles();
-            }*/
-
-        /* var datos = {
-                "total":10,
-                "paginaActual":9
-            }
-            var response = ApiServices.getWS('POST',urlApiProd, datos);
-            response.then(function (datos) {
-                console.log(datos);
-                $scope.inmuebles = datos;
-                $scope.spinner = false;
-            })
-            response.catch(function (error) {
-                console.error(error);
-                $scope.spinner = false;
-            });/*/
-
-            $scope.agregarInmueble = ()=>{
-                $state.go('agregarInmueble');
-            };
 
 }]);
