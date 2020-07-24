@@ -39,3 +39,6 @@ header a img{
     background: url('../Image/loader.gif') 50% 50% no-repeat rgb(255,255,255);
     opacity: .7;
 }
+.itemPagination{
+    cursor: pointer;
+}

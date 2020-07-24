@@ -30,8 +30,6 @@
                 <th class="centerText" scope="col">Correo</th>
                 <th class="centerText" scope="col">Estatus</th>
                 <th class="centerText" scope="col">Administrador</th>
-                <th class="centerText" scope="col">Subsecretaría</th>
-                <th class="centerText" scope="col">Direccion</th>
                 <th class="centerText" scope="col">Clave</th>
                 <th class="centerText" scope="col"></th>
 
@@ -53,19 +51,6 @@
                                ng-disabled="true" id="defaultCheck1">
                     </div>
                 </td>
-                <td class="centerText">
-                    <div class="form-check" style="vertical-align: middle; text-align: center">
-                        <input class="form-check-input" type="checkbox" value="" ng-checked="value.subsecretaria"
-                               ng-disabled="true" id="defaultCheck2">
-                    </div>
-                </td>
-                <td class="centerText">
-                    <div class="form-check" style="vertical-align: middle; text-align: center">
-                        <input class="form-check-input" type="checkbox" value="" ng-checked="value.direccion"
-                               ng-disabled="true" id="defaultCheck3">
-                    </div>
-                </td>
-
                 <td class="centerText">{{value.clave}}</td>
                 <td class="centerText">
                     <span class="fa fa-edit"></span>
@@ -75,6 +60,22 @@
             </tbody>
         </table>
     </div>
+    <nav aria-label="...">
+        <ul class="pagination pagination-lg">
+            <li class="page-item itemPagination">
+<!--                <a class="page-link" ng-click="Anterior()">Anterior</a>-->
+                <button class="btn btn-light btn-lg" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">Atrás</button>
+            </li>
+            <li class="page-item"><a class="page-link">
+                {{paginaActual}}/{{paginas}}
+            </a></li>
+            <li class="page-item itemPagination">
+                <button class="btn btn-light btn-lg" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">Siguiente</button>
+<!--                <a class="page-link" ng-click="Siguiente()">Siguiente</a>-->
+            </li>
+        </ul>
+    </nav>
+
 </div>
 </body>
 </html>

@@ -23,16 +23,5 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $scope.agregarInmueble = ()=>{
         $state.go('agregarInmueble');
     };
-    /*ObtenerInmuebles = () =>{
-        var datos =  $http({method: 'GET', url: urlApiDaniel});
-        datos.then(function(response) {
-            //console.log(response);
-            $scope.datos = response.data;
-            console.log($scope.datos);
-        }, function(response) {
-            console.error(response);
-        });
-    };
-    ObtenerInmuebles();*/
 
 }]);
