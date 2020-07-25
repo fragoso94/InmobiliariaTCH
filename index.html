@@ -33,13 +33,13 @@
             //Disable full page
             $('body').bind('cut copy paste', function (e) {
                 if(e.type == 'copy'){
-                    MostrarAlert("No está permitido cortar.")
+                    MostrarAlert("Protegido contra COPYRIGHT.")
                 }
                 if(e.type == 'cut'){
-                    MostrarAlert("No está permitido cortar.");
+                    MostrarAlert("Protegido contra COPYRIGHT.");
                 }
                 if(e.type == 'paste'){
-                    MostrarAlert("No está permitido pegar.");
+                    MostrarAlert("Protegido contra COPYRIGHT.");
                 }
                 e.preventDefault();
             });
@@ -62,7 +62,7 @@
             });*/
             MostrarAlert = (mensaje) => {
                 swal({
-                    title: "Instituto del Patrimonio del Estado",
+                    title: "IPE LE INFORMA",
                     text: mensaje,
                     icon: "info",
                     button: "Entendido",

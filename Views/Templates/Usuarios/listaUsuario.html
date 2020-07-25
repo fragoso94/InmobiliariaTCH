@@ -61,16 +61,16 @@
         </table>
     </div>
     <nav aria-label="...">
-        <ul class="pagination pagination-lg">
+        <ul class="pagination justify-content-center pagination-sm">
             <li class="page-item itemPagination">
 <!--                <a class="page-link" ng-click="Anterior()">Anterior</a>-->
-                <button class="btn btn-light btn-lg" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">Atrás</button>
+                <button class="btn btn-light btn-sm" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">&laquo</button>
             </li>
             <li class="page-item"><a class="page-link">
                 {{paginaActual}}/{{paginas}}
             </a></li>
-            <li class="page-item itemPagination">
-                <button class="btn btn-light btn-lg" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">Siguiente</button>
+            <li class="page-item itemPagination">                
+                <button class="btn btn-light btn-sm" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">&raquo</button>
 <!--                <a class="page-link" ng-click="Siguiente()">Siguiente</a>-->
             </li>
         </ul>

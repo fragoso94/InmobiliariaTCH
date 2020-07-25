@@ -38,7 +38,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
                                 $location.path('/inmobiliaria');
                             }else{
                                 swal({
-                                    title: "Instituto del Patrimonio del Estado",
+                                    title: "IPE LE INFORMA",
                                     text: response.data.mensaje,
                                     icon: "warning",
                                     button: "Entendido",

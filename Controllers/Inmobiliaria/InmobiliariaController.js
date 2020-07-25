@@ -6,8 +6,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $scope.paginaActual = 1;
 
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
-    ObtenerInmuebles = () => {
-        console.log("Hola");
+    ObtenerInmuebles = () => {        
         var datos = {
             "total": $scope.totalPagina,
             "paginaActual": $scope.paginaActual
