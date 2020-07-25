@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-sm-2">
-            <button class="btn btn-success" ng-click="AgregarUsuario()">
+            <button class="btn btn-success" ng-click="agregarUsuario()">
                 Agregar Usuario
             </button>
         </div>
@@ -54,7 +54,7 @@
                 <td class="centerText">{{value.clave}}</td>
                 <td class="centerText">
                     <span class="fa fa-edit"></span>
-                    <span class="fa fa-trash"></span>
+                    <span class="fa fa-trash" ng-click="alerta()"></span>
                 </td>
             </tr>
             </tbody>

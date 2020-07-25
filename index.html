@@ -17,6 +17,7 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <!-- rutas de Controladores-->
     <script src="config.js"></script>
     <script src="Controllers/Home/HomeController.js"></script>
@@ -27,5 +28,48 @@
     <script src="Controllers/ListarUsuario/ListarUsuarioController.js"></script>
     <script src="Controllers/Inmobiliaria/AgregarInmuebleController.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Disable full page
+            $('body').bind('cut copy paste', function (e) {
+                if(e.type == 'copy'){
+                    MostrarAlert("No está permitido cortar.")
+                }
+                if(e.type == 'cut'){
+                    MostrarAlert("No está permitido cortar.");
+                }
+                if(e.type == 'paste'){
+                    MostrarAlert("No está permitido pegar.");
+                }
+                e.preventDefault();
+            });
+            //Disable part of page
+            /*$('#id').bind('cut copy paste', function (e) {
+                e.preventDefault();
+            });*/
+
+            //Disable mouse right click
+            /*$("body").on("contextmenu",function(e){
+                if(e.type == 'contextmenu'){
+                    alert("No está permitido el Click derecho.");
+                    return false;
+                }
+
+            });*/
+            //Disable part of page
+           /* $("#id").on("contextmenu",function(e){
+                return false;
+            });*/
+            MostrarAlert = (mensaje) => {
+                swal({
+                    title: "Instituto del Patrimonio del Estado",
+                    text: mensaje,
+                    icon: "info",
+                    button: "Entendido",
+                });
+            }
+        });
+
+    </script>
 </body>
 </html>

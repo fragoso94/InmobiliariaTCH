@@ -32,10 +32,6 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
     };
     ObtenerUsuarios();
 
-    $scope.listarUsuario = ()=>{
-        $state.go('listaUsuario');
-    };
-
     $scope.Anterior = () => {
         $scope.paginaActual--;
         ObtenerUsuarios();
@@ -45,4 +41,15 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
         ObtenerUsuarios();
     }
 
+    $scope.agregarUsuario = () => {
+        $state.go('agregarUsuario');
+    }
+
+    $scope.alerta = () => {
+        swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+        });
+    }
 }]);

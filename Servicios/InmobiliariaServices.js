@@ -29,14 +29,22 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         data: datos})
                         .then(function(response) {
                             //defered.resolve(response.data);
-                            console.log(response.data);
+                            //console.log(response.data);
                             if(response.data.estado == 1){
                                 usuario = response.data.username;
                                 estado = response.data.estado;
                                 token = response.data.token;
                                 console.log(token);
                                 $location.path('/inmobiliaria');
+                            }else{
+                                swal({
+                                    title: "Instituto del Patrimonio del Estado",
+                                    text: response.data.mensaje,
+                                    icon: "warning",
+                                    button: "Entendido",
+                                });
                             }
+
                         }, function(err) {
                             //defered.reject(err);
                             console.error(err);

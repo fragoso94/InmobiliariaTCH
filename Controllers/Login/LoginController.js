@@ -8,16 +8,14 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
         $password = validar($scope.form.pass);
         if($usuario){
             if($password){
-
-                $scope.mensajeValidacion = "";
                 Loguear();
             }
             else{
-                $scope.mensajeValidacion ="La Contraseña es requerida";
+                MostrarAlert("La contraseña es requerido.")
             }
         }
         else{
-            $scope.mensajeValidacion ="El Usuario Es requerido";
+            MostrarAlert("El nombre de usuario es requerido.");
         }
     }
 
@@ -26,9 +24,7 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
            "Usuario": $scope.form.user,
            "Password": $scope.form.pass
        };
-       $scope.mensajeValidacion ="Datos Incorrectos, llame a soporte técnico para reuperar su contraseña";
-       ApiServices.getWS('LOGIN', urlApiProd, data);
-
+      ApiServices.getWS('LOGIN', urlApiProd, data);
     }
 
     validar = (campo)=>{
@@ -36,5 +32,14 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
             return false;
         }else{ return  true;}
     };
+
+    MostrarAlert = (mensaje) => {
+        swal({
+            title: "Instituto del Patrimonio del Estado",
+            text: mensaje,
+            icon: "warning",
+            button: "Entendido",
+        });
+    }
 
 }]);

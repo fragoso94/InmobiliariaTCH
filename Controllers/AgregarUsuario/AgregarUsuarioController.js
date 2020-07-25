@@ -45,7 +45,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
             respuesta.then(function (datos){
                 console.log(datos);
                 if(datos.exito){
-                    $state.go('login');
+                    $state.go('listaUsuario');
                 }
             })
             respuesta.catch(function(error){
