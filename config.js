@@ -1,11 +1,6 @@
 var app = angular.module('AppInmobiliaria', ['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider){
-    let home = {
-    name: 'home',
-    url: '/home',
-    templateUrl: 'Views/Custom/ContenedorHome.html',
-    controller: 'HomeController'  
-};
+
     let login = {
         name: 'login',
         url: '/login',
@@ -38,6 +33,12 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'Views/Custom/contenedorListaUsuario.html',
         controller: 'ListarUsuarioController'
     };
+
+    let home = {
+        name: 'home',
+        url: '/home',
+        templateUrl: 'Views/Templates/menu.html'
+    }
 
     $stateProvider.state(home);
     $stateProvider.state(login);

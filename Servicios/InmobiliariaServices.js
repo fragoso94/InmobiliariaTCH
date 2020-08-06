@@ -35,7 +35,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
                                 estado = response.data.estado;
                                 token = response.data.token;
                                 console.log(token);
-                                $location.path('/inmobiliaria');
+                                $location.path('/home');
                             }else{
                                 swal({
                                     title: "IPE LE INFORMA",

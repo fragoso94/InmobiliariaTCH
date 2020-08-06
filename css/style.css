@@ -42,3 +42,17 @@ header a img{
 .itemPagination{
     cursor: pointer;
 }
+
+.CardStyle{
+    width: 18rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.CardStyle .card-header {
+    background-color: #621132;
+    font-size: 1em;
+    color: white;
+    font-weight: bold;
+}
