@@ -1,7 +1,8 @@
 app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    //let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
+    let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
     let urlApiProd = $rootScope.urlBaseProd + '/Usuarios/ObtenerUsuarios';
     $rootScope.session();
+    $scope.ID_USUARIO = localStorage.getItem('idUsuario');
     //propiedades de la paginación
     $scope.totalPagina = 8;
     $scope.paginaActual = 1;
@@ -14,7 +15,7 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
             "total": $scope.totalPagina,
             "paginaActual": $scope.paginaActual
         }
-        var response = ApiServices.getWS('POST',urlApiProd, datos);
+        var response = ApiServices.getWS('POST',urlApiLocal, datos);
         response.then(function (datos) {
             console.log(datos);
             $scope.Usuarios = datos;
@@ -45,11 +46,40 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
         $state.go('agregarUsuario');
     }
 
-    $scope.alerta = () => {
+    $scope.EliminarUsuario = (id) => {
+        console.log(id)
         swal({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
+            title: "Patrimonio del Estado",
+            text: "¿Estás seguro de Eliminar el usuario?",
+            icon: "warning",
+            buttons: ['Cancelar', 'Aceptar'],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                let respuesta = ApiServices.getWS('DELETE', $rootScope.urlBase + "/Usuarios", id);
+                respuesta.then(function (response){
+                    //console.log(response);
+                    if(response.exito){
+                        ObtenerUsuarios();
+                        swal({
+                            title: "Instituto del Patrimonio del Estado",
+                            text: response.mensaje,
+                            icon: "success",
+                            button: "Entendido",
+                        });
+                    }
+
+                })
+                respuesta.catch(function(error){
+                    //console.log(error.data);
+                    let errores = error.data;
+                    console.log(errores)
+                });
+            } else {
+                close();
+            }
         });
+
     }
 }]);

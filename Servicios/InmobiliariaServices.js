@@ -1,8 +1,11 @@
 app.factory('ApiServices', function ($http, $q, $location) {
+    let idUsuario = null;
     let usuario = "";
     let estado = 0;
     let token = "";
 
+    let getToken = localStorage.getItem('token');
+    let accessToken = "Bearer " + getToken;
     return{
 
         getWS: function (method, urlApi, datos = {}) {
@@ -31,6 +34,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
                             //defered.resolve(response.data);
                             //console.log(response.data);
                             if(response.data.estado == 1){
+                                idUsuario = response.data.idUsuario;
                                 usuario = response.data.username;
                                 estado = response.data.estado;
                                 token = response.data.token;
@@ -51,9 +55,6 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         });
                     break;
                 case 'POST':
-                    let getToken = localStorage.getItem('token');
-                    let accessToken = "Bearer " + getToken;
-
                     $http({
                         method: method,
                         url: urlApi,
@@ -68,6 +69,20 @@ app.factory('ApiServices', function ($http, $q, $location) {
                             defered.reject(err);
                         });
                     return promise;
+                case 'DELETE':
+                    $http.delete(urlApi, {
+                        headers:{
+                            'Authorization': accessToken,
+                            'Content-Type': 'application/json'
+                        },
+                        data: datos
+                    })
+                    .then(function(response) {
+                        defered.resolve(response.data);
+                    }, function(err) {
+                        defered.reject(err);
+                    });
+                    return promise;
                 default: break;
             }
         },
@@ -79,6 +94,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
 
         islogged: function(){
             checkSession = {
+                "idUsuario": idUsuario,
                 "usuario" : usuario,
                 "estado" : estado,
                 "token" : token

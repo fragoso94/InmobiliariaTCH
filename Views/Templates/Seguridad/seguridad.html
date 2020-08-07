@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="active-cyan-3 active-cyan-4 mb-4">
+                <input class="form-control" type="text" placeholder="Buscar Usuarios" aria-label="Search" ng-model="usuario">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a type="button" class="btn btn-danger" ui-sref="home">Regresar</a>
+        </div>
+    </div>
+    <div class="loader" ng-show="spinner"></div>
+    <div class="fixed_header">
+        <table class="table table-striped table-bordered fixed_header" style="width:100%;">
+            <thead>
+            <tr>
+                <th class="text-center" scope="col">Nombre de usuario</th>
+                <th class="text-center" scope="col">Fecha de movimiento</th>
+                <th class="text-center" scope="col">Tipo de moficación</th>
+                <th class="text-center" scope="col">Tabla de modificación</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            <tr ng-repeat=" (key,value) in Usuarios | filter: nombre ">-->
+<!--                <td class="text-center">{{value.nombre}}</td>-->
+<!--                <td class="text-center">{{value.correo}}</td>-->
+
+<!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="...">
+<!--        <ul class="pagination justify-content-center pagination-sm">-->
+<!--            <li class="page-item itemPagination">-->
+<!--                &lt;!&ndash;                <a class="page-link" ng-click="Anterior()">Anterior</a>&ndash;&gt;-->
+<!--                <button class="btn btn-light btn-sm" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">&laquo</button>-->
+<!--            </li>-->
+<!--            <li class="page-item"><a class="page-link">-->
+<!--                {{paginaActual}}/{{paginas}}-->
+<!--            </a></li>-->
+<!--            <li class="page-item itemPagination">-->
+<!--                <button class="btn btn-light btn-sm" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">&raquo</button>-->
+<!--                &lt;!&ndash;                <a class="page-link" ng-click="Siguiente()">Siguiente</a>&ndash;&gt;-->
+<!--            </li>-->
+<!--        </ul>-->
+    </nav>
+</div>
