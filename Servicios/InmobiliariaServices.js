@@ -4,13 +4,13 @@ app.factory('ApiServices', function ($http, $q, $location) {
     let estado = 0;
     let token = "";
 
-    let getToken = localStorage.getItem('token');
-    let accessToken = "Bearer " + getToken;
     return{
 
         getWS: function (method, urlApi, datos = {}) {
             var defered = $q.defer();
             var promise = defered.promise;
+            let getToken = localStorage.getItem('token');
+            let accessToken = "Bearer " + getToken;
 
             switch (method) {
                 case 'GET':
@@ -31,14 +31,12 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         },
                         data: datos})
                         .then(function(response) {
-                            //defered.resolve(response.data);
-                            //console.log(response.data);
                             if(response.data.estado == 1){
                                 idUsuario = response.data.idUsuario;
                                 usuario = response.data.username;
                                 estado = response.data.estado;
                                 token = response.data.token;
-                                console.log(token);
+                                console.log(response);
                                 $location.path('/home');
                             }else{
                                 swal({
@@ -74,8 +72,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         headers:{
                             'Authorization': accessToken,
                             'Content-Type': 'application/json'
-                        },
-                        data: datos
+                        }
                     })
                     .then(function(response) {
                         defered.resolve(response.data);
