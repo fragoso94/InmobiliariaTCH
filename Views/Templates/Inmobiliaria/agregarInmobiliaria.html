@@ -132,9 +132,7 @@
 
     </form>
     <!-- Fin de Formulario -->
-    <h6 class="cabecera p-2 mb-2 text-white">Datos Particulares del Inmueble</h6>
-    <span class="cabecera p-2 mb-2 text-white">Generales</span>
-    <h6 class="cabecera p-2 mb-2 text-white"></h6>   
+    <h6 class="cabecera p-2 mb-2 text-white">Datos Particulares del Inmueble</h6>         
 
       <!-- Ejemplo TABS-->
       <div class="wrap">
@@ -142,493 +140,547 @@
 			<li><a href="#tab1"><span class="fa fa-book"></span><span class="tab-text">Generales</span></a></li>
 			<li><a href="#tab2"><span class="fa fa-calendar"></span><span class="tab-text">Detalles</span></a></li>
 			<li><a href="#tab3"><span class="fa fa-map-pin"></span><span class="tab-text">Medidas y Colindancias</span></a></li>
-            <li><a href="#tab4"><span class="fa fa-folder-open"></span><span class="tab-text">Registro Público</span></a></li>
-            <li><a href="#tab5"><span class="fa fa-file-text"></span><span class="tab-text">Escritura</span></a></li>
+            <li><a href="#tab4"><span class="fa fa-pencil-square-o"></span><span class="tab-text">Registro Público</span></a></li>
+            <li><a href="#tab5"><span class="fa fa-file-text"></span><span class="tab-text">Decreto</span></a></li>
 		</ul>
 
 		<div class="secciones">
-			<article id="tab1">
-				<span class="cabecera p-2 mb-2 text-white">Generales</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam odio voluptate. Aliquam incidunt similique, et quasi ducimus quos aut autem non dignissimos dicta sit provident, voluptatibus ut blanditiis perspiciatis cum, vel temporibus minima enim. Asperiores omnis placeat officiis a tenetur sit recusandae, reprehenderit neque. Tempora quibusdam, perferendis id ratione culpa dolorum! Nemo, animi? Eveniet eaque perspiciatis, libero quia, pariatur iusto, ipsum porro quod, ut tempora cum quo non illum. Non eligendi incidunt sequi, molestias quia perspiciatis architecto repudiandae quod.</p>
-			</article>
-			<article id="tab2">
-                <span class="cabecera p-2 mb-2 text-white">Detalles</span>				
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptates unde, consequuntur aliquid architecto rem numquam expedita minima dolorem pariatur recusandae, eius quod quia aspernatur id impedit, tenetur! Aspernatur incidunt molestiae dolores animi ea praesentium ipsam tenetur voluptas cupiditate perspiciatis eum nihil, natus exercitationem libero earum fuga dignissimos impedit numquam, quasi, placeat officiis voluptates, ad reprehenderit fugiat? Fugiat aperiam et magni, molestiae, numquam consectetur vitae sapiente cupiditate totam laboriosam voluptate obcaecati, aliquam placeat? Suscipit dolores fuga laudantium sed, qui magni iusto dolore quia. Quis fugit exercitationem porro. Rerum nihil omnis recusandae ratione fuga alias eligendi, earum sunt veritatis praesentium eum perspiciatis. Molestias deserunt, iure neque animi quod! Impedit reprehenderit cumque, numquam velit quae cum eius quidem similique laudantium hic deleniti!</p>
-			</article>
-			<article id="tab3">
-                <span class="cabecera p-2 mb-2 text-white">Medidas y Colindancias</span>				
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam odio voluptate. Aliquam incidunt similique, et quasi ducimus quos aut autem non dignissimos dicta sit provident, voluptatibus ut blanditiis perspiciatis cum, vel temporibus minima enim. Asperiores omnis placeat officiis a tenetur sit recusandae, reprehenderit neque. Tempora quibusdam, perferendis id ratione culpa dolorum! Nemo, animi?</p><br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum dignissimos at esse, ipsum rerum assumenda nisi obcaecati! Aliquam iure voluptatem incidunt, explicabo sit labore, perferendis eius ad vel quia. Praesentium, doloribus. Quisquam provident nostrum totam itaque debitis, minima, tempore dolores!</p>
-			</article>
-			<article id="tab4">                
-                <span class="cabecera p-2 mb-2 text-white">Registro Público</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam odio voluptate. Aliquam incidunt similique, et quasi ducimus quos aut autem non dignissimos dicta sit provident, voluptatibus ut blanditiis perspiciatis cum, vel temporibus minima enim. Asperiores omnis placeat officiis a tenetur sit recusandae, reprehenderit neque. Tempora quibusdam, perferendis id ratione culpa dolorum! Nemo, animi? Eveniet eaque perspiciatis, libero quia, pariatur iusto, ipsum porro quod, ut tempora cum quo non illum. Non eligendi incidunt sequi, molestias quia perspiciatis architecto repudiandae quod.</p><br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam ipsa ducimus amet at cumque sed numquam, explicabo impedit optio quas iste aperiam quidem ipsam rerum libero voluptatibus perferendis officiis voluptatum!</p>
+        <!--1er Tab-->
+			<article id="tab1">				
+				 <!--Form 2-->
+                 <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Cve_Municipio">Municipio</label>
+                            <select class="form-control" id="Cve_Municipio" required>
+                                <option selected disabled value="">Buscar...</option>
+                                <option>Acacoyagua</option>
+                                <option>Acala</option>
+                                <option>Acapetahua</option>
+                                <option>Altamirano</option>
+                                <option>Amatán</option>
+                                <option>Amatenango de la Frontera</option>
+                                <option>Amatenango del Valle</option>
+                                <option>Ángel Albino Corzo</option>
+                                <option>Arriaga</option>
+                                <option>Bejucal de Ocampo</option>
+                                <option>Bella Vista</option>
+                                <option>Berriozábal</option>
+                                <option>Bochil</option>
+                                <option>El Bosque</option>
+                                <option>Cacahoatán</option>
+                                <option>Catazajá</option>
+                                <option>Cintalapa</option>
+                                <option>Coapilla</option>
+                                <option>Comitán de Domínguez</option>
+                                <option>La Concordia</option>
+                                <option>Copainalá</option>
+                                <option>Chalchihuitán</option>
+                                <option>Chamula</option>
+                                <option>Chanal</option>
+                                <option>Chapultenango</option>
+                                <option>Chenalhó</option>
+                                <option>Chiapa de Corzo</option>
+                                <option>Chiapilla</option>
+                                <option>Chicoasén</option>
+                                <option>Chicomuselo</option>
+                                <option>Chilón</option>
+                                <option>Escuintla</option>
+                                <option>Francisco León</option>
+                                <option>Frontera Comalapa</option>
+                                <option>Frontera Hidalgo</option>
+                                <option>La Grandeza</option>
+                                <option>Huehuetán</option>
+                                <option>Huixtán</option>
+                                <option>Huitiupán</option>
+                                <option>Huixtla</option>
+                                <option>La Independencia</option>
+                                <option>Ixhuatán</option>
+                                <option>Ixtacomitán</option>
+                                <option>Ixtapa</option>
+                                <option>Ixtapangajoya</option>
+                                <option>Jiquipilas</option>
+                                <option>Jitotol</option>
+                                <option>Juárez</option>
+                                <option>Larráinzar</option>
+                                <option>La Libertad</option>
+                                <option>Mapastepec</option>
+                                <option>Las Margaritas</option>
+                                <option>Mazapa de Madero</option>
+                                <option>Mazatán</option>
+                                <option>Metapa</option>
+                                <option>Mitontic</option>
+                                <option>Motozintla</option>
+                                <option>Nicolas Ruíz</option>
+                                <option>Ocosingo</option>
+                                <option>Ocotepec</option>
+                                <option>Ocozocoautla de Espinosa</option>
+                                <option>Ostuacán</option>
+                                <option>Osumacinta</option>
+                                <option>Oxchuc</option>
+                                <option>Palenque</option>
+                                <option>Pantelhó</option>
+                                <option>Pantepec</option>
+                                <option>Pichucalco</option>
+                                <option>Pijijiapan</option>
+                                <option>El Porvenir</option>
+                                <option>Villa Comaltitlán</option>
+                                <option>Pueblo Nuevo Sollistahuacán</option>
+                                <option>Rayón</option>
+                                <option>Reforma</option>
+                                <option>Las Rosas</option>
+                                <option>Sabanilla</option>
+                                <option>Salto de Agua</option>
+                                <option>San Cristóbal de las Casas</option>
+                                <option>San Fernando</option>
+                                <option>Siltepec</option>
+                                <option>Simojovel</option>
+                                <option>Sitalá</option>
+                                <option>Socoltenango</option>
+                                <option>Solosuchiapa</option>
+                                <option>Soyaló</option>
+                                <option>Suchiapa</option>
+                                <option>Suchiate</option>
+                                <option>Sunuapa</option>
+                                <option>Tapachula</option>
+                                <option>Tapalapa</option>
+                                <option>Tapilula</option>
+                                <option>Tecpatán</option>
+                                <option>Tenejapa</option>
+                                <option>Teopisca</option>
+                                <option>Tila</option>
+                                <option>Tonalá</option>
+                                <option>Totolapá</option>
+                                <option>La Trinitaria</option>
+                                <option>Tumbalá</option>
+                                <option>Tuxtla Gutiérrez</option>
+                                <option>Tuxtla Chico</option>
+                                <option>Tuzantán</option>
+                                <option>Tzimol</option>
+                                <option>Unión Juárez</option>
+                                <option>Venustiano Carranza</option>
+                                <option>Villa Corzo</option>
+                                <option>Villaflores</option>
+                                <option>Yajalón</option>
+                                <option>San Lucas</option>
+                                <option>Zinacantán</option>
+                                <option>San Juan Cancuc</option>
+                                <option>Aldama</option>
+                                <option>Benemérito de las Américas</option>
+                                <option>Maravilla Tenejapa</option>
+                                <option>Marqués de Comillas</option>
+                                <option>Montecristo de Guerrero</option>
+                                <option>San Andrés Duraznal</option>
+                                <option>Santiago el Pinar</option>
+                                <option>No Definido</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group col-md-4">
+                            <label for="ClasificaPredio">Clasifica Predio</label>
+                            <select class="form-control" id="ClasificaPredio" required>
+                                <option selected disabled value="">Seleccionar...</option>                    
+                                <option>Urbano</option>                   
+                                <option>Sub-Urbano</option>
+                                <option>Rústico</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group col-md-4">
+                            <label for="TipoPredio">Tipo Predio</label>
+                            <select class="form-control" id="TipoPredio" required>
+                                <option selected disabled value="">Elegir...</option>
+                                <option>Construido</option>
+                                <option>Baldio</option>
+                                <option>Bardado</option>
+                                <option>Cercado Alambre Puas</option>
+                                <option>Cercado Malla</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Status">Status</label>
+                            <input type="text" class="form-control" id="Status" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="fecha_alta">Fecha Alta</label>
+                            <input type="date" class="form-control" id="fecha_alta" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="Asegurado" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Asegurado</label>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="SuperficieTotal">Superficie Total</label>
+                            <input type="text" class="form-control" id="SuperficieTotal" placeholder="mts" required>
+                        </div>
+            
+                        <div class="form.group col-md-4">
+                            <label for="SuperficiConstruida">Superficie Construida</label>
+                            <input type="text" class="form-control" id="SuperficiConstruida" placeholder="mts" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="NoNiveles">No. Niveles</label>
+                            <input type="text" class="form-control" id="NoNiveles">
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Cve_Castastral">Clave Castastral</label>
+                            <input type="text" class="form-control" id="Cve_Castastral" required>
+                        </div>
+            
+                        <div class="form.group col-md-4">
+                            <label for="ValorCatastral">Valor Catastral</label>
+                            <input type="text" class="form-control" id="ValorCatastral" placeholder="$0.00" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="ValorActual">Valor Actual</label>
+                            <input type="text" class="form-control" id="ValorActual" placeholder="$0.00" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="ValorFiscal">Valor Fiscal</label>
+                            <input type="text" class="form-control" id="ValorFiscal" required>
+                        </div>
+            
+                        <div class="form.group col-md-4">
+                            <label for="ValorAdquisición">Valor Adquisición</label>
+                            <input type="text" class="form-control" id="ValorAdquisición" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="PropetarioAnterior">Propetario Anterior</label>
+                            <input type="text" class="form-control" id="PropetarioAnterior" required>
+                        </div>
+            
+                        <div class="form.group col-md-4">
+                            <label for="Observaciones">Observaciones</label>
+                            <input type="text" class="form-control" id="Observaciones" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="DependenciaOcupante">Dependencia Ocupante</label>
+                            <input type="text" class="form-control" id="DependenciaOcupante">
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            
+                        </div>
+                    </div>
+                </form>  
             </article>
+        <!-- Fin 1er Tab-->
+
+            <!--Inicia 2do Tab-->
+            <article id="tab2">
+                <form>
+                    <div class="form-row">      
+                        <div class="form-group col-md-6">
+                        <label for="Forma Adquisicion">Forma de Adquisicion</label>
+                        <select class="form-control" id="Forma Adquisicion" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                            <option>Dación en Pago</option>
+                            <option>Compra-Venta</option>
+                            <option>Permuta</option>
+                            <option>Donación</option>
+                            <option>Expropiación</option>
+                            <option>Adjudicación</option>
+                            <option>Reversión</option>
+                        </select>
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="fecha Adquisicion">Fecha Adquisicion</label>
+                            <input type="date" class="form-control" id="fecha Adquisicion" required>
+                        </div>  
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="NoExpediente">No. Expediente</label>
+                            <input type="text" class="form-control" id="NoExpediente" placeholder="Ingresar" required>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <label for="Fecha Escrituras">Fecha Escrituras</label>
+                            <input type="date" class="form-control" id="Fecha Escrituras" required>
+                        </div>  
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Notario">Notario</label>
+                            <input type="text" class="form-control" id="Notario" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="Titular" id="exampleCheck1">
+                                <label class="form-check-label" for="Titular">Titular</label>
+                            </div>
+                        </div>
+        
+                        <div class="form-group col-md-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="Adjunto" id="exampleCheck1">
+                                <label class="form-check-label" for="Adjunto">Adjunto</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            
+                        </div>
+                    </div>
+
+                </form>
+            </article>            
+            <!--Fin 2o Tab-->
+
+            <!-- 3er Tab-->
+			<article id="tab3">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Nte">Al Nte. Con</label>
+                            <input type="text" class="form-control" id="Nte" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="mtsNte">Mts. Lineales</label>
+                            <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="ObNte">Observaciones</label>
+                            <input type="text" class="form-control" id="ObNte" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Sur">Al Sur Con</label>
+                            <input type="text" class="form-control" id="Sur" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="mtsSur">Mts. Lineales</label>
+                            <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="ObSur">Observaciones</label>
+                            <input type="text" class="form-control" id="ObSur" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Pte">Al Pte. Con</label>
+                            <input type="text" class="form-control" id="Pte" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="mtsPte">Mts. Lineales</label>
+                            <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="ObPte">Observaciones</label>
+                            <input type="text" class="form-control" id="ObPte" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Ote">Al Ote. Con</label>
+                            <input type="text" class="form-control" id="Ote" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="mtsOte">Mts. Lineales</label>
+                            <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="ObOte">Observaciones</label>
+                            <input type="text" class="form-control" id="ObOte" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            
+                        </div>
+                    </div>
+
+                </form>
+            </article>
+            <!--Fin 3er Tab-->
+
+            <!--Inicia 4o Tab-->
+			<article id="tab4">                
+                <form>
+                    <div class="form-row">      
+                        <div class="form-group col-md-4">
+                            <label for="libroReg">Libro de Registro</label>
+                            <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="NoInsc">No. Inscripción</label>
+                            <input type="text" class="form-control" id="NoInsc" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-4">
+                            <label for="Fojas">Fojas</label>
+                            <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+                   
+                    <div class="form-row">      
+                        <div class="form-group col-md-6">
+                        <label for="Tomo">Tomo</label>
+                        <select class="form-control" id="Tomo" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                            <option>I</option>
+                            <option>II</option>
+                            <option>III</option>
+                            <option>IV</option>
+                            <option>V</option>
+                            <option>VI</option>
+                            <option>VII</option>
+                        </select>
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="fechaRegistro">Fecha de Registro</label>
+                            <input type="date" class="form-control" id="fechaRegistro" required>
+                        </div>  
+                    </div>
+        
+                    <div class="form-row">      
+                        <div class="form-group col-md-6">
+                        <label for="Seccion">Sección</label>
+                        <select class="form-control" id="Seccion" required>
+                            <option selected disabled value="">Seleccionar...</option>
+                            <option>S/R</option>
+                            <option>Primera</option>
+                            <option>Cuarta</option>
+                            <option>Civil</option>                    
+                        </select>
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="LugarReg">Lugar de Registro</label>
+                            <select class="form-control" id="Cve_Municipio" required>
+                                <option selected disabled value="">Buscar...</option>
+                                <option>Ninguno</option> 
+                                <option>Tuxtla Gutiérrez</option>
+                                <option>San Cristóbal de las Casas</option>                       
+                                <option>Comitán de Domínguez</option>
+                                <option>Yajalón</option>
+                                <option>Acapetagua</option>
+                                <option>Catazajá</option>
+                                <option>Cintalapa</option>                        
+                                <option>Copainalá</option>
+                                <option>Chiapa de Corzo</option>
+                                <option>Huixtla</option>
+                                <option>Motozintla</option>
+                                <option>Ocosingo</option>
+                                <option>Pichucalco</option>
+                                <option>Simojovel</option>
+                                <option>Tapachula de Córdova y Ordóñez</option>
+                                <option>Tonalá</option>
+                                <option>Venustiano Carranza</option> 
+                                <option>Villaflores</option>
+                                <option>Salto de Agua</option>
+                                <option>Bochil</option> 
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            
+                        </div>
+                    </div>
+
+                </form>
+            </article>
+            <!-- Fin 4o Tab-->
+
+            <!--5to Tab-->
             <article id="tab5">                
-                <span class="cabecera p-2 mb-2 text-white">Escrituras</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam odio voluptate. Aliquam incidunt similique, et quasi ducimus quos aut autem non dignissimos dicta sit provident, voluptatibus ut blanditiis perspiciatis cum, vel temporibus minima enim. Asperiores omnis placeat officiis a tenetur sit recusandae, reprehenderit neque. Tempora quibusdam, perferendis id ratione culpa dolorum! Nemo, animi? Eveniet eaque perspiciatis, libero quia, pariatur iusto, ipsum porro quod, ut tempora cum quo non illum. Non eligendi incidunt sequi, molestias quia perspiciatis architecto repudiandae quod.</p><br>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam ipsa ducimus amet at cumque sed numquam, explicabo impedit optio quas iste aperiam quidem ipsam rerum libero voluptatibus perferendis officiis voluptatum!</p>
-			</article>
+                <form>
+
+                    <div class="form-row">      
+                        <div class="form-group col-md-6">
+                            <label for="NoDecreto">No. Decreto</label>
+                            <input type="text" class="form-control" id="NoDecreto" placeholder="Ingresar" required>
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="NoPeriodico">No. Periódico</label>
+                            <input type="text" class="form-control" id="NoPeriodico" placeholder="Ingresar" required>
+                        </div>
+                    </div>
+        
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="ValEna">Valor Enajenación</label>
+                            <input type="text" class="form-control" id="ValEna" placeholder="$0.00" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="fechaPeriodico">Fecha Periódico</label>
+                            <input type="date" class="form-control" id="fechaPeriodicoo" required>
+                        </div>  
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-3">
+                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </article>
+            <!-- Fin 5to Tab-->
 		</div>
 	</div>
-      <!-- FIN EJEMPLO TABS-->
-
-    <!--Form 2-->
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="Cve_Municipio">Municipio</label>
-                <select class="form-control" id="Cve_Municipio" required>
-                    <option selected disabled value="">Buscar...</option>
-                    <option>Acacoyagua</option>
-                    <option>Acala</option>
-                    <option>Acapetahua</option>
-                    <option>Altamirano</option>
-                    <option>Amatán</option>
-                    <option>Amatenango de la Frontera</option>
-                    <option>Amatenango del Valle</option>
-                    <option>Ángel Albino Corzo</option>
-                    <option>Arriaga</option>
-                    <option>Bejucal de Ocampo</option>
-                    <option>Bella Vista</option>
-                    <option>Berriozábal</option>
-                    <option>Bochil</option>
-                    <option>El Bosque</option>
-                    <option>Cacahoatán</option>
-                    <option>Catazajá</option>
-                    <option>Cintalapa</option>
-                    <option>Coapilla</option>
-                    <option>Comitán de Domínguez</option>
-                    <option>La Concordia</option>
-                    <option>Copainalá</option>
-                    <option>Chalchihuitán</option>
-                    <option>Chamula</option>
-                    <option>Chanal</option>
-                    <option>Chapultenango</option>
-                    <option>Chenalhó</option>
-                    <option>Chiapa de Corzo</option>
-                    <option>Chiapilla</option>
-                    <option>Chicoasén</option>
-                    <option>Chicomuselo</option>
-                    <option>Chilón</option>
-                    <option>Escuintla</option>
-                    <option>Francisco León</option>
-                    <option>Frontera Comalapa</option>
-                    <option>Frontera Hidalgo</option>
-                    <option>La Grandeza</option>
-                    <option>Huehuetán</option>
-                    <option>Huixtán</option>
-                    <option>Huitiupán</option>
-                    <option>Huixtla</option>
-                    <option>La Independencia</option>
-                    <option>Ixhuatán</option>
-                    <option>Ixtacomitán</option>
-                    <option>Ixtapa</option>
-                    <option>Ixtapangajoya</option>
-                    <option>Jiquipilas</option>
-                    <option>Jitotol</option>
-                    <option>Juárez</option>
-                    <option>Larráinzar</option>
-                    <option>La Libertad</option>
-                    <option>Mapastepec</option>
-                    <option>Las Margaritas</option>
-                    <option>Mazapa de Madero</option>
-                    <option>Mazatán</option>
-                    <option>Metapa</option>
-                    <option>Mitontic</option>
-                    <option>Motozintla</option>
-                    <option>Nicolas Ruíz</option>
-                    <option>Ocosingo</option>
-                    <option>Ocotepec</option>
-                    <option>Ocozocoautla de Espinosa</option>
-                    <option>Ostuacán</option>
-                    <option>Osumacinta</option>
-                    <option>Oxchuc</option>
-                    <option>Palenque</option>
-                    <option>Pantelhó</option>
-                    <option>Pantepec</option>
-                    <option>Pichucalco</option>
-                    <option>Pijijiapan</option>
-                    <option>El Porvenir</option>
-                    <option>Villa Comaltitlán</option>
-                    <option>Pueblo Nuevo Sollistahuacán</option>
-                    <option>Rayón</option>
-                    <option>Reforma</option>
-                    <option>Las Rosas</option>
-                    <option>Sabanilla</option>
-                    <option>Salto de Agua</option>
-                    <option>San Cristóbal de las Casas</option>
-                    <option>San Fernando</option>
-                    <option>Siltepec</option>
-                    <option>Simojovel</option>
-                    <option>Sitalá</option>
-                    <option>Socoltenango</option>
-                    <option>Solosuchiapa</option>
-                    <option>Soyaló</option>
-                    <option>Suchiapa</option>
-                    <option>Suchiate</option>
-                    <option>Sunuapa</option>
-                    <option>Tapachula</option>
-                    <option>Tapalapa</option>
-                    <option>Tapilula</option>
-                    <option>Tecpatán</option>
-                    <option>Tenejapa</option>
-                    <option>Teopisca</option>
-                    <option>Tila</option>
-                    <option>Tonalá</option>
-                    <option>Totolapá</option>
-                    <option>La Trinitaria</option>
-                    <option>Tumbalá</option>
-                    <option>Tuxtla Gutiérrez</option>
-                    <option>Tuxtla Chico</option>
-                    <option>Tuzantán</option>
-                    <option>Tzimol</option>
-                    <option>Unión Juárez</option>
-                    <option>Venustiano Carranza</option>
-                    <option>Villa Corzo</option>
-                    <option>Villaflores</option>
-                    <option>Yajalón</option>
-                    <option>San Lucas</option>
-                    <option>Zinacantán</option>
-                    <option>San Juan Cancuc</option>
-                    <option>Aldama</option>
-                    <option>Benemérito de las Américas</option>
-                    <option>Maravilla Tenejapa</option>
-                    <option>Marqués de Comillas</option>
-                    <option>Montecristo de Guerrero</option>
-                    <option>San Andrés Duraznal</option>
-                    <option>Santiago el Pinar</option>
-                    <option>No Definido</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="ClasificaPredio">Clasifica Predio</label>
-                <select class="form-control" id="ClasificaPredio" required>
-                    <option selected disabled value="">Seleccionar...</option>                    
-                    <option>Urbano</option>                   
-                    <option>Sub-Urbano</option>
-                    <option>Rústico</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="TipoPredio">Tipo Predio</label>
-                <select class="form-control" id="TipoPredio" required>
-                    <option selected disabled value="">Elegir...</option>
-                    <option>Construido</option>
-                    <option>Baldio</option>
-                    <option>Bardado</option>
-                    <option>Cercado Alambre Puas</option>
-                    <option>Cercado Malla</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="Status">Status</label>
-                <input type="text" class="form-control" id="Status" required>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="fecha_alta">Fecha Alta</label>
-                <input type="date" class="form-control" id="fecha_alta" required>
-            </div>
-            <div class="form-group col-md-4">
-                <div class="form-check">
-                    <input type="checkbox" class="Asegurado" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Asegurado</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="SuperficieTotal">Superficie Total</label>
-                <input type="text" class="form-control" id="SuperficieTotal" placeholder="mts" required>
-            </div>
-
-            <div class="form.group col-md-4">
-                <label for="SuperficiConstruida">Superficie Construida</label>
-                <input type="text" class="form-control" id="SuperficiConstruida" placeholder="mts" required>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="NoNiveles">No. Niveles</label>
-                <input type="text" class="form-control" id="NoNiveles">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="Cve_Castastral">Clave Castastral</label>
-                <input type="text" class="form-control" id="Cve_Castastral" required>
-            </div>
-
-            <div class="form.group col-md-4">
-                <label for="ValorCatastral">Valor Catastral</label>
-                <input type="text" class="form-control" id="ValorCatastral" placeholder="$0.00" required>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="ValorActual">Valor Actual</label>
-                <input type="text" class="form-control" id="ValorActual" placeholder="$0.00" required>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="ValorFiscal">Valor Fiscal</label>
-                <input type="text" class="form-control" id="ValorFiscal" required>
-            </div>
-
-            <div class="form.group col-md-4">
-                <label for="ValorAdquisición">Valor Adquisición</label>
-                <input type="text" class="form-control" id="ValorAdquisición" required>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="PropetarioAnterior">Propetario Anterior</label>
-                <input type="text" class="form-control" id="PropetarioAnterior" required>
-            </div>
-
-            <div class="form.group col-md-4">
-                <label for="Observaciones">Observaciones</label>
-                <input type="text" class="form-control" id="Observaciones" required>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="DependenciaOcupante">Dependencia Ocupante</label>
-                <input type="text" class="form-control" id="DependenciaOcupante">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                <button type="submit" class="btn btn-danger">Cancelar</button>
-                <button type="submit" class="btn btn-success">Agregar</button>
-                
-            </div>
-        </div>
-    </form>  
-
-    <!-- Inicia 3er Formulario-->
-    <span class="cabecera p-2 mb-2 text-white">Detalles</span>
-    <h6 class="cabecera p-2 mb-2 text-white"></h6>
+      <!-- FIN TABS--> 
     
-        <form>
-            <div class="form-row">      
-                <div class="form-group col-md-3">
-                <label for="Forma Adquisicion">Forma de Adquisicion</label>
-                <select class="form-control" id="Forma Adquisicion" required>
-                    <option selected disabled value="">Seleccionar...</option>
-                    <option>Dación en Pago</option>
-                    <option>Compra-Venta</option>
-                    <option>Permuta</option>
-                    <option>Donación</option>
-                    <option>Expropiación</option>
-                    <option>Adjudicación</option>
-                    <option>Reversión</option>
-                </select>
-                </div>
-
-                <div class="form-group col-md-2">
-                    <label for="fecha Adquisicion">Fecha Adquisicion</label>
-                    <input type="date" class="form-control" id="fecha Adquisicion" required>
-                </div>  
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="NoExpediente">No. Expediente</label>
-                    <input type="text" class="form-control" id="NoExpediente" placeholder="Ingresar" required>
-                </div>
-                
-                <div class="form-group col-md-2">
-                    <label for="Fecha Escrituras">Fecha Escrituras</label>
-                    <input type="date" class="form-control" id="Fecha Escrituras" required>
-                </div>  
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="Notario">Notario</label>
-                    <input type="text" class="form-control" id="Notario" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <div class="form-check">
-                        <input type="checkbox" class="Titular" id="exampleCheck1">
-                        <label class="form-check-label" for="Titular">Titular</label>
-                    </div>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <div class="form-check">
-                        <input type="checkbox" class="Adjunto" id="exampleCheck1">
-                        <label class="form-check-label" for="Adjunto">Adjunto</label>
-                    </div>
-                </div>
-            </div>
-
-            <span class="cabecera p-2 mb-2 text-white">Medidas y Colindancias</span>
-            <h6 class="cabecera p-2 mb-2 text-white"></h6>
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="Nte">Al Nte. Con</label>
-                    <input type="text" class="form-control" id="Nte" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="mtsNte">Mts. Lineales</label>
-                    <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="ObNte">Observaciones</label>
-                    <input type="text" class="form-control" id="ObNte" placeholder="Ingresar" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="Sur">Al Sur Con</label>
-                    <input type="text" class="form-control" id="Sur" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="mtsSur">Mts. Lineales</label>
-                    <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="ObSur">Observaciones</label>
-                    <input type="text" class="form-control" id="ObSur" placeholder="Ingresar" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="Pte">Al Pte. Con</label>
-                    <input type="text" class="form-control" id="Pte" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="mtsPte">Mts. Lineales</label>
-                    <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="ObPte">Observaciones</label>
-                    <input type="text" class="form-control" id="ObPte" placeholder="Ingresar" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="Ote">Al Ote. Con</label>
-                    <input type="text" class="form-control" id="Ote" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="mtsOte">Mts. Lineales</label>
-                    <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="ObOte">Observaciones</label>
-                    <input type="text" class="form-control" id="ObOte" placeholder="Ingresar" required>
-                </div>
-            </div>
-
-            <span class="cabecera p-2 mb-2 text-white">Registro Público</span>
-            <h6 class="cabecera p-2 mb-2 text-white"></h6>
-            <div class="form-row">      
-                <div class="form-group col-md-3">
-                    <label for="libroReg">Libro de Registro</label>
-                    <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="NoInsc">No. Inscripción</label>
-                    <input type="text" class="form-control" id="NoInsc" placeholder="Ingresar" required>
-                </div>
-
-                <div class="form-group col-md-1">
-                    <label for="Fojas">Fojas</label>
-                    <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" required>
-                </div>
-            </div>
-           
-            <div class="form-row">      
-                <div class="form-group col-md-3">
-                <label for="Tomo">Tomo</label>
-                <select class="form-control" id="Tomo" required>
-                    <option selected disabled value="">Seleccionar...</option>
-                    <option>I</option>
-                    <option>II</option>
-                    <option>III</option>
-                    <option>IV</option>
-                    <option>V</option>
-                    <option>VI</option>
-                    <option>VII</option>
-                </select>
-                </div>
-
-                <div class="form-group col-md-2">
-                    <label for="fechaRegistro">Fecha de Registro</label>
-                    <input type="date" class="form-control" id="fechaRegistro" required>
-                </div>  
-            </div>
-
-            <div class="form-row">      
-                <div class="form-group col-md-3">
-                <label for="Seccion">Sección</label>
-                <select class="form-control" id="Seccion" required>
-                    <option selected disabled value="">Seleccionar...</option>
-                    <option>S/R</option>
-                    <option>Primera</option>
-                    <option>Cuarta</option>
-                    <option>Civil</option>                    
-                </select>
-                </div>
-
-                <div class="form-group col-md-2">
-                    <label for="LugarReg">Lugar de Registro</label>
-                    <select class="form-control" id="Cve_Municipio" required>
-                        <option selected disabled value="">Buscar...</option>
-                        <option>Ninguno</option> 
-                        <option>Tuxtla Gutiérrez</option>
-                        <option>San Cristóbal de las Casas</option>                       
-                        <option>Comitán de Domínguez</option>
-                        <option>Yajalón</option>
-                        <option>Acapetagua</option>
-                        <option>Catazajá</option>
-                        <option>Cintalapa</option>                        
-                        <option>Copainalá</option>
-                        <option>Chiapa de Corzo</option>
-                        <option>Huixtla</option>
-                        <option>Motozintla</option>
-                        <option>Ocosingo</option>
-                        <option>Pichucalco</option>
-                        <option>Simojovel</option>
-                        <option>Tapachula de Córdova y Ordóñez</option>
-                        <option>Tonalá</option>
-                        <option>Venustiano Carranza</option> 
-                        <option>Villaflores</option>
-                        <option>Salto de Agua</option>
-                        <option>Bochil</option> 
-                    </select>
-                </div>
-            </div>
-
-            <span class="cabecera p-2 mb-2 text-white">Escrituras</span>
-            <h6 class="cabecera p-2 mb-2 text-white"></h6>
-
-        </form> <!-- Fin 3er Formulario-->
-
-    
-
     <h6 class="cabecera p-2 mb-2 text-white"></h6>
 </div>
