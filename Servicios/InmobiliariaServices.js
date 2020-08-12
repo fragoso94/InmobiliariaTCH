@@ -80,6 +80,7 @@ app.factory('ApiServices', function ($http, $q, $location) {
                         defered.reject(err);
                     });
                     return promise;
+                case 'PUT': break;
                 default: break;
             }
         },

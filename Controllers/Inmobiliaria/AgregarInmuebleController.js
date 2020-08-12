@@ -1,4 +1,6 @@
-app.controller('AgregarInmuebleController', ["$scope","$state", function () {
+app.controller('AgregarInmuebleController', ["$scope","$state","$rootScope", function ($scope, $state, $rootScope) {
+    $scope.form = {};
+    $rootScope.session();
     $(document).ready(function(){
         $('ul.tabs li a:first').addClass('active');
         $('.secciones article').hide();
@@ -14,4 +16,9 @@ app.controller('AgregarInmuebleController', ["$scope","$state", function () {
             return false;
         });
     });
+
+    $scope.AgregarInmueble = () =>{
+        console.log($scope.form);
+    }
+
 }]);
