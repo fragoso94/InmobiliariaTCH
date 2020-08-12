@@ -1,5 +1,6 @@
 app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$state','$rootScope', function ($scope, $http, ApiServices, $state, $rootScope) {
     $scope.form = {};
+    let urlApiLocal = $rootScope.urlBaseProd + '/ObtenerUsuarios';
     let urlApiProd = $rootScope.urlBaseProd + '/ObtenerUsuarios';
 
     $scope.guardarUsuario = () => {                   
@@ -41,7 +42,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
          };
          $scope.mensajeValidacion = "Datos necesarios"
         console.log(data);
-            var respuesta = ApiServices.getWS('POST', urlApiProd, data);
+            var respuesta = ApiServices.getWS('POST', urlApiLocal, data);
             respuesta.then(function (datos){
                 console.log(datos);
                 if(datos.exito){

@@ -1,6 +1,6 @@
 app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope', function ($scope,$state, ApiServices, $rootScope) {
     $scope.form = {};
-    //let urlApiLocal = $rootScope.urlBase + '/Login/LoginPortal';
+    let urlApiLocal = $rootScope.urlBase + '/Login/LoginPortal';
     let urlApiProd = $rootScope.urlBaseProd + '/Login/LoginPortal';
 
     $scope.login = () => {
@@ -24,7 +24,7 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
            "Usuario": $scope.form.user,
            "Password": $scope.form.pass
        };
-      ApiServices.getWS('LOGIN', urlApiProd, data);
+      ApiServices.getWS('LOGIN', urlApiLocal, data);
     }
 
     validar = (campo)=>{

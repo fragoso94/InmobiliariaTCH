@@ -1,5 +1,5 @@
 app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    //let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
+    let urlApiLocal = $rootScope.urlBase + '/Usuarios/ObtenerUsuarios';
     let urlApiProd = $rootScope.urlBaseProd + '/Usuarios/ObtenerUsuarios';
     $rootScope.session();
     $scope.ID_USUARIO = localStorage.getItem('idUsuario');
@@ -15,7 +15,7 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
             "total": $scope.totalPagina,
             "paginaActual": $scope.paginaActual
         }
-        var response = ApiServices.getWS('POST', urlApiProd, datos);
+        var response = ApiServices.getWS('POST', urlApiLocal, datos);
         response.then(function (datos) {
             console.log(datos);
             $scope.Usuarios = datos;
@@ -57,7 +57,7 @@ app.controller('ListarUsuarioController',['$scope','$state', '$http', 'ApiServic
         })
         .then((willDelete) => {
             if (willDelete) {
-                let respuesta = ApiServices.getWS('DELETE', $rootScope.urlBaseProd + "/Usuarios/EliminarUsuario/"+id);
+                let respuesta = ApiServices.getWS('DELETE', $rootScope.urlBase + "/Usuarios/EliminarUsuario/"+id);
                 respuesta.then(function (response){
                     //console.log(response);
                     if(response.exito){
