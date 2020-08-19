@@ -24,7 +24,9 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
            "Usuario": $scope.form.user,
            "Password": $scope.form.pass
        };
-      ApiServices.getWS('LOGIN', urlApiLocal, data);
+        $scope.spinner = true;
+        ApiServices.getWS('LOGIN', urlApiLocal, data);
+        $scope.spinner = false;
     }
 
     validar = (campo)=>{

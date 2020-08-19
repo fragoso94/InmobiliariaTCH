@@ -14,8 +14,15 @@ app.factory('ApiServices', function ($http, $q, $location) {
 
             switch (method) {
                 case 'GET':
-                    $http({method: method, url: urlApi})
+                    $http({
+                        method: method,
+                        url: urlApi,
+                        headers:{
+                            'Authorization': accessToken,
+                            'Content-Type': 'application/json'
+                        }})
                         .then(function(response) {
+                            console.log(response)
                             defered.resolve(response.data);
                         }, function(err) {
                             defered.reject(err);
