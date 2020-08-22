@@ -1,6 +1,6 @@
 app.controller('SeguridadController', ['$scope','ApiServices','$rootScope', function ($scope, ApiServices, $rootScope){
     $rootScope.session();
-    this.urlLocal = $rootScope.urlBase + "/seguridad/ObtenerMovimientos";
+    //this.urlLocal = $rootScope.urlBase + "/seguridad/ObtenerMovimientos";
     this.urlProd = $rootScope.urlBaseProd + "/seguridad/ObtenerMovimientos";
     $scope.totalPagina = 10;
     $scope.paginaActual = 1;
@@ -11,7 +11,7 @@ app.controller('SeguridadController', ['$scope','ApiServices','$rootScope', func
             "total": 10,
             "paginaActual":1
         }
-        let response = ApiServices.getWS('POST', self.urlLocal, datos);
+        let response = ApiServices.getWS('POST', self.urlProd, datos);
         response.then( result =>{
             console.log(result)
             $scope.movimientos = result;

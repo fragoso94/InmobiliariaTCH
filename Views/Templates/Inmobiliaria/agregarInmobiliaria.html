@@ -4,25 +4,27 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="NoExpediente">No. Expediente</label>
-                <input type="text" class="form-control" id="NoExpediente" placeholder="Ingresar" required>
+                <input type="text" class="form-control" id="NoExpediente" placeholder="IPE-BI-..." disabled>
             </div>
 
             <div class="form-group col-md-4">
                 <label for="TipoExpediente">Tipo de Expediente</label>
-                <select class="form-control" id="TipoExpediente" required>
-                    <option selected disabled value="">Seleccionar...</option>
+                <select class="form-control" id="TipoExpediente" ng-model="form.tipoExpediente" required>
+                    <!--<option ng-repeat="(key, tipoExpediente) in TipoExpediente" ng-value="tipoExpediente.id_TipoExp">
+                        {{}}
+                    </option>-->
+                    <option selected disabled ng-repeat="form.tipoExpediente" ng-required="true" value="">Seleccionar...</option>
                     <option>Activo</option>
                     <option>Desincorporado</option>
                     <option>Rehabiltación Agraria</option>
                     <option>Centro Educativo</option>
-                    <option>Regularizar</option>
-                    
+                    <option>Regularizar</option>-->                    
                 </select>
             </div>
 
             <div class="form-group col-md-4">
                 <label for="Cve_TipoInmueble">Tipo de Inmueble</label>
-                <select class="form-control" id="Cve_TipoInmueble" required>
+                <select class="form-control" id="Cve_TipoInmueble">
                     <option selected disabled value="">Seleccionar...</option>
                     <option>Todos</option>
                     <option>Aeropuerto</option>
@@ -110,7 +112,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="Nombre_Inmueble">Nombre del Inmueble</label>
-                <input id="Nombre_Inmueble" type="text" class="form-control" placeholder="Nombre" required ng-model="form.nombreInmueble" ng-required="true">
+                <input id="Nombre_Inmueble" type="text" class="form-control" placeholder="Nombre" ng-model="form.nombreInmueble" ng-required="true">
             </div>
             <div class="form-group col-md-4">
                 <label for="Direccion_Inmueble">Dirección del Inmueble</label>
@@ -122,13 +124,13 @@
             </div>
         </div>
 
-        <div class="form-row">
+        <!--<div class="form-row">
             <div class="form-group col-md-3">
                 <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>
                 <button class="btn btn-danger" ui-sref="">Cancelar</button>
                 <button type="submit" class="btn btn-success" ng-click="AgregarInmueble()">Guardar</button>
             </div>
-        </div>
+        </div>-->
 
     </form>
     <!-- Fin de Formulario -->
@@ -278,7 +280,7 @@
             
                         <div class="form-group col-md-4">
                             <label for="ClasificaPredio">Clasifica Predio</label>
-                            <select class="form-control" id="ClasificaPredio" required>
+                            <select class="form-control" id="ClasificaPredio">
                                 <option selected disabled value="">Seleccionar...</option>                    
                                 <option>Urbano</option>                   
                                 <option>Sub-Urbano</option>
@@ -288,7 +290,7 @@
             
                         <div class="form-group col-md-4">
                             <label for="TipoPredio">Tipo Predio</label>
-                            <select class="form-control" id="TipoPredio" required>
+                            <select class="form-control" id="TipoPredio" >
                                 <option selected disabled value="">Elegir...</option>
                                 <option>Construido</option>
                                 <option>Baldio</option>
@@ -302,15 +304,15 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Status">Status</label>
-                            <input type="text" class="form-control" id="Status" required>
+                            <input type="text" class="form-control" id="Status" ng-model="form.Status" ng-required="true">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="fecha_alta">Fecha Alta</label>
-                            <input type="date" class="form-control" id="fecha_alta" required>
+                            <label for="fechaAlta">Fecha de Alta</label>
+                            <input type="date" class="form-control" id="fechaAlta" ng-model="form.fechaAlta" ng-required="true">
                         </div>
                         <div class="form-group col-md-4">
                             <div class="form-check">
-                                <input type="checkbox" class="Asegurado" id="exampleCheck1">
+                                <input type="checkbox" class="Asegurado" id="exampleCheck1" ng-model="form.Asegurado" ng-required="true">
                                 <label class="form-check-label" for="exampleCheck1">Asegurado</label>
                             </div>
                         </div>
@@ -318,69 +320,67 @@
             
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="SuperficieTotal">Superficie Total</label>
-                            <input type="text" class="form-control" id="SuperficieTotal" placeholder="mts" required>
+                            <label for="superficieTotal">Superficie Total</label>
+                            <input type="text" class="form-control" id="superficieTotal" placeholder="mts" ng-model="form.superficieTotal" ng-required="true">
                         </div>
             
                         <div class="form.group col-md-4">
-                            <label for="SuperficiConstruida">Superficie Construida</label>
-                            <input type="text" class="form-control" id="SuperficiConstruida" placeholder="mts" required>
+                            <label for="superficiConstruida">Superficie Construida</label>
+                            <input type="text" class="form-control" id="superficiConstruida" placeholder="mts" ng-model="form.superficiConstruida" ng-required="true">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="NoNiveles">No. Niveles</label>
-                            <input type="text" class="form-control" id="NoNiveles">
+                            <label for="noNiveles">No. Niveles</label>
+                            <input type="text" class="form-control" id="noNiveles" placeholder="Niveles" ng-model="form.noNiveles" ng-required="true">
                         </div>
                     </div>
             
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="Cve_Castastral">Clave Castastral</label>
-                            <input type="text" class="form-control" id="Cve_Castastral" required>
+                            <label for="cveCastastral">Clave Castastral</label>
+                            <input type="text" class="form-control" id="cveCastastral" placeholder="Digite Clave" ng-model="form.cveCastastral" ng-required="true">
                         </div>
             
                         <div class="form.group col-md-4">
-                            <label for="ValorCatastral">Valor Catastral</label>
-                            <input type="text" class="form-control" id="ValorCatastral" placeholder="$0.00" required>
+                            <label for="valorCatastral">Valor Catastral</label>
+                            <input type="text" class="form-control" id="valorCatastral" placeholder="$0.00" ng-model="form.valorCatastral" ng-required="true">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="ValorActual">Valor Actual</label>
-                            <input type="text" class="form-control" id="ValorActual" placeholder="$0.00" required>
+                            <label for="valorActual">Valor Actual</label>
+                            <input type="text" class="form-control" id="valorActual" placeholder="$0.00" ng-model="form.valorActual" ng-required="true">
                         </div>
                     </div>
             
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="ValorFiscal">Valor Fiscal</label>
-                            <input type="text" class="form-control" id="ValorFiscal" required>
+                            <label for="valorFiscal">Valor Fiscal</label>
+                            <input type="text" class="form-control" id="valorFiscal" ng-model="form.valorFiscal" ng-required="true">
                         </div>
             
                         <div class="form.group col-md-4">
-                            <label for="ValorAdquisición">Valor Adquisición</label>
-                            <input type="text" class="form-control" id="ValorAdquisición" required>
+                            <label for="valorAdquisición">Valor Adquisición</label>
+                            <input type="text" class="form-control" id="valorAdquisición" ng-model="form.valorAdquisición" ng-required="true">
                         </div>
                     </div>
             
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="PropetarioAnterior">Propetario Anterior</label>
-                            <input type="text" class="form-control" id="PropetarioAnterior" required>
+                            <label for="propetarioAnterior">Propetario Anterior</label>
+                            <input type="text" class="form-control" id="propetarioAnterior" ng-model="form.propetarioAnterior" ng-required="true">
                         </div>
             
                         <div class="form.group col-md-4">
-                            <label for="Observaciones">Observaciones</label>
-                            <input type="text" class="form-control" id="Observaciones" required>
+                            <label for="ObsPropetario">Observaciones</label>
+                            <input type="text" class="form-control" id="ObsPropetario" ng-model="form.ObsPropetario" ng-required="true">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="DependenciaOcupante">Dependencia Ocupante</label>
-                            <input type="text" class="form-control" id="DependenciaOcupante">
+                            <label for="depOcupante">Dependencia Ocupante</label>
+                            <input type="text" class="form-control" id="depOcupante" ng-model="form.depOcupante" ng-required="true">
                         </div>
                     </div>
             
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="submit" class="btn btn-success">Siguiente</button>
                             
                         </div>
                     </div>
@@ -407,39 +407,39 @@
                         </div>
         
                         <div class="form-group col-md-6">
-                            <label for="fecha Adquisicion">Fecha Adquisicion</label>
-                            <input type="date" class="form-control" id="fecha Adquisicion" required>
+                            <label for="fechaAdquisicion">Fecha Adquisición</label>
+                            <input type="date" class="form-control" id="fechaAdquisicion" ng-model="form.fechaAdquisicion" ng-required="true">
                         </div>  
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="NoExpediente">No. Expediente</label>
-                            <input type="text" class="form-control" id="NoExpediente" placeholder="Ingresar" required>
+                            <label for="noExpediente">No. Expediente</label>
+                            <input type="text" class="form-control" id="noExpediente" placeholder="Ingresar" ng-model="form.noExpediente" ng-required="true">
                         </div>
                         
                         <div class="form-group col-md-6">
-                            <label for="Fecha Escrituras">Fecha Escrituras</label>
-                            <input type="date" class="form-control" id="Fecha Escrituras" required>
+                            <label for="fechaEscrituras">Fecha Escrituras</label>
+                            <input type="date" class="form-control" id="fechaEscrituras" ng-model="form.fechaEscrituras" ng-required="true">
                         </div>  
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="Notario">Notario</label>
-                            <input type="text" class="form-control" id="Notario" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Notario" placeholder="Ingresar" ng-model="form.Notario" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-3">
                             <div class="form-check">
-                                <input type="checkbox" class="Titular" id="exampleCheck1">
+                                <input type="checkbox" class="Titular" id="Titular" ng-model="form.Titular" ng-required="true">
                                 <label class="form-check-label" for="Titular">Titular</label>
                             </div>
                         </div>
         
                         <div class="form-group col-md-3">
                             <div class="form-check">
-                                <input type="checkbox" class="Adjunto" id="exampleCheck1">
+                                <input type="checkbox" class="Adjunto" id="Archivo" ng-model="form.Adjunto" ng-required="true">
                                 <label class="form-check-label" for="Adjunto">Adjunto</label>
                             </div>
                         </div>
@@ -447,9 +447,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="submit" class="btn btn-success">Siguiente</button>
                             
                         </div>
                     </div>
@@ -464,76 +462,74 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Nte">Al Nte. Con</label>
-                            <input type="text" class="form-control" id="Nte" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Nte" placeholder="Ingresar" ng-model="form.Nte" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
                             <label for="mtsNte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" ng-model="form.mtsNte" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
-                            <label for="ObNte">Observaciones</label>
-                            <input type="text" class="form-control" id="ObNte" placeholder="Ingresar" required>
+                            <label for="obNte">Observaciones</label>
+                            <input type="text" class="form-control" id="obNte" placeholder="Ingresar" ng-model="form.obNte" ng-required="true">
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Sur">Al Sur Con</label>
-                            <input type="text" class="form-control" id="Sur" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Sur" placeholder="Ingresar" ng-model="form.Sur" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
                             <label for="mtsSur">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" ng-model="form.mtsSUR" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
-                            <label for="ObSur">Observaciones</label>
-                            <input type="text" class="form-control" id="ObSur" placeholder="Ingresar" required>
+                            <label for="obSur">Observaciones</label>
+                            <input type="text" class="form-control" id="obSur" placeholder="Ingresar" ng-model="form.ObSur" ng-required="true">
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Pte">Al Pte. Con</label>
-                            <input type="text" class="form-control" id="Pte" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Pte" placeholder="Ingresar" ng-model="form.Pte" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
                             <label for="mtsPte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" ng-model="form.mtsPte" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
-                            <label for="ObPte">Observaciones</label>
-                            <input type="text" class="form-control" id="ObPte" placeholder="Ingresar" required>
+                            <label for="obPte">Observaciones</label>
+                            <input type="text" class="form-control" id="obPte" placeholder="Ingresar" ng-model="form.obPte" ng-required="true">
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Ote">Al Ote. Con</label>
-                            <input type="text" class="form-control" id="Ote" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Ote" placeholder="Ingresar" ng-model="form.Ote" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
                             <label for="mtsOte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" ng-model="form.mtsOte" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
-                            <label for="ObOte">Observaciones</label>
-                            <input type="text" class="form-control" id="ObOte" placeholder="Ingresar" required>
+                            <label for="obOte">Observaciones</label>
+                            <input type="text" class="form-control" id="obOte" placeholder="Ingresar" ng-model="form.obOte" ng-required="true">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="submit" class="btn btn-success">Siguiente</button>
                             
                         </div>
                     </div>
@@ -548,24 +544,24 @@
                     <div class="form-row">      
                         <div class="form-group col-md-4">
                             <label for="libroReg">Libro de Registro</label>
-                            <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" ng-model="form.libroReg" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
-                            <label for="NoInsc">No. Inscripción</label>
-                            <input type="text" class="form-control" id="NoInsc" placeholder="Ingresar" required>
+                            <label for="noInsc">No. Inscripción</label>
+                            <input type="text" class="form-control" id="noInsc" placeholder="Ingresar" ng-model="form.noInsc" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-4">
                             <label for="Fojas">Fojas</label>
-                            <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" required>
+                            <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" ng-model="form.Fojas" ng-required="true">
                         </div>
                     </div>
                    
                     <div class="form-row">      
                         <div class="form-group col-md-6">
                         <label for="Tomo">Tomo</label>
-                        <select class="form-control" id="Tomo" required>
+                        <select class="form-control" id="Tomo">
                             <option selected disabled value="">Seleccionar...</option>
                             <option>I</option>
                             <option>II</option>
@@ -579,14 +575,14 @@
         
                         <div class="form-group col-md-6">
                             <label for="fechaRegistro">Fecha de Registro</label>
-                            <input type="date" class="form-control" id="fechaRegistro" required>
+                            <input type="date" class="form-control" id="fechaRegistro" ng-model="form.fechaRegistro" ng-required="true">
                         </div>  
                     </div>
         
                     <div class="form-row">      
                         <div class="form-group col-md-6">
                         <label for="Seccion">Sección</label>
-                        <select class="form-control" id="Seccion" required>
+                        <select class="form-control" id="Seccion">
                             <option selected disabled value="">Seleccionar...</option>
                             <option>S/R</option>
                             <option>Primera</option>
@@ -597,7 +593,7 @@
         
                         <div class="form-group col-md-6">
                             <label for="LugarReg">Lugar de Registro</label>
-                            <select class="form-control" id="Cve_Municipio" required>
+                            <select class="form-control" id="Cve_Municipio">
                                 <option selected disabled value="">Buscar...</option>
                                 <option>Ninguno</option> 
                                 <option>Tuxtla Gutiérrez</option>
@@ -626,9 +622,7 @@
                     
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="submit" class="btn btn-success" >Siguiente</button>
                             
                         </div>
                     </div>
@@ -643,35 +637,33 @@
 
                     <div class="form-row">      
                         <div class="form-group col-md-6">
-                            <label for="NoDecreto">No. Decreto</label>
-                            <input type="text" class="form-control" id="NoDecreto" placeholder="Ingresar" required>
+                            <label for="noDecreto">No. Decreto</label>
+                            <input type="text" class="form-control" id="noDecreto" placeholder="Ingresar" ng-model="form.noDecreto" ng-required="true">
                         </div>
         
                         <div class="form-group col-md-6">
-                            <label for="NoPeriodico">No. Periódico</label>
-                            <input type="text" class="form-control" id="NoPeriodico" placeholder="Ingresar" required>
+                            <label for="noPeriodico">No. Periódico</label>
+                            <input type="text" class="form-control" id="noPeriodico" placeholder="Ingresar" ng-model="form.noPeriodico" ng-required="true">
                         </div>
                     </div>
         
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
-                            <label for="ValEna">Valor Enajenación</label>
-                            <input type="text" class="form-control" id="ValEna" placeholder="$0.00" required>
+                            <label for="valEna">Valor Enajenación</label>
+                            <input type="text" class="form-control" id="valEna" placeholder="$0.00" ng-model="form.valEna" ng-required="true">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="fechaPeriodico">Fecha Periódico</label>
-                            <input type="date" class="form-control" id="fechaPeriodicoo" required>
+                            <input type="date" class="form-control" id="fechaPeriodicoo" ng-model="form.fechaPeriodico" ng-required="true">
                         </div>  
                     </div>
 
                     <div class="form-row">
 
                         <div class="form-group col-md-3">
-                            <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>                
-                            <button type="submit" class="btn btn-danger">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="submit" class="btn btn-success" ng-click="AgregarInmueble()" > Guardar</button>
                             
                         </div>
                     </div>

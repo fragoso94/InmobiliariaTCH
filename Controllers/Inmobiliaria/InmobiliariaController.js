@@ -1,5 +1,5 @@
 app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiServices', '$rootScope', function ($scope, $state, $http, ApiServices, $rootScope) {
-    //let urlApiLocal = $rootScope.urlBase + '/Inmuebles/ObtenerInmuebles';
+    let urlApiLocal = $rootScope.urlBase + '/Inmuebles/ObtenerInmuebles';
     let urlApiProd = $rootScope.urlBaseProd + '/Inmuebles/ObtenerInmuebles';
     $rootScope.session();
     $scope.totalPagina = 20;
@@ -11,7 +11,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
             "total": $scope.totalPagina,
             "paginaActual": $scope.paginaActual
         }
-        var response = ApiServices.getWS('POST', urlApiProd, datos);
+        var response = ApiServices.getWS('POST', urlApiLocal, datos);
         response.then(function(data){
             $scope.inmuebles = data;
             data.forEach(item => {

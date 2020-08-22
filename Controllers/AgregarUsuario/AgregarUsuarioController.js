@@ -5,7 +5,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
     let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
     ObtenerGrupos = () => {
         console.log("ejecutando");
-        let url = $rootScope.urlBase + "/Catalogos/ObtenerGrupos";
+        let url = $rootScope.urlApiLocal+ "/Catalogos/ObtenerGrupos";
         let response = ApiServices.getWS("GET", url);
         response.then(function (result){
             $scope.Roles = result;

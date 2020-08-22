@@ -1,6 +1,7 @@
 app.controller('AgregarInmuebleController', ["$scope","$state","$rootScope", function ($scope, $state, $rootScope) {
     $scope.form = {};
-    $rootScope.session();
+    $rootScope.session();    
+
     $(document).ready(function(){
         $('ul.tabs li a:first').addClass('active');
         $('.secciones article').hide();

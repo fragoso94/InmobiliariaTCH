@@ -35,13 +35,13 @@
             //Disable full page
             $('body').bind('cut copy paste', function (e) {
                 if(e.type == 'copy'){
-                    MostrarAlert("Protegido contra COPYRIGHT.")
+                    MostrarAlert("Acción no Permitida.")
                 }
                 if(e.type == 'cut'){
-                    MostrarAlert("Protegido contra COPYRIGHT.");
+                    MostrarAlert("Acción no Permitida.");
                 }
                 if(e.type == 'paste'){
-                    MostrarAlert("Protegido contra COPYRIGHT.");
+                    MostrarAlert("Acción no Permitida.");
                 }
                 e.preventDefault();
             });
