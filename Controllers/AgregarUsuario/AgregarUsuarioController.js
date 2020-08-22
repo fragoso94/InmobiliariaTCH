@@ -3,9 +3,9 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
     $rootScope.session();
     let urlApiLocal = $rootScope.urlBase + '/Usuarios';
     let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
+
     ObtenerGrupos = () => {
-        console.log("ejecutando");
-        let url = $rootScope.urlApiLocal+ "/Catalogos/ObtenerGrupos";
+        let url = $rootScope.urlBase + "/Catalogos/ObtenerGrupos";
         let response = ApiServices.getWS("GET", url);
         response.then(function (result){
             $scope.Roles = result;
@@ -15,6 +15,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
         });
     };
     ObtenerGrupos(); //Obteniendo los roles
+
     $scope.guardarUsuario = () => {
 
        $nombreUsuario = validar($scope.form.usuario);
