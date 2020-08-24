@@ -25,7 +25,7 @@ app.controller('LoginController', ['$scope','$state', 'ApiServices', '$rootScope
            "Password": $scope.form.pass
        };
         $scope.spinner = true;
-        ApiServices.getWS('LOGIN', urlApiProd, data);
+        ApiServices.getWS('LOGIN', urlApiLocal, data);
         $scope.spinner = false;
     }
 

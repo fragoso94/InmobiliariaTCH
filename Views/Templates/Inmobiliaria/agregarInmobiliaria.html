@@ -1,678 +1,408 @@
 <div style="margin: 50px;">
     <h6 class="cabecera p-2 mb-2 text-white">Captura de Expedientes de Bienes Inmuebles</h6>
     <form name="formulario">
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="NoExpediente">No. Expediente</label>
-                <input type="text" class="form-control" id="NoExpediente" placeholder="IPE-BI-..." disabled>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="TipoExpediente">Tipo de Expediente</label>
-                <select class="form-control" id="TipoExpediente" ng-model="form.tipoExpediente" required>
-                    <!--<option ng-repeat="(key, tipoExpediente) in TipoExpediente" ng-value="tipoExpediente.id_TipoExp">
-                        {{}}
-                    </option>-->
-                    <option selected disabled ng-repeat="form.tipoExpediente" ng-required="true" value="">Seleccionar...</option>
-                    <option>Activo</option>
-                    <option>Desincorporado</option>
-                    <option>Rehabiltación Agraria</option>
-                    <option>Centro Educativo</option>
-                    <option>Regularizar</option>-->                    
-                </select>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="Cve_TipoInmueble">Tipo de Inmueble</label>
-                <select class="form-control" id="Cve_TipoInmueble">
-                    <option selected disabled value="">Seleccionar...</option>
-                    <option>Todos</option>
-                    <option>Aeropuerto</option>
-                    <option>Albergue</option>
-                    <option>Almacenes</option>
-                    <option>Anillo Periférico</option>
-                    <option>Antena Radio</option>
-                    <option>Asilo Ancianos</option>
-                    <OPtion>Asociación Civil</OPtion>
-                    <option>Auditorios</option>
-                    <option>Autopistas</option>
-                    <option>Bases Militares</option>
-                    <option>Bases Navales</option>
-                    <option>Bibliotecas</option>
-                    <option>Bodegas</option>
-                    <option>Bomberos</option>
-                    <option>Bordes y Espigones</option>
-                    <option>Calles</option>
-                    <option>Campos Aéreos</option>
-                    <option>Campos Deportivos</option>
-                    <option>campos Experimentales</option>
-                    <option>Carceles Municipales</option>
-                    <option>Casa Hogar para Enfermos</option>
-                    <option>Casa de Gobierno</option>
-                    <option>Vialidades</option>
-                    <option>Casas de la Cultura</option>
-                    <option>Casas Ejidales</option>
-                    <option>Casas Habitación</option>
-                    <option>Casas Habilitada para Oficina</option>
-                    <option>Casetas Fiscales</option>
-                    <option>Centros de Educación Basica</option>
-                    <option>Centros de Convivencia Infantil</option>
-                    <option>TeleBachilleratos</option>
-                    <option>Centros de Educación Infantil</option>
-                    <option>Centros D.I.F.</option>
-                    <option>Centros de Readaptación Social</option>
-                    <option>Centros de Salud</option>
-                    <option>Asociación Civil</option>
-                    <option>Conalep</option>
-                    <option>Colonias</option>
-                    <option>Cruz Roja</option>
-                    <option>Edificios</option>
-                    <option>Escuelas de Ciencias y Tecnologías</option>
-                    <option>Escuelas de Educación Especial</option>
-                    <option>Escuelas de Enfermería</option>
-                    <option>Escuelas Normales</option>
-                    <option>Escuelas Preescolares</option>
-                    <option>Escuelas Preparatoris</option>
-                    <option>Escuelas Primarias</option>
-                    <option>Escuelas Secundarias</option>
-                    <option>Escuelas Telesecundarias</option>
-                    <option>Estacionamientos</option>
-                    <option>Fábricas</option>
-                    <option>Asociacion Civil</option>
-                    <option>Fraccionamientos</option>
-                    <option>Hangares</option>
-                    <option>Hospitales</option>
-                    <option>Instalaciones de la Feria</option>
-                    <option>Libramientos</option>
-                    <option>Ladrilleras</option>
-                    <option>Mercados</option>
-                    <option>Mina y Planta Trituradora</option>
-                    <option>Museos</option>
-                    <option>Parques Públicos</option>
-                    <option>Plantas de Tratamiento de Aguas</option>
-                    <option>Plantas Industriales</option>
-                    <option>Plantas Potabilizadoras</option>
-                    <option>Plazuelas</option>
-                    <option>Rastros</option>
-                    <option>Finca Rústica</option>
-                    <option>Tanque de Bombeo</option>
-                    <option>Teatros de la Ciudad</option>
-                    <option>Terrenos</option>
-                    <option>Universidades</option>
-                    <option>Víveros</option>
-                    <option>Velatorio D.I.F.</option>
-                    <option>Tanque de Almacenamiento</option>
-                    <option>Glorietas</option>
-                    <option>Zoomat</option>
-                </select>
-            </div>
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="Nombre_Inmueble">Nombre del Inmueble</label>
-                <input id="Nombre_Inmueble" type="text" class="form-control" placeholder="Nombre" ng-model="form.nombreInmueble" ng-required="true">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="Direccion_Inmueble">Dirección del Inmueble</label>
-                <input id="Direccion_Inmueble" type="text" class="form-control" placeholder="Dirección" ng-model="form.direccion" ng-required="true">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="DescripcionEjecutiva">Descripción Ejecutiva</label>
-                <input type="text" class="form-control" id="DescripcionEjecutiva" placeholder="Descripción" ng-model="form.descripcionEjecutiva" ng-required="true">
-            </div>
-        </div>
-
-        <!--<div class="form-row">
-            <div class="form-group col-md-3">
-                <button class="btn btn-warning" ui-sref="inmobiliaria">Regresar</button>
-                <button class="btn btn-danger" ui-sref="">Cancelar</button>
-                <button type="submit" class="btn btn-success" ng-click="AgregarInmueble()">Guardar</button>
-            </div>
-        </div>-->
-
-    </form>
-    <!-- Fin de Formulario -->
-    <h6 class="cabecera p-2 mb-2 text-white">Datos Particulares del Inmueble</h6>         
-
-      <!-- Ejemplo TABS-->
-      <div class="wrap">
-		<ul class="tabs">
-			<li><a href="#tab1"><span class="fa fa-book"></span><span class="tab-text">Generales</span></a></li>
-			<li><a href="#tab2"><span class="fa fa-calendar"></span><span class="tab-text">Detalles</span></a></li>
-			<li><a href="#tab3"><span class="fa fa-map-pin"></span><span class="tab-text">Medidas y Colindancias</span></a></li>
-            <li><a href="#tab4"><span class="fa fa-pencil-square-o"></span><span class="tab-text">Registro Público</span></a></li>
-            <li><a href="#tab5"><span class="fa fa-file-text"></span><span class="tab-text">Decreto</span></a></li>
-		</ul>
-
-		<div class="secciones">
-        <!--1er Tab-->
-			<article id="tab1">				
-				 <!--Form 2-->
-                 <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Cve_Municipio">Municipio</label>
-                            <select class="form-control" id="Cve_Municipio" required>
-                                <option selected disabled value="">Buscar...</option>
-                                <option>Acacoyagua</option>
-                                <option>Acala</option>
-                                <option>Acapetahua</option>
-                                <option>Altamirano</option>
-                                <option>Amatán</option>
-                                <option>Amatenango de la Frontera</option>
-                                <option>Amatenango del Valle</option>
-                                <option>Ángel Albino Corzo</option>
-                                <option>Arriaga</option>
-                                <option>Bejucal de Ocampo</option>
-                                <option>Bella Vista</option>
-                                <option>Berriozábal</option>
-                                <option>Bochil</option>
-                                <option>El Bosque</option>
-                                <option>Cacahoatán</option>
-                                <option>Catazajá</option>
-                                <option>Cintalapa</option>
-                                <option>Coapilla</option>
-                                <option>Comitán de Domínguez</option>
-                                <option>La Concordia</option>
-                                <option>Copainalá</option>
-                                <option>Chalchihuitán</option>
-                                <option>Chamula</option>
-                                <option>Chanal</option>
-                                <option>Chapultenango</option>
-                                <option>Chenalhó</option>
-                                <option>Chiapa de Corzo</option>
-                                <option>Chiapilla</option>
-                                <option>Chicoasén</option>
-                                <option>Chicomuselo</option>
-                                <option>Chilón</option>
-                                <option>Escuintla</option>
-                                <option>Francisco León</option>
-                                <option>Frontera Comalapa</option>
-                                <option>Frontera Hidalgo</option>
-                                <option>La Grandeza</option>
-                                <option>Huehuetán</option>
-                                <option>Huixtán</option>
-                                <option>Huitiupán</option>
-                                <option>Huixtla</option>
-                                <option>La Independencia</option>
-                                <option>Ixhuatán</option>
-                                <option>Ixtacomitán</option>
-                                <option>Ixtapa</option>
-                                <option>Ixtapangajoya</option>
-                                <option>Jiquipilas</option>
-                                <option>Jitotol</option>
-                                <option>Juárez</option>
-                                <option>Larráinzar</option>
-                                <option>La Libertad</option>
-                                <option>Mapastepec</option>
-                                <option>Las Margaritas</option>
-                                <option>Mazapa de Madero</option>
-                                <option>Mazatán</option>
-                                <option>Metapa</option>
-                                <option>Mitontic</option>
-                                <option>Motozintla</option>
-                                <option>Nicolas Ruíz</option>
-                                <option>Ocosingo</option>
-                                <option>Ocotepec</option>
-                                <option>Ocozocoautla de Espinosa</option>
-                                <option>Ostuacán</option>
-                                <option>Osumacinta</option>
-                                <option>Oxchuc</option>
-                                <option>Palenque</option>
-                                <option>Pantelhó</option>
-                                <option>Pantepec</option>
-                                <option>Pichucalco</option>
-                                <option>Pijijiapan</option>
-                                <option>El Porvenir</option>
-                                <option>Villa Comaltitlán</option>
-                                <option>Pueblo Nuevo Sollistahuacán</option>
-                                <option>Rayón</option>
-                                <option>Reforma</option>
-                                <option>Las Rosas</option>
-                                <option>Sabanilla</option>
-                                <option>Salto de Agua</option>
-                                <option>San Cristóbal de las Casas</option>
-                                <option>San Fernando</option>
-                                <option>Siltepec</option>
-                                <option>Simojovel</option>
-                                <option>Sitalá</option>
-                                <option>Socoltenango</option>
-                                <option>Solosuchiapa</option>
-                                <option>Soyaló</option>
-                                <option>Suchiapa</option>
-                                <option>Suchiate</option>
-                                <option>Sunuapa</option>
-                                <option>Tapachula</option>
-                                <option>Tapalapa</option>
-                                <option>Tapilula</option>
-                                <option>Tecpatán</option>
-                                <option>Tenejapa</option>
-                                <option>Teopisca</option>
-                                <option>Tila</option>
-                                <option>Tonalá</option>
-                                <option>Totolapá</option>
-                                <option>La Trinitaria</option>
-                                <option>Tumbalá</option>
-                                <option>Tuxtla Gutiérrez</option>
-                                <option>Tuxtla Chico</option>
-                                <option>Tuzantán</option>
-                                <option>Tzimol</option>
-                                <option>Unión Juárez</option>
-                                <option>Venustiano Carranza</option>
-                                <option>Villa Corzo</option>
-                                <option>Villaflores</option>
-                                <option>Yajalón</option>
-                                <option>San Lucas</option>
-                                <option>Zinacantán</option>
-                                <option>San Juan Cancuc</option>
-                                <option>Aldama</option>
-                                <option>Benemérito de las Américas</option>
-                                <option>Maravilla Tenejapa</option>
-                                <option>Marqués de Comillas</option>
-                                <option>Montecristo de Guerrero</option>
-                                <option>San Andrés Duraznal</option>
-                                <option>Santiago el Pinar</option>
-                                <option>No Definido</option>
-                            </select>
-                        </div>
-            
-                        <div class="form-group col-md-4">
-                            <label for="ClasificaPredio">Clasifica Predio</label>
-                            <select class="form-control" id="ClasificaPredio">
-                                <option selected disabled value="">Seleccionar...</option>                    
-                                <option>Urbano</option>                   
-                                <option>Sub-Urbano</option>
-                                <option>Rústico</option>
-                            </select>
-                        </div>
-            
-                        <div class="form-group col-md-4">
-                            <label for="TipoPredio">Tipo Predio</label>
-                            <select class="form-control" id="TipoPredio" >
-                                <option selected disabled value="">Elegir...</option>
-                                <option>Construido</option>
-                                <option>Baldio</option>
-                                <option>Bardado</option>
-                                <option>Cercado Alambre Puas</option>
-                                <option>Cercado Malla</option>
-                            </select>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="NoExpediente">No. Expediente</label>
+                        <input type="text" class="form-control" id="NoExpediente" placeholder="IPE-BI-..." disabled>
                     </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Status">Status</label>
-                            <input type="text" class="form-control" id="Status" ng-model="form.Status" ng-required="true">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="fechaAlta">Fecha de Alta</label>
-                            <input type="date" class="form-control" id="fechaAlta" ng-model="form.fechaAlta" ng-required="true">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class="form-check">
-                                <input type="checkbox" class="Asegurado" id="exampleCheck1" ng-model="form.Asegurado" ng-required="true">
-                                <label class="form-check-label" for="exampleCheck1">Asegurado</label>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="superficieTotal">Superficie Total</label>
-                            <input type="text" class="form-control" id="superficieTotal" placeholder="mts" ng-model="form.superficieTotal" ng-required="true">
-                        </div>
-            
-                        <div class="form.group col-md-4">
-                            <label for="superficiConstruida">Superficie Construida</label>
-                            <input type="text" class="form-control" id="superficiConstruida" placeholder="mts" ng-model="form.superficiConstruida" ng-required="true">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="noNiveles">No. Niveles</label>
-                            <input type="text" class="form-control" id="noNiveles" placeholder="Niveles" ng-model="form.noNiveles" ng-required="true">
-                        </div>
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="cveCastastral">Clave Castastral</label>
-                            <input type="text" class="form-control" id="cveCastastral" placeholder="Digite Clave" ng-model="form.cveCastastral" ng-required="true">
-                        </div>
-            
-                        <div class="form.group col-md-4">
-                            <label for="valorCatastral">Valor Catastral</label>
-                            <input type="text" class="form-control" id="valorCatastral" placeholder="$0.00" ng-model="form.valorCatastral" ng-required="true">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="valorActual">Valor Actual</label>
-                            <input type="text" class="form-control" id="valorActual" placeholder="$0.00" ng-model="form.valorActual" ng-required="true">
-                        </div>
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="valorFiscal">Valor Fiscal</label>
-                            <input type="text" class="form-control" id="valorFiscal" ng-model="form.valorFiscal" ng-required="true">
-                        </div>
-            
-                        <div class="form.group col-md-4">
-                            <label for="valorAdquisición">Valor Adquisición</label>
-                            <input type="text" class="form-control" id="valorAdquisición" ng-model="form.valorAdquisición" ng-required="true">
-                        </div>
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="propetarioAnterior">Propetario Anterior</label>
-                            <input type="text" class="form-control" id="propetarioAnterior" ng-model="form.propetarioAnterior" ng-required="true">
-                        </div>
-            
-                        <div class="form.group col-md-4">
-                            <label for="ObsPropetario">Observaciones</label>
-                            <input type="text" class="form-control" id="ObsPropetario" ng-model="form.ObsPropetario" ng-required="true">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="depOcupante">Dependencia Ocupante</label>
-                            <input type="text" class="form-control" id="depOcupante" ng-model="form.depOcupante" ng-required="true">
-                        </div>
-                    </div>
-            
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <button type="submit" class="btn btn-success">Siguiente</button>
-                            
-                        </div>
-                    </div>
-                </form>  
-            </article>
-        <!-- Fin 1er Tab-->
 
-            <!--Inicia 2do Tab-->
-            <article id="tab2">
-                <form>
-                    <div class="form-row">      
-                        <div class="form-group col-md-6">
-                        <label for="Forma Adquisicion">Forma de Adquisicion</label>
-                        <select class="form-control" id="Forma Adquisicion" required>
-                            <option selected disabled value="">Seleccionar...</option>
-                            <option>Dación en Pago</option>
-                            <option>Compra-Venta</option>
-                            <option>Permuta</option>
-                            <option>Donación</option>
-                            <option>Expropiación</option>
-                            <option>Adjudicación</option>
-                            <option>Reversión</option>
+                    <div class="form-group col-md-4">
+                        <label for="TipoExpediente">Tipo de Expediente</label>
+                        <select class="form-control" id="TipoExpediente" ng-options="tExp.desripcion for tExp in TipoExpediente track by tExp.clave" ng-model="form.tipoExpediente" ng-required="true">
+                            <option value="">Seleccione</option>                             
                         </select>
-                        </div>
-        
-                        <div class="form-group col-md-6">
-                            <label for="fechaAdquisicion">Fecha Adquisición</label>
-                            <input type="date" class="form-control" id="fechaAdquisicion" ng-model="form.fechaAdquisicion" ng-required="true">
-                        </div>  
                     </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="noExpediente">No. Expediente</label>
-                            <input type="text" class="form-control" id="noExpediente" placeholder="Ingresar" ng-model="form.noExpediente" ng-required="true">
-                        </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="TipoInmueble">Tipo de Inmueble</label>
+                        <select class="form-control" id="TipoInmueble" ng-options="tipoInmu.descripcion for tipoInmu in TipoInmuebles track by tipoInmu.clave" ng-model="form.TipoInmueble" ng-required="true">
+                            <option value="">Seleccione</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="Nombre_Inmueble">Nombre del Inmueble</label>
+                        <input id="Nombre_Inmueble" type="text" class="form-control" placeholder="Nombre" ng-model="form.nombreInmueble" ng-required="true">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="dirInmu">Dirección del Inmueble</label>
+                        <input id="dirInmu" type="text" class="form-control" placeholder="dirInmu" ng-model="form.direccion" ng-required="true">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="DescEjecutiva">Descripción Ejecutiva</label>
+                        <input type="text" class="form-control" id="DescEjecutiva" placeholder="Descripción" ng-model="form.descjecutiva" ng-required="true">
+                    </div>
+                </div>
+                <h6 class="cabecera p-2 mb-2 text-white">Datos Particulares del Inmueble</h6>
+                <!-- TABS-->
+                <!--Inicia 1er Tab-->
+                <div class="wrap">
+                    <ul class="tabs">
+                        <li><a href="#tab1"><span class="fa fa-book"></span><span class="tab-text">Generales</span></a></li>
+                        <li><a href="#tab2"><span class="fa fa-calendar"></span><span class="tab-text">Detalles</span></a></li>
+			            <li><a href="#tab3"><span class="fa fa-map-pin"></span><span class="tab-text">Medidas y Colindancias</span></a></li>
+		                <li><a href="#tab4"><span class="fa fa-pencil-square-o"></span><span class="tab-text">Registro Público</span></a></li>
+	                    <li><a href="#tab5"><span class="fa fa-file-text"></span><span class="tab-text">Decreto</span></a></li>
+                    </ul>
+            
+                    <div class="secciones">
+                        <article id="tab1">
+                            <h1></h1>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="CveMunicipio">Municipio</label>
+                                        <select class="form-control" id="CveMunicipio" ng-options="muni.descripcion for muni in Municipios track by muni.clave" ng-model="form.Municipios" ng-required="true">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="ClasPredio">Clasificación de Predio</label>
+                                        <select class="form-control" id="ClasPredio" ng-options="clasPre.descripcion for clasPre in ClasificacionPredios track by clasPre.clave" ng-model="form.ClasificacionPredios" ng-required="true">
+                                            <option value="">Seleccione</option>                                     
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="TipoPredio">Tipo de Predio</label>
+                                        <select class="form-control" id="TipoPredio" ng-options="tipPre.descripcion for tipPre in TipoPredios track by tipPre.clave" ng-model="form.TipoPredios" ng-required="true">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>                                    
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Status">Status</label>
+                                        <input type="text" class="form-control" id="Status" ng-model="form.Status" ng-required="true">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="fechaAlta">Fecha de Alta</label>
+                                        <input type="date" class="form-control" id="fechaAlta" ng-model="form.fechaAlta" ng-required="true">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="Asegurado" id="exampleCheck1" ng-model="form.Asegurado" ng-required="true">
+                                            <label class="form-check-label" for="exampleCheck1">Asegurado</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="superficieTotal">Superficie Total</label>
+                                        <input type="text" class="form-control" id="superficieTotal" placeholder="mts" ng-model="form.superficieTotal" ng-required="true">
+                                    </div>
                         
-                        <div class="form-group col-md-6">
-                            <label for="fechaEscrituras">Fecha Escrituras</label>
-                            <input type="date" class="form-control" id="fechaEscrituras" ng-model="form.fechaEscrituras" ng-required="true">
-                        </div>  
-                    </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="Notario">Notario</label>
-                            <input type="text" class="form-control" id="Notario" placeholder="Ingresar" ng-model="form.Notario" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-3">
-                            <div class="form-check">
-                                <input type="checkbox" class="Titular" id="Titular" ng-model="form.Titular" ng-required="true">
-                                <label class="form-check-label" for="Titular">Titular</label>
-                            </div>
-                        </div>
-        
-                        <div class="form-group col-md-3">
-                            <div class="form-check">
-                                <input type="checkbox" class="Adjunto" id="Archivo" ng-model="form.Adjunto" ng-required="true">
-                                <label class="form-check-label" for="Adjunto">Adjunto</label>
-                            </div>
-                        </div>
-                    </div>
+                                    <div class="form.group col-md-4">
+                                        <label for="superficiConstruida">Superficie Construida</label>
+                                        <input type="text" class="form-control" id="superficiConstruida" placeholder="mts" ng-model="form.superficiConstruida" ng-required="true">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="noNiveles">No. Niveles</label>
+                                        <input type="text" class="form-control" id="noNiveles" placeholder="Niveles" ng-model="form.noNiveles" ng-required="true">
+                                    </div>
+                                </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <button type="submit" class="btn btn-success">Siguiente</button>
-                            
-                        </div>
-                    </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="cveCastastral">Clave Castastral</label>
+                                        <input type="text" class="form-control" id="cveCastastral" placeholder="Digite Clave" ng-model="form.cveCastastral" ng-required="true">
+                                    </div>
+                        
+                                    <div class="form.group col-md-4">
+                                        <label for="valorCatastral">Valor Catastral</label>
+                                        <input type="text" class="form-control" id="valorCatastral" placeholder="$0.00" ng-model="form.valorCatastral" ng-required="true">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="valorActual">Valor Actual</label>
+                                        <input type="text" class="form-control" id="valorActual" placeholder="$0.00" ng-model="form.valorActual" ng-required="true">
+                                    </div>
+                                </div>
 
-                </form>
-            </article>            
-            <!--Fin 2o Tab-->
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="valorFiscal">Valor Fiscal</label>
+                                        <input type="text" class="form-control" id="valorFiscal" ng-model="form.valorFiscal" ng-required="true">
+                                    </div>
 
-            <!-- 3er Tab-->
-			<article id="tab3">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Nte">Al Nte. Con</label>
-                            <input type="text" class="form-control" id="Nte" placeholder="Ingresar" ng-model="form.Nte" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="mtsNte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" ng-model="form.mtsNte" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="obNte">Observaciones</label>
-                            <input type="text" class="form-control" id="obNte" placeholder="Ingresar" ng-model="form.obNte" ng-required="true">
-                        </div>
-                    </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Sur">Al Sur Con</label>
-                            <input type="text" class="form-control" id="Sur" placeholder="Ingresar" ng-model="form.Sur" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="mtsSur">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" ng-model="form.mtsSUR" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="obSur">Observaciones</label>
-                            <input type="text" class="form-control" id="obSur" placeholder="Ingresar" ng-model="form.ObSur" ng-required="true">
-                        </div>
-                    </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Pte">Al Pte. Con</label>
-                            <input type="text" class="form-control" id="Pte" placeholder="Ingresar" ng-model="form.Pte" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="mtsPte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" ng-model="form.mtsPte" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="obPte">Observaciones</label>
-                            <input type="text" class="form-control" id="obPte" placeholder="Ingresar" ng-model="form.obPte" ng-required="true">
-                        </div>
-                    </div>
-        
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Ote">Al Ote. Con</label>
-                            <input type="text" class="form-control" id="Ote" placeholder="Ingresar" ng-model="form.Ote" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="mtsOte">Mts. Lineales</label>
-                            <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" ng-model="form.mtsOte" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="obOte">Observaciones</label>
-                            <input type="text" class="form-control" id="obOte" placeholder="Ingresar" ng-model="form.obOte" ng-required="true">
-                        </div>
-                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="valorAdqui">Valor Adquisición</label>
+                                        <input type="text" class="form-control" id="valorAdqui" ng-model="form.valorAdqui" ng-required="true">                                    
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="propetarioAnterior">Propetario Anterior</label>
+                                            <input type="text" class="form-control" id="propetarioAnterior" ng-model="form.propetarioAnterior" ng-required="true">
+                                        </div>                            
+                                        <div class="form.group col-md-4">
+                                            <label for="ObsPropetario">Observaciones</label>
+                                            <input type="text" class="form-control" id="ObsPropetario" ng-model="form.ObsPropetario" ng-required="true">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="depOcupante">Dependencia Ocupante</label>
+                                            <input type="text" class="form-control" id="depOcupante" ng-model="form.depOcupante" ng-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-3">
+                                            <button type="submit" class="btn btn-success" href="#tab2" >Siguiente</button>                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <button type="submit" class="btn btn-success">Siguiente</button>
-                            
-                        </div>
-                    </div>
+                            </form>
+                        </article><!-- Fin 1er Tab-->
 
-                </form>
-            </article>
-            <!--Fin 3er Tab-->
-
-            <!--Inicia 4o Tab-->
-			<article id="tab4">                
-                <form>
-                    <div class="form-row">      
-                        <div class="form-group col-md-4">
-                            <label for="libroReg">Libro de Registro</label>
-                            <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" ng-model="form.libroReg" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="noInsc">No. Inscripción</label>
-                            <input type="text" class="form-control" id="noInsc" placeholder="Ingresar" ng-model="form.noInsc" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-4">
-                            <label for="Fojas">Fojas</label>
-                            <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" ng-model="form.Fojas" ng-required="true">
-                        </div>
-                    </div>
-                   
-                    <div class="form-row">      
-                        <div class="form-group col-md-6">
-                        <label for="Tomo">Tomo</label>
-                        <select class="form-control" id="Tomo">
-                            <option selected disabled value="">Seleccionar...</option>
-                            <option>I</option>
-                            <option>II</option>
-                            <option>III</option>
-                            <option>IV</option>
-                            <option>V</option>
-                            <option>VI</option>
-                            <option>VII</option>
-                        </select>
-                        </div>
-        
-                        <div class="form-group col-md-6">
-                            <label for="fechaRegistro">Fecha de Registro</label>
-                            <input type="date" class="form-control" id="fechaRegistro" ng-model="form.fechaRegistro" ng-required="true">
-                        </div>  
-                    </div>
-        
-                    <div class="form-row">      
-                        <div class="form-group col-md-6">
-                        <label for="Seccion">Sección</label>
-                        <select class="form-control" id="Seccion">
-                            <option selected disabled value="">Seleccionar...</option>
-                            <option>S/R</option>
-                            <option>Primera</option>
-                            <option>Cuarta</option>
-                            <option>Civil</option>                    
-                        </select>
-                        </div>
-        
-                        <div class="form-group col-md-6">
-                            <label for="LugarReg">Lugar de Registro</label>
-                            <select class="form-control" id="Cve_Municipio">
-                                <option selected disabled value="">Buscar...</option>
-                                <option>Ninguno</option> 
-                                <option>Tuxtla Gutiérrez</option>
-                                <option>San Cristóbal de las Casas</option>                       
-                                <option>Comitán de Domínguez</option>
-                                <option>Yajalón</option>
-                                <option>Acapetagua</option>
-                                <option>Catazajá</option>
-                                <option>Cintalapa</option>                        
-                                <option>Copainalá</option>
-                                <option>Chiapa de Corzo</option>
-                                <option>Huixtla</option>
-                                <option>Motozintla</option>
-                                <option>Ocosingo</option>
-                                <option>Pichucalco</option>
-                                <option>Simojovel</option>
-                                <option>Tapachula de Córdova y Ordóñez</option>
-                                <option>Tonalá</option>
-                                <option>Venustiano Carranza</option> 
-                                <option>Villaflores</option>
-                                <option>Salto de Agua</option>
-                                <option>Bochil</option> 
-                            </select>
-                        </div>
-                    </div>
+                        <article id="tab2"> <!--Inicia 2do Tab-->
+                            <h1> </h1>
+                            <form>
+                                <div class="form-row">      
+                                    <div class="form-group col-md-6">
+                                        <label for="TipoAdqui">Tipo de Adquisicion</label>
+                                        <select class="form-control" id="TipoAdqui" ng-options="tipoAdqui.descripcion for tipoAdqui in TipoAdquisicion track by tipoAdqui.clave" ng-model="form.TipoAdquisicion" ng-required="true">
+                                            <option value="">Seleccione</option>                                        
+                                        </select>
+                                    </div>
                     
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <button type="submit" class="btn btn-success" >Siguiente</button>
+                                    <div class="form-group col-md-6">
+                                        <label for="fechaAdquisicion">Fecha de Adquisición</label>
+                                        <input type="date" class="form-control" id="fechaAdquisicion" ng-model="form.fechaAdquisicion" ng-required="true">
+                                    </div>  
+                                </div>
+                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="noExpediente">No. Expediente</label>
+                                        <input type="text" class="form-control" id="noExpediente" placeholder="Ingresar" ng-model="form.noExpediente" ng-required="true">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="fechaEscrituras">Fecha Escrituras</label>
+                                        <input type="date" class="form-control" id="fechaEscrituras" ng-model="form.fechaEscrituras" ng-required="true">
+                                    </div>  
+                                </div>
+                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="Notario">Notario</label>
+                                        <input type="text" class="form-control" id="Notario" placeholder="Ingresar" ng-model="form.Notario" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="Titular" id="Titular" ng-model="form.Titular" ng-required="true">
+                                            <label class="form-check-label" for="Titular">Titular</label>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-group col-md-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="Adjunto" id="Archivo" ng-model="form.Adjunto" ng-required="true">
+                                            <label class="form-check-label" for="Adjunto">Adjunto</label>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <button type="submit" class="btn btn-success">Siguiente</button>
+                                        
+                                    </div>
+                                </div>
+            
+                            </form>
+                        </article><!--Fin 2o Tab-->
+
+                        <article id="tab3"> <!--Inicia 3er Tab-->
+                            <h1> </h1>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Nte">Al Nte. Con</label>
+                                        <input type="text" class="form-control" id="Nte" placeholder="Ingresar" ng-model="form.Nte" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="mtsNte">Mts. Lineales</label>
+                                        <input type="text" class="form-control" id="mtsNte" placeholder="Ingresar" ng-model="form.mtsNte" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="obNte">Observaciones</label>
+                                        <input type="text" class="form-control" id="obNte" placeholder="Ingresar" ng-model="form.obNte" ng-required="true">
+                                    </div>
+                                </div>
+                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Sur">Al Sur Con</label>
+                                        <input type="text" class="form-control" id="Sur" placeholder="Ingresar" ng-model="form.Sur" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="mtsSur">Mts. Lineales</label>
+                                        <input type="text" class="form-control" id="mtsSUR" placeholder="Ingresar" ng-model="form.mtsSUR" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="obSur">Observaciones</label>
+                                        <input type="text" class="form-control" id="obSur" placeholder="Ingresar" ng-model="form.ObSur" ng-required="true">
+                                    </div>
+                                </div>
+                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Pte">Al Pte. Con</label>
+                                        <input type="text" class="form-control" id="Pte" placeholder="Ingresar" ng-model="form.Pte" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="mtsPte">Mts. Lineales</label>
+                                        <input type="text" class="form-control" id="mtsPte" placeholder="Ingresar" ng-model="form.mtsPte" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="obPte">Observaciones</label>
+                                        <input type="text" class="form-control" id="obPte" placeholder="Ingresar" ng-model="form.obPte" ng-required="true">
+                                    </div>
+                                </div>
+                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Ote">Al Ote. Con</label>
+                                        <input type="text" class="form-control" id="Ote" placeholder="Ingresar" ng-model="form.Ote" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="mtsOte">Mts. Lineales</label>
+                                        <input type="text" class="form-control" id="mtsOte" placeholder="Ingresar" ng-model="form.mtsOte" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="obOte">Observaciones</label>
+                                        <input type="text" class="form-control" id="obOte" placeholder="Ingresar" ng-model="form.obOte" ng-required="true">
+                                    </div>
+                                </div>
+            
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <button type="submit" class="btn btn-success">Siguiente</button>                                        
+                                    </div>
+                                </div>            
+                            </form>     
+                        </article><!--Fin 3er Tab-->
                             
-                        </div>
-                    </div>
+                        <article id="tab4"> <!-- Inicia 4o tap-->
+                            <h1> </h1>
+                            <form>
+                                <div class="form-row">      
+                                    <div class="form-group col-md-4">
+                                        <label for="libroReg">Libro de Registro</label>
+                                        <input type="text" class="form-control" id="libroReg" placeholder="Ingresar" ng-model="form.libroReg" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="noInsc">No. Inscripción</label>
+                                        <input type="text" class="form-control" id="noInsc" placeholder="Ingresar" ng-model="form.noInsc" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-4">
+                                        <label for="Fojas">Fojas</label>
+                                        <input type="text" class="form-control" id="Fojas" placeholder="Ingresar" ng-model="form.Fojas" ng-required="true">
+                                    </div>
+                                </div>
+                               
+                                <div class="form-row">      
+                                    <div class="form-group col-md-6">
+                                        <label for="Tomo">Tomo</label>
+                                        <select class="form-control" id="Tomo" ng-options="tomos.descripcion for tomos in Tomos track by tomos.clave" ng-model="form.Tomos" ng-required="true">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+                    
+                                    <div class="form-group col-md-6">
+                                        <label for="fechaRegistro">Fecha de Registro</label>
+                                        <input type="date" class="form-control" id="fechaRegistro" ng-model="form.fechaRegistro" ng-required="true">
+                                    </div>  
+                                </div>
+                    
+                                <div class="form-row">      
+                                    <div class="form-group col-md-6">
+                                    <label for="seccion">Sección</label>
+                                    <input type="text" class="form-control" id="seccion" placeholder="Ingresar" ng-model="form.seccion" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-6">
+                                        <label for="LugarReg">Lugar de Registro</label>
+                                        <select class="form-control" id="Cve_Municipio" ng-options="lugReg.descripcion for lugReg in LugaresRegionales track by lugReg.clave" ng-model="form.LugaresRegionales" ng-required="true">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <button type="submit" class="btn btn-success" >Siguiente</button>
+                                        
+                                    </div>
+                                </div>
+            
+                            </form>
+                        </article> <!-- Fin 4o Tab-->
 
-                </form>
-            </article>
-            <!-- Fin 4o Tab-->
+                        <article id="tab5"><!--Inicia 40 Tab-->
+                            <h1> </h1>
+                            <form>
 
-            <!--5to Tab-->
-            <article id="tab5">                
-                <form>
-
-                    <div class="form-row">      
-                        <div class="form-group col-md-6">
-                            <label for="noDecreto">No. Decreto</label>
-                            <input type="text" class="form-control" id="noDecreto" placeholder="Ingresar" ng-model="form.noDecreto" ng-required="true">
-                        </div>
-        
-                        <div class="form-group col-md-6">
-                            <label for="noPeriodico">No. Periódico</label>
-                            <input type="text" class="form-control" id="noPeriodico" placeholder="Ingresar" ng-model="form.noPeriodico" ng-required="true">
-                        </div>
-                    </div>
-        
-                    <div class="form-row">
-
-                        <div class="form-group col-md-6">
-                            <label for="valEna">Valor Enajenación</label>
-                            <input type="text" class="form-control" id="valEna" placeholder="$0.00" ng-model="form.valEna" ng-required="true">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="fechaPeriodico">Fecha Periódico</label>
-                            <input type="date" class="form-control" id="fechaPeriodicoo" ng-model="form.fechaPeriodico" ng-required="true">
-                        </div>  
-                    </div>
-
-                    <div class="form-row">
-
-                        <div class="form-group col-md-3">
-                            <button type="submit" class="btn btn-success" ng-click="AgregarInmueble()" > Guardar</button>
+                                <div class="form-row">      
+                                    <div class="form-group col-md-6">
+                                        <label for="noDecreto">No. Decreto</label>
+                                        <input type="text" class="form-control" id="noDecreto" placeholder="Ingresar" ng-model="form.noDecreto" ng-required="true">
+                                    </div>
+                    
+                                    <div class="form-group col-md-6">
+                                        <label for="noPeriodico">No. Periódico</label>
+                                        <input type="text" class="form-control" id="noPeriodico" placeholder="Ingresar" ng-model="form.noPeriodico" ng-required="true">
+                                    </div>
+                                </div>
+                    
+                                <div class="form-row">
+            
+                                    <div class="form-group col-md-6">
+                                        <label for="valEna">Valor Enajenación</label>
+                                        <input type="text" class="form-control" id="valEna" placeholder="$0.00" ng-model="form.valEna" ng-required="true">
+                                    </div>
+            
+                                    <div class="form-group col-md-6">
+                                        <label for="fechaPeriodico">Fecha Periódico</label>
+                                        <input type="date" class="form-control" id="fechaPeriodicoo" ng-model="form.fechaPeriodico" ng-required="true">
+                                    </div>  
+                                </div>
+                            </form>
                             
-                        </div>
-                    </div>
-                </form>
-            </article>
-            <!-- Fin 5to Tab-->
-		</div>
-	</div>
-      <!-- FIN TABS--> 
-    
-    <h6 class="cabecera p-2 mb-2 text-white"></h6>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-success" ng-click="AgregarInmueble()" > Guardar</button>                        
+                                </div>
+                            </div>
+
+                        </article><!--Fin 5o Tab-->
+
+                    </div>                    
+                </div>
+                
+                <!-- FIN TABS-->
+                
+                            
+    </form>
+         <!-- Fin de Formulario -->
+            
+        <h6 class="cabecera p-2 mb-2 text-white"></h6>
 </div>
