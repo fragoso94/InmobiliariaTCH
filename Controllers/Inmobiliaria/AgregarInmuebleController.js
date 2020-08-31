@@ -1,8 +1,8 @@
 app.controller('AgregarInmuebleController', ["$scope","$state", 'ApiServices', "$rootScope", function ($scope, $state, ApiServices, $rootScope) {
     $scope.form = {};
     $rootScope.session();
-    //let urlApiLocal = $rootScope.urlBase + '/Usuarios';
-    //let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
+    let urlApiLocal = $rootScope.urlBase + '/Usuarios';
+    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
 
     $(document).ready(function(){
         $('ul.tabs li a:first').addClass('active');
@@ -109,20 +109,7 @@ app.controller('AgregarInmuebleController', ["$scope","$state", 'ApiServices', "
                 console.error(error)
             });
         };
-        ObtenerTomos(); //Obteniendo Tomos
-
-        /*ObtenerSecciones = ()=> {
-            let url = $rootScope.urlBase + "/Catalogos/ObtenerTomos";
-            let response = ApiServices.getWS("GET", url);
-            response.then(function (result){
-                console.log(result);
-                $scope.Tomos = result;
-            })
-            response.catch(function (error){
-                console.error(error)
-            });
-        };
-        ObtenerSecciones(); //Obteniendo Secciones*/
+        ObtenerTomos(); //Obteniendo Tomos       
 
         ObtenerLugaresRegionales = ()=> {
             let url = $rootScope.urlBase + "/Catalogos/ObtenerLugaresRegionales";

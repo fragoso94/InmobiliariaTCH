@@ -9,6 +9,7 @@ app.controller('AgregarUsuarioController', ['$scope', '$http','ApiServices','$st
         let response = ApiServices.getWS("GET", url);
         response.then(function (result){
             $scope.Roles = result;
+            console.log(result);
         })
         response.catch(function (error){
             console.error(error)
