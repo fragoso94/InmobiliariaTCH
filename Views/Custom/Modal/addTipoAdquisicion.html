@@ -1,0 +1,74 @@
+<div class="modal fade" id="addModal" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-light">
+                <h4 class="modal-title">Agregar Tipo de Adquisición</h4>
+                <!--                <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            </div>
+            <!-- Modal body -->
+            <form novalidate name="formulario">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Clave</label>
+                                <input name="clave" type="number" class="form-control" placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
+                                <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Descripcion</label>
+                                <input name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">
+                                <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer bg-light">
+                    <a type="submit" class="btn btn-success" ng-click="agregar(formulario.$valid)">Guardar</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="btnClearModal('#addModal','add')">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-light">
+                <h4 class="modal-title">Editar Tipo de Adquisición</h4>
+                <!--                <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            </div>
+            <form novalidate name="formulario">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Clave</label>
+                                <input name="clave" type="number" class="form-control" placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
+<!--                                <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Descripcion</label>
+                                <input id="add" name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">
+<!--                                <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer bg-light">
+                    <a type="submit" class="btn btn-success" ng-click="modificar(formulario.$valid)">Guardar</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="btnClearModal('#editModal','add')">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

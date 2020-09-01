@@ -53,6 +53,41 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'Views/Custom/contenedorCatalogos.html'
     }
 
+    let tipoInmueble = {
+        name: 'tipoInmueble',
+        url: '/tipoInmueble',
+        templateUrl: 'Views/Custom/Catalogos/contenedorTipoInmueble.html',
+        controller: 'TipoInmuebleController'
+    }
+
+    let tipoPredio = {
+        name: 'tipoPredio',
+        url: '/tipoPredio',
+        templateUrl: 'Views/Custom/Catalogos/contenedorTipoPredio.html',
+        controller: 'TipoPredioController'
+    }
+
+    let tipoNotario = {
+        name: 'tipoNotario',
+        url: '/tipoNotario',
+        templateUrl: 'Views/Custom/Catalogos/contenedorTipoNotario.html',
+        controller: 'TipoNotarioController'
+    }
+
+    let tipoExpediente = {
+        name: 'tipoExpediente',
+        url: '/tipoExpediente',
+        templateUrl: 'Views/Custom/Catalogos/contenedorTipoExpediente.html',
+        controller: 'TipoExpedienteController'
+    }
+
+    let tipoAdquisicion = {
+        name: 'tipoAdquisicion',
+        url: '/tipoAdquisicion',
+        templateUrl: 'Views/Custom/Catalogos/contenedorTipoAdquisicion.html',
+        controller: 'TipoAdquisicionController'
+    }
+
     $stateProvider.state(home);
     $stateProvider.state(login);
     $stateProvider.state(inmobiliaria);
@@ -61,6 +96,11 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state(listaUsuario);
     $stateProvider.state(seguridad);
     $stateProvider.state(catalogos);
+    $stateProvider.state(tipoInmueble);
+    $stateProvider.state(tipoPredio);
+    $stateProvider.state(tipoNotario);
+    $stateProvider.state(tipoAdquisicion);
+    $stateProvider.state(tipoExpediente);
 
     //$urlRouterProvider.hashPrefix('!');
     $urlRouterProvider.otherwise('/login');
