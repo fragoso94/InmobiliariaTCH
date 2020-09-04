@@ -28,7 +28,7 @@
                 <td class="text-center">{{value.clave}}</td>
                 <td class="text-center">{{value.descripcion}}</td>
                 <td class="text-center">
-                    <button data-toggle="modal" data-target="#editModal" data-dismiss="addModal">
+                    <button data-toggle="modal" data-target="#editModal" data-dismiss="editModal" ng-click="editar(value.clave)">
                         <span class="fa fa-edit IconAccion" style="margin-right: 5px"></span>
                     </button>
                     <button ng-click="eliminar(value.clave)">

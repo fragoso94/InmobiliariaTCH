@@ -17,7 +17,7 @@
                                 <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-8">
                             <div class="form-group">
                                 <label>Descripcion</label>
                                 <input name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">
@@ -50,11 +50,11 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Clave</label>
-                                <input name="clave" type="number" class="form-control" placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
+                                <input name="clave" type="number" class="form-control" readonly placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
 <!--                                <span ng-show="cantidadAddInvalido" style="color: red; font-family: Arial; font-size: 12px">La cantidad es obligatorio.</span>-->
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-8">
                             <div class="form-group">
                                 <label>Descripcion</label>
                                 <input id="add" name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">

@@ -12,7 +12,8 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
         response.catch(function (error) {
             console.error(error);
         });
-    }
+    };
+
     ObtenerListado();
 
     $scope.agregar = (form) =>{
@@ -31,7 +32,7 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
                     swal({
                         title: "Sistema",
                         text: res.mensaje,
-                        icon: "warning",
+                        icon: "success",
                         button: "Entendido!",
                     });
                     ObtenerListado();
@@ -58,11 +59,39 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
                 button: "Entendido!",
             });
         }
-    }
+    };
+
+    $scope.editar = (id) =>{
+        let response = ApiServices.getWS('GET', urlApi + "/ObtenerTipoAdquisicion/" + id);
+        response.then(function (res){
+            $scope.form.clave = res.clave;
+            $scope.form.descripcion = res.descripcion;
+        })
+        response.catch(function () {
+            
+        })
+    };
 
     $scope.modificar = (form) =>{
         if(form){
+            let response = ApiServices.getWS('POST', urlApi + "/ModificarTipoAdquisicion", $scope.form);
+            response.then(function (res){
+                closeModal('update');
+                LimpiarDatos();
+                if(res.exito)
+                {
+                    swal({
+                        title: "Sistema",
+                        text: res.mensaje,
+                        icon: "success",
+                        button: "Entendido!",
+                    });
+                    ObtenerListado();
+                }
+            })
+            response.catch(function () {
 
+            });
         }else{
             swal({
                 title: "Sistema",
@@ -71,33 +100,46 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
                 button: "Entendido!",
             });
         }
-    }
+    };
 
     $scope.eliminar = (clave) => {
-        let response = ApiServices.getWS('DELETE', urlApi + "/EliminarTipoAdquisicion/" + clave);
-        response.then(function (res) {
-            console.log(res)
-            if(res.exito){
-                swal({
-                    title: "Sistema",
-                    text: res.mensaje,
-                    icon: "success",
-                    button: "Entendido!",
-                });
-                ObtenerListado();
-            }else{
-                swal({
-                    title: "Sistema",
-                    text: res.mensaje,
-                    icon: "warning",
-                    button: "Entendido!",
+        swal({
+            title: "Sistema",
+            text: "Está seguro de eliminar.?",
+            icon: "warning",
+            buttons: ["Cancelar","Eliminar"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                let response = ApiServices.getWS('DELETE', urlApi + "/EliminarTipoAdquisicion/" + clave);
+                response.then(function (res) {
+                    if(res.exito){
+                        swal({
+                            title: "Sistema",
+                            text: res.mensaje,
+                            icon: "success",
+                            button: "Entendido!",
+                        });
+                        ObtenerListado();
+                    }else{
+                        swal({
+                            title: "Sistema",
+                            text: res.mensaje,
+                            icon: "warning",
+                            button: "Entendido!",
+                        });
+                    }
+                })
+                response.catch(function (error) {
+                    console.error(error);
                 });
             }
-        })
-        response.catch(function (error) {
-            console.error(error);
+            //else {
+            //
+            // }
         });
-    }
+    };
 
     closeModal = (action) => {
         switch (action) {
@@ -122,7 +164,7 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
     LimpiarDatos = () =>{
         $scope.form.clave= "";
         $scope.form.descripcion = "";
-    }
+    };
 
     $scope.btnClearModal = (modal, tag) => {
         $(modal).on('hide.bs.modal', (e)=>{
