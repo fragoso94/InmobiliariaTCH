@@ -88,7 +88,15 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'TipoAdquisicionController'
     }
 
+    let reportes = {
+        name: 'reportes',
+        url: '/reportes',
+        templateUrl: 'Views/Custom/contenedorReporteInmuebles.html',
+        controller: 'ReporteInmuebleController'
+    }
+
     $stateProvider.state(home);
+    $stateProvider.state(reportes);
     $stateProvider.state(login);
     $stateProvider.state(inmobiliaria);
     $stateProvider.state(agregarInmueble);

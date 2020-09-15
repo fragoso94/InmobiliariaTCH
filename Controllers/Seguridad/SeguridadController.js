@@ -1,17 +1,18 @@
 app.controller('SeguridadController', ['$scope','ApiServices','$rootScope', function ($scope, ApiServices, $rootScope){
     $rootScope.session();
-    //this.urlLocal = $rootScope.urlBase + "/seguridad/ObtenerMovimientos";
-    this.urlProd = $rootScope.urlBaseProd + "/seguridad/ObtenerMovimientos";
+    this.urlLocal = $rootScope.urlBase + "/seguridad";
+    this.urlProd = $rootScope.urlBaseProd + "/seguridad";
     $scope.totalPagina = 10;
     $scope.paginaActual = 1;
+    let IdUsuario = localStorage.getItem('idUsuario');
 
-    this.CargarHistorial = function (){
+    CargarHistorial = () => {
         var self = this;
         let datos = {
-            "total": 10,
-            "paginaActual":1
+            "total": $scope.totalPagina,
+            "paginaActual": $scope.paginaActual
         }
-        let response = ApiServices.getWS('POST', self.urlProd, datos);
+        let response = ApiServices.getWS('POST', self.urlLocal + "/ObtenerMovimientos/" + IdUsuario, datos);
         response.then( result =>{
             console.log(result)
             $scope.movimientos = result;
@@ -23,15 +24,15 @@ app.controller('SeguridadController', ['$scope','ApiServices','$rootScope', func
             console.log(error);
         });
     }
-    this.CargarHistorial();
+    CargarHistorial();
 
-    this.Anterior = () => {
+    $scope.Anterior = () => {
         $scope.paginaActual--;
-        ObtenerUsuarios();
+        CargarHistorial();
     }
-    this.Siguiente = () =>{
+    $scope.Siguiente = () =>{
         $scope.paginaActual++;
-        ObtenerUsuarios();
+        CargarHistorial();
     }
 
 

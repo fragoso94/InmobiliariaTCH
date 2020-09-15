@@ -13,6 +13,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
         }
         var response = ApiServices.getWS('POST', urlApiLocal, datos);
         response.then(function(data){
+            console.log(data)
             $scope.inmuebles = data;
             data.forEach(item => {
                 let total = (item.cantidad/$scope.totalPagina);

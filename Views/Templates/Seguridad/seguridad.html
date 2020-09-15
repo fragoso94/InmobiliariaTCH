@@ -5,9 +5,6 @@
                 <input class="form-control" type="text" placeholder="Buscar Usuarios" aria-label="Search" ng-model="usuario">
             </div>
         </div>
-        <div class="col-md-2">
-            <a type="button" class="btn btn-danger" ui-sref="home">Regresar</a>
-        </div>
     </div>
     <div class="loader" ng-show="spinner"></div>
     <div class="fixed_header">
@@ -23,7 +20,7 @@
             <tbody>
             <tr ng-repeat=" (key,value) in movimientos | filter: nombre ">
                 <td class="text-center">{{value.nombreUsuario}}</td>
-                <td class="text-center">{{value.fechaMovimiento | ctime}}</td>
+                <td class="text-center">{{value.fechaMovimiento | date: 'dd/MM/yyyy h:mm:ss' }}</td>
                 <td class="text-center">{{value.tipoMovimiento}}</td>
                 <td class="text-center">{{value.tablaMovimiento}}</td>
             </tr>

@@ -1,8 +1,7 @@
 app.controller('AgregarInmuebleController', ["$scope","$state", 'ApiServices', "$rootScope", function ($scope, $state, ApiServices, $rootScope) {
     $scope.form = {};
     $rootScope.session();
-    let urlApiLocal = $rootScope.urlBase + '/Usuarios';
-    let urlApiProd = $rootScope.urlBaseProd + '/Usuarios';
+    let urlLocal = $scope.urlBase + "/Inmuebles";
 
     $(document).ready(function(){
         $('ul.tabs li a:first').addClass('active');
@@ -126,6 +125,13 @@ app.controller('AgregarInmuebleController', ["$scope","$state", 'ApiServices', "
 
     $scope.AgregarInmueble = () =>{
         console.log($scope.form);
+        let response = ApiServices.getWS('POST', urlLocal + "/InsertarInmueble", $scope.form);
+        response.then(function (res) {
+            console.log(res);
+        });
+        response.catch(function (error) {
+            console.log(error);
+        });
     }
 
 }]);

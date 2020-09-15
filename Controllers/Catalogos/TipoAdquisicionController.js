@@ -67,8 +67,8 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
             $scope.form.clave = res.clave;
             $scope.form.descripcion = res.descripcion;
         })
-        response.catch(function () {
-            
+        response.catch(function (error) {
+            console.log(error);
         })
     };
 
@@ -122,7 +122,8 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
                             button: "Entendido!",
                         });
                         ObtenerListado();
-                    }else{
+                    }
+                    else{
                         swal({
                             title: "Sistema",
                             text: res.mensaje,
@@ -135,9 +136,6 @@ app.controller('TipoAdquisicionController', ['$scope','ApiServices','$rootScope'
                     console.error(error);
                 });
             }
-            //else {
-            //
-            // }
         });
     };
 
