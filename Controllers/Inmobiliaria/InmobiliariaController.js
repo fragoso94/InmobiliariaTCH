@@ -5,6 +5,17 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $scope.totalPagina = 20;
     $scope.paginaActual = 1;
 
+    $scope.InstrumentosJuridicos = [
+        {
+            "id": 1,
+            "descripcion": "Comodatos"
+        },
+        {
+            "id": 2,
+            "descripcion": "Acta de Entrega"
+        }
+    ];
+    console.log($scope.InstrumentosJuridicos)
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
     ObtenerInmuebles = () => {        
         var datos = {
