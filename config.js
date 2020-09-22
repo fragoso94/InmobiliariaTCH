@@ -67,11 +67,11 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'TipoPredioController'
     }
 
-    let tipoNotario = {
-        name: 'tipoNotario',
-        url: '/tipoNotario',
-        templateUrl: 'Views/Custom/Catalogos/contenedorTipoNotario.html',
-        controller: 'TipoNotarioController'
+    let notarios = {
+        name: 'notarios',
+        url: '/notarios',
+        templateUrl: 'Views/Custom/Catalogos/contenedorNotario.html',
+        controller: 'NotarioController'
     }
 
     let tipoExpediente = {
@@ -106,7 +106,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state(catalogos);
     $stateProvider.state(tipoInmueble);
     $stateProvider.state(tipoPredio);
-    $stateProvider.state(tipoNotario);
+    $stateProvider.state(notarios);
     $stateProvider.state(tipoAdquisicion);
     $stateProvider.state(tipoExpediente);
 

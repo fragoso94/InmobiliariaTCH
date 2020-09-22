@@ -1,0 +1,50 @@
+<div ng-include="'Views/Custom/modal/_Notario.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <button class="btn btn-success" data-toggle="modal" data-target="#addModal" data-dismiss="addModal">
+                Agregar Notario
+            </button>
+        </div>
+    </div>
+    <div class="loader" ng-show="spinner"></div>
+    <div class="fixed_header">
+        <table class="table table-striped table-bordered fixed_header" style="width:100%;">
+            <thead>
+            <tr>
+                <th class="text-center" scope="col">Notaria</th>
+                <th class="text-center" scope="col">Nombre</th>
+                <th class="text-center" scope="col">Dirección</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" (key,value) in listado ">
+                <td class="text-center">{{value.notaria}}</td>
+                <td class="text-center">{{value.nombre}}</td>
+                <td class="text-center">{{value.direccion}}</td>
+                <td class="text-center">
+                    <button data-toggle="modal" data-target="#editModal" data-dismiss="editModal" ng-click="editar(value.clave)">
+                        <span class="fa fa-edit IconAccion" style="margin-right: 5px"></span>
+                    </button>
+                    <button ng-click="eliminar(value.clave)">
+                        <span class="fa fa-trash IconAccion"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination justify-content-center pagination-sm">
+            <li class="page-item itemPagination">
+                <button class="btn btn-light btn-sm" ng-click="Anterior()" ng-disabled="(paginaActual<=1) ? true : false">&laquo</button>
+            </li>
+            <li class="page-item"><a class="page-link">
+                {{paginaActual}}/{{paginas}}
+            </a></li>
+            <li class="page-item itemPagination">
+                <button class="btn btn-light btn-sm" ng-click="Siguiente()" ng-disabled="(paginaActual>=paginas) ? true : false">&raquo</button>
+            </li>
+        </ul>
+    </nav>
+</div>

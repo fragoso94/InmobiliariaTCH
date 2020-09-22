@@ -37,12 +37,12 @@
                <td class="centerText">{{value.nombre}}</td>
                <td class="centerText">{{value.direccion}}</td>
                <td class="centerText">
-                   <select class="form-control" id="HerramientaJuridica" ng-options="instrumento.descripcion for instrumento in InstrumentosJuridicos" ng-model="form.idInstrumentoJuridico" ng-required="true">
+                   <select class="form-control" id="HerramientaJuridica" ng-options="instrumento.id as instrumento.descripcion for instrumento in InstrumentosJuridicos" ng-model="value.idInstrumentoJuridico">
                        <option value="">Seleccione</option>
                    </select>
                </td>
                <td>
-                   <button class="btn btn-info">
+                   <button type="submit" class="btn btn-info" ng-click="ModificarHerramientaJuridica(value.idExpediente, value.idInstrumentoJuridico)">
                        Modificar
                    </button>
                </td>
