@@ -12,21 +12,65 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Clave</label>
-                                <input name="clave" type="number" class="form-control" placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
+                                <label>Nombre</label>
+                                <input name="nombre" type="text" class="form-control" placeholder="Nombre" ng-model="form.nombre" ng-required="true">
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Descripcion</label>
-                                <input name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">
+                                <label>Apellido Paterno</label>
+                                <input name="paterno" type="text" class="form-control" placeholder="Apellido Paterno" ng-model="form.apellidoPaterno" ng-required="true">
                             </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Apellido Materno</label>
+                            <input name="materno" type="text" class="form-control" placeholder="Apellido Materno" ng-model="form.apellidoMaterno" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Notaria</label>
+                                <input name="notaria" type="text" class="form-control" placeholder="Notaria" ng-model="form.notaria" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <input name="direccion" type="text" class="form-control" placeholder="Dirección" ng-model="form.direccion" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Teléfono</label>
+                            <input name="telefono" type="text" class="form-control" placeholder="Teléfono" ng-model="form.telefono" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Municipio</label>
+                                <select class="form-control" name="municipio" ng-options="M.clave as M.descripcion for M in Municipios" ng-model="form.idMunicipio" ng-required="true">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Tipo de Notario</label>
+                                <select class="form-control" name="tipoNotario" ng-options="N.id as N.descripcion for N in TipoNotarios" ng-model="form.tipoNotario" ng-required="true">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Clave Anterior</label>
+                            <input name="claveAnterior" type="number" maxlength="4" class="form-control" placeholder="Clave Anterior" ng-model="form.claveAnterior" ng-required="true">
                         </div>
                     </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer bg-light">
-                    <a type="submit" class="btn btn-success" ng-click="agregar(formulario.$valid)">Guardar</a>
+                    <a type="submit" class="btn btn-success" ng-click="agregar(formulario.$valid)">Modificar</a>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="btnClearModal('#addModal','add')">Cerrar</button>
                 </div>
             </form>
@@ -39,7 +83,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header bg-light">
-                <h4 class="modal-title">Editar Notario</h4>
+                <h4 class="modal-title">Modificar Notario</h4>
                 <!--                <button type="button" class="close" data-dismiss="modal">&times;</button>-->
             </div>
             <form novalidate name="formulario">
@@ -47,15 +91,59 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Clave</label>
-                                <input name="clave" type="number" class="form-control" readonly placeholder="Clave" ng-maxlength="3" ng-model="form.clave" ng-required="true">
+                                <label>Nombre</label>
+                                <input name="nombre" type="text" class="form-control" placeholder="Nombre" ng-model="form.nombre" ng-required="true">
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Descripcion</label>
-                                <input id="add" name="descripcion" type="text" min="1" class="form-control" placeholder="Descripción" ng-model="form.descripcion" ng-required="true">
+                                <label>Apellido Paterno</label>
+                                <input name="paterno" type="text" class="form-control" placeholder="Apellido Paterno" ng-model="form.apellidoPaterno" ng-required="true">
                             </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Apellido Materno</label>
+                            <input name="materno" type="text" class="form-control" placeholder="Apellido Materno" ng-model="form.apellidoMaterno" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Notaria</label>
+                                <input name="notaria" type="text" class="form-control" placeholder="Notaria" ng-model="form.notaria" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <input name="direccion" type="text" class="form-control" placeholder="Dirección" ng-model="form.direccion" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Teléfono</label>
+                            <input name="telefono" type="text" class="form-control" placeholder="Teléfono" ng-model="form.telefono" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Municipio</label>
+                                <select class="form-control" name="municipio" ng-options="M.clave as M.descripcion for M in Municipios" ng-model="form.idMunicipio" ng-required="true">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Tipo de Notario</label>
+                                <select class="form-control" name="tipoNotario" ng-options="N.id as N.descripcion for N in TipoNotarios" ng-model="form.tipoNotario" ng-required="true">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Clave Anterior</label>
+                            <input name="claveAnterior" type="number" maxlength="4" class="form-control" placeholder="Clave Anterior" ng-model="form.claveAnterior" ng-required="true">
                         </div>
                     </div>
                 </div>

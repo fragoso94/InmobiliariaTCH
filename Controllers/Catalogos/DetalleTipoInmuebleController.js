@@ -1,59 +1,24 @@
-app.controller('NotarioController',['$scope','ApiServices', '$rootScope', function ($scope, ApiServices, $rootScope) {
+app.controller('DetalleTipoInmuebleController', ['$scope','ApiServices','$rootScope', '$stateParams', function ($scope, ApiServices, $rootScope, $stateParams){
     $rootScope.session();
+    var urlApi = $rootScope.urlBase + "/Catalogos";
     $scope.form = {};
-    $scope.TipoNotarios = [
-            {
-                "id":"A",
-                "descripcion": "Adjunto"
-            },
-            {
-                "id":"B",
-                "descripcion": "Titular"
-            }
-        ];
-    var urlApi = $rootScope.urlBase + "/Notarios";
-    $scope.total = 10;
-    $scope.paginaActual = 1;
+    let idTipo = parseInt($stateParams.clave);
 
     ObtenerListado = () => {
-        let datos = { "total": $scope.total, "paginaActual": $scope.paginaActual};
-        let response = ApiServices.getWS('POST', urlApi + "/ObtenerNotarios", datos);
-        response.then(function (res) {
-            console.log(res);
-            $scope.listado = res;
-            res.forEach( (item) => {
-                let total = (item.cantidad/$scope.total);
-                $scope.paginas = Math.ceil(total);
-            });
+        let response = ApiServices.getWS('GET', urlApi + "/ObtenerTipoInmuebles/"+idTipo);
+        response.then(function (datos) {
+            console.log(datos);
+            $scope.listado = datos;
         })
         response.catch(function (error) {
             console.error(error);
         });
-    };
-    ObtenerMunicipios = () =>{
-        let response = ApiServices.getWS('GET', $rootScope.urlBase + "/Catalogos/ObtenerMunicipios");
-        response.then(function (res) {
-            $scope.Municipios = res;
-        })
-        response.catch(function (error) {
-            console.error(error);
-        });
-    };
+    }
     ObtenerListado();
-    ObtenerMunicipios();
-    $scope.Siguiente = () =>{
-      $scope.paginaActual++;
-      ObtenerListado();
-    };
-    $scope.Anterior = () => {
-        $scope.paginaActual--;
-        ObtenerListado();
-    };
 
     $scope.agregar = (form) =>{
-        console.log(form)
         if(form){
-            let response = ApiServices.getWS('POST', urlApi + "/InsertarNotario", $scope.form);
+            let response = ApiServices.getWS('POST', urlApi + "/InsertarTipoInmueble", $scope.form);
             response.then(function (res) {
                 console.log(res);
                 closeModal('add');
@@ -93,20 +58,19 @@ app.controller('NotarioController',['$scope','ApiServices', '$rootScope', functi
     };
 
     $scope.editar = (id) =>{
-        let response = ApiServices.getWS('GET', urlApi + "/ObtenerNotario/" + id);
+        let response = ApiServices.getWS('GET', urlApi + "/ObtenerTipoInmueble/" + id);
         response.then(function (res){
-            $scope.form = res;
-
+            $scope.form.clave = res.clave;
+            $scope.form.descripcion = res.descripcion;
         })
         response.catch(function (error) {
             console.log(error);
         })
     };
 
-    $scope.modificar = (form) =>
-    {
+    $scope.modificar = (form) =>{
         if(form){
-            let response = ApiServices.getWS('POST', urlApi + "/ModificarNotario", $scope.form);
+            let response = ApiServices.getWS('POST', urlApi + "/ModificarTipoInmueble", $scope.form);
             response.then(function (res){
                 closeModal('update');
                 LimpiarDatos();
@@ -129,8 +93,7 @@ app.controller('NotarioController',['$scope','ApiServices', '$rootScope', functi
                     button: "Entendido!",
                 });
             });
-        }
-        else{
+        }else{
             swal({
                 title: "Sistema",
                 text: "Faltan datos por completar.!",
@@ -139,7 +102,6 @@ app.controller('NotarioController',['$scope','ApiServices', '$rootScope', functi
             });
         }
     };
-
 
     $scope.eliminar = (id) =>
     {
@@ -152,7 +114,7 @@ app.controller('NotarioController',['$scope','ApiServices', '$rootScope', functi
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    let response = ApiServices.getWS('DELETE', urlApi + "/EliminarNotario/" + id);
+                    let response = ApiServices.getWS('DELETE', urlApi + "/EliminarTipoInmueble/" + id);
                     response.then(function (res) {
                         if(res.exito){
                             swal({
@@ -200,14 +162,8 @@ app.controller('NotarioController',['$scope','ApiServices', '$rootScope', functi
     };
 
     LimpiarDatos = () =>{
-        $scope.form.nombre= "";
-        $scope.form.apellidoPaterno = "";
-        $scope.form.apellidoMaterno = "";
-        $scope.form.notaria = "";
-        $scope.form.direccion = "";
-        $scope.form.telefono = "";
-        $scope.form.municipio = "";
-        $scope.form.tipoNotario = "";
-        $scope.form.claveAnterior = "";
+        $scope.form.clave= "";
+        $scope.form.descripcion = "";
     };
+
 }]);

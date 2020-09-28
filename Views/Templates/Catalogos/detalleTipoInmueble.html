@@ -1,0 +1,45 @@
+<div ng-include="'Views/Custom/modal/_TipoInmueble.html'"></div>
+<!--<header>-->
+<!--    <h2 class="cabecera p-2 mb-2 text-white">Tipo de Inmuebles</h2>-->
+<!--</header>-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+            <button class="btn btn-warning" data-toggle="modal" ui-sref="tipoInmueble">
+                Regresar
+            </button>
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" data-toggle="modal" data-target="#addModal" data-dismiss="addModal">
+                Agregar Tipo de Inmueble
+            </button>
+        </div>
+    </div>
+    <div class="loader" ng-show="spinner"></div>
+    <div class="fixed_header" style="margin-top: 10px">
+        <table class="table table-striped table-bordered fixed_header" style="width:100%;">
+            <thead>
+            <tr>
+                <th class="text-center" scope="col">Clave</th>
+                <th class="text-center" scope="col">Descripción</th>
+                <th class="text-center" scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" (key,value) in listado ">
+                <td class="text-center">{{value.clave}}</td>
+                <td class="text-center">{{value.descripcion}}</td>
+                <td class="text-center">
+                    <button data-toggle="modal" data-target="#editModal" data-dismiss="editModal" ng-click="editar(value.clave)">
+                        <span class="fa fa-edit IconAccion" style="margin-right: 5px"></span>
+                    </button>
+                    <button ng-click="eliminar(value.clave)">
+                        <span class="fa fa-trash IconAccion"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

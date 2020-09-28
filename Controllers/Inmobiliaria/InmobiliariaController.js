@@ -5,7 +5,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $scope.totalPagina = 20;
     $scope.paginaActual = 1;
     $scope.form = {};
-
+    //let listaBusqueda = []; //arreglo donde se almacenará todos los registros para su posterior búsqueda.
     $scope.InstrumentosJuridicos = [
         {
             "id": 0,
@@ -20,7 +20,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
             "descripcion": "Acta de Entrega"
         }
     ];
-    console.log($scope.InstrumentosJuridicos);
+
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
     ObtenerInmuebles = () => {        
         var datos = {
@@ -34,14 +34,27 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
             data.forEach(item => {
                 let total = (item.cantidad/$scope.totalPagina);
                 $scope.paginas = Math.ceil(total);
+                //listaBusqueda.push(item);
             })
         })
         response.catch(function(error){
             console.log(error);
         })
     };
-    
    ObtenerInmuebles();
+
+   // $scope.buscar = (e) =>
+   // {
+   //     if(listaBusqueda.length != 0){
+   //         const found = listaBusqueda.find(element => {
+   //             if(parseInt(element.id) == 2){
+   //                 console.log(element)
+   //             }
+   //         });
+   //     }
+   //     console.log(found);
+   // };
+
     $scope.Anterior = () => {
         $scope.paginaActual--;
         ObtenerInmuebles();
@@ -83,6 +96,11 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
             });
         }
 
+    };
+
+    $scope.irDetalle = (id) =>
+    {
+        $state.go('detalleInmueble', {"id": id});
     };
 
 }]);

@@ -1,0 +1,23 @@
+<div ng-include="'Views/Custom/modal/_TipoInmueble.html'"></div>
+<!--<header>-->
+<!--    <h2 class="cabecera p-2 mb-2 text-white">Detalle del Inmueble</h2>-->
+<!--</header>-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <button class="btn btn-warning" data-toggle="modal" ui-sref="inmobiliaria">
+                Regresar
+            </button>
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-danger" ng-disabled="true">
+                Modificar Inmueble
+            </button>
+        </div>
+    </div>
+    <div class="loader" ng-show="spinner"></div>
+    <div class="fixed_header" style="margin-top: 10px">
+
+    </div>
+
+</div>

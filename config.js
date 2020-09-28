@@ -95,6 +95,20 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'ReporteInmuebleController'
     }
 
+    let detalleTipoInmueble = {
+        name: 'detalleTipoInmueble',
+        url: '/detalleTipoInmueble/{clave}',
+        templateUrl: 'Views/Custom/Catalogos/contenedorDetalleTipoInmueble.html',
+        controller: 'DetalleTipoInmuebleController'
+    }
+
+    let detalleInmueble = {
+        name: 'detalleInmueble',
+        url: '/detalleInmueble/{id}',
+        templateUrl: 'Views/Custom/contenedorDetalleInmueble.html',
+        controller: 'DetalleInmuebleController'
+    }
+
     $stateProvider.state(home);
     $stateProvider.state(reportes);
     $stateProvider.state(login);
@@ -109,6 +123,8 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state(notarios);
     $stateProvider.state(tipoAdquisicion);
     $stateProvider.state(tipoExpediente);
+    $stateProvider.state(detalleTipoInmueble);
+    $stateProvider.state(detalleInmueble);
 
     //$urlRouterProvider.hashPrefix('!');
     $urlRouterProvider.otherwise('/login');
