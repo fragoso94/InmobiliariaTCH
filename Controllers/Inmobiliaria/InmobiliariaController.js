@@ -5,6 +5,7 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
     $scope.totalPagina = 20;
     $scope.paginaActual = 1;
     $scope.form = {};
+    let busqueda = "";
     //let listaBusqueda = []; //arreglo donde se almacenará todos los registros para su posterior búsqueda.
     $scope.InstrumentosJuridicos = [
         {
@@ -21,13 +22,35 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
         }
     ];
 
+    $scope.buscar = (form) =>
+    {
+        if(form){
+            busqueda = $scope.form.nombre;
+            ObtenerInmuebles(busqueda);
+        }
+        else{
+            swal({
+                title: "Sistema",
+                text: "El dato a buscar es requerida.!",
+                icon: "warning",
+                button: "Entendido!",
+            });
+        }
+    }
     //llamando al servicio que devuelve una promesa con los datos de inmuebles.
-    ObtenerInmuebles = () => {        
-        var datos = {
+    ObtenerInmuebles = (texto = "") => {
+        console.log("busqueda:", texto);
+        let datos = {
             "total": $scope.totalPagina,
             "paginaActual": $scope.paginaActual
         }
-        var response = ApiServices.getWS('POST', urlApiLocal + "/ObtenerInmuebles", datos);
+        let response;
+        if(texto === ""){
+            response = ApiServices.getWS('POST', urlApiLocal + "/ObtenerInmuebles", datos);
+        }
+        else{
+            response = ApiServices.getWS('POST', urlApiLocal + "/BuscarInmueble/" + texto, datos);
+        }
         response.then(function(data){
             console.log(data)
             $scope.inmuebles = data;
@@ -57,13 +80,16 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
 
     $scope.Anterior = () => {
         $scope.paginaActual--;
-        ObtenerInmuebles();
+        if(busqueda !== "") ObtenerInmuebles();
+        else ObtenerInmuebles(busqueda);
     }
     $scope.Siguiente = () =>{
         $scope.paginaActual++;
-        ObtenerInmuebles();
+        if(busqueda !== "") ObtenerInmuebles();
+        else ObtenerInmuebles(busqueda);
     }
     $scope.agregarInmueble = ()=>{
+        console.log(texto);
         $state.go('agregarInmueble');
     };
 

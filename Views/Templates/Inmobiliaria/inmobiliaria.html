@@ -8,9 +8,20 @@
 <div class="container">
     <div class="form-row">
         <div class="col-sm-10">
-            <div class="active-cyan-3 active-cyan-4 mb-4">
-                <input class="form-control" type="text" placeholder="Buscar nombre de inmueble" aria-label="Search" ng-model="nombre">
-            </div>
+            <form name="formBusqueda">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="active-cyan-3 active-cyan-4 mb-4">
+                            <input class="form-control" type="text" placeholder="Buscar nombre de inmueble" aria-label="Search" ng-model="form.nombre" ng-required="true">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-info" ng-click="buscar(formBusqueda.$valid)">
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="col-sm-2">
             <button class="btn btn-success" ng-click="agregarInmueble()">
@@ -31,7 +42,7 @@
            </tr>
            </thead>
            <tbody>
-           <tr ng-repeat=" (key,value) in inmuebles | filter: nombre"><!--| filter: nombre -->
+           <tr ng-repeat=" (key,value) in inmuebles "><!--| filter: nombre -->
                <td class="centerText">
                    <a type="button" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Mostrar Detalle"
                       ng-click="irDetalle(value.idExpediente)">
