@@ -19,6 +19,10 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
         {
             "id": 2,
             "descripcion": "Acta de Entrega"
+        },
+        {
+            "id": 3,
+            "descripcion": "Disponible"
         }
     ];
 
