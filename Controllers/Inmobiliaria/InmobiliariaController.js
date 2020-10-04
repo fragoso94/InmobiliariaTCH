@@ -92,8 +92,8 @@ app.controller('InmobiliariaController',['$scope','$state', '$http', 'ApiService
         if(busqueda !== "") ObtenerInmuebles();
         else ObtenerInmuebles(busqueda);
     }
-    $scope.agregarInmueble = ()=>{
-        console.log(texto);
+    $scope.agregarInmueble = ()=>
+    {
         $state.go('agregarInmueble');
     };
 
